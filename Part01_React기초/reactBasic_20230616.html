@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <script crossorigin src="https://unpkg.com/react@18/umd/react.development.js"></script>
+    <script
+      crossorigin
+      src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"
+    ></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+  </head>
+  <body>
+    <div id="root"></div>
+    <!-- <script type="text/babel">
+      const rootEle = document.getElementById("root");
+
+      const paint = (title, desc) => (
+        <>
+          <h1>{title}</h1>
+          <h3>{desc}</h3>
+        </>
+      );
+      // 기존 html 태그 네임과 겹칠 수 있기때문에 첫 글자는 대문자로 작성해야한다.
+      const Paint = ({ title, desc, children }) => (
+        <>
+          <h1>{title}</h1>
+          <h3>{desc}</h3>
+          {children}
+        </>
+      );
+
+      // const ele = (
+      //   <>
+      //     <Paint title="Good" desc="good">
+      //       <span>hi</span>
+      //     </Paint>
+      //     <Paint title="Bad" desc="bad" />
+      //     <Paint title="Soso" desc="soso" />
+
+      //     {paint("Good", "good")}
+      //     {paint("Bad", "bad")}
+      //     {paint("Soso", "soso")}
+      //   </>
+      // );
+
+      const ele = (
+        <>
+          <Paint title="Good" desc="good">
+            {Paint({ title: "Bad", desc: "bad", children: "hi" })}
+          </Paint>
+        </>
+      );
+
+      ReactDOM.render(ele, rootEle);
+    </script> -->
+
+
+    <script type="text/babel">
+      const rootEle = document.getElementById("root");
+
+      const paint = (title, desc) => (
+        <>
+          <h1>{title}</h1>
+          <h3>{desc}</h3>
+        </>
+      );
+
+      const Text = ({ text }) => {
+        // text가 대문자로 시작하게 되면 h1 소문자면 h3
+        if (text.charAt(0) === text.charAt(0).toUpperCase()) {
+          return <h1>{text}</h1>;
+        } else {
+          return <h3>{text}</h3>;
+        }
+      };
+
+      const ele = (
+        <>
+          <Text text="Text" />
+          <Text text="text" />
+        </>
+      );
+
+      ReactDOM.render(ele, rootEle);
+    </script>
+
+  </body>
+</html>
