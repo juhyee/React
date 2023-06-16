@@ -22,9 +22,26 @@
       // });
       const title = "title";
       const text = "Hello world!!!";
-      const props = { className: title, children: text };
-      const customH1 = <h1 {...props} />;
-      const ele = customH1;
+      // const props = { className: title, children: text };
+      const ele = (
+        // <div
+        //   className="box"
+        //   children={[
+        //     React.createElement("h1", null, "Hi"),
+        //     React.createElement("h3", null, "Bye"),
+        //     React.createElement("h5", null, "children")
+        //   ]}
+        // />
+
+        <>
+          <h1>Hi</h1>
+          <h3>Bye</h3>
+          <h5>children</h5>
+        </>
+
+        // <React.Fragment children={[<h1>Hi</h1>, <h3>Bye</h3>, <h5>children</h5>]} />
+      );
+      // const ele = customH1;
       // console.log(ele);
       ReactDOM.render(ele, rootEle);
     </script>
