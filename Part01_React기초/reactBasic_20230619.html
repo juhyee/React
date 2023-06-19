@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <script
+      crossorigin
+      src="https://unpkg.com/react@18/umd/react.development.js"
+    ></script>
+    <script
+      crossorigin
+      src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"
+    ></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="text/babel">
+      const rootEle = document.getElementById("root");
+
+      // function Number({ num }) {
+      //   return num % 2 == 0 ? <h1>{num}</h1> : <h3>{num}</h3>;
+      // }
+
+      // const ele = (
+      //   <>
+      //     <Number num={3} />
+      //     <Number num={2} />
+      //     <Number num={6} />
+      //     <Number num={3} />
+      //   </>
+      // );
+
+
+
+      function Number({ num, selected }) {
+        return selected ? <h1>{num}</h1> : <h3>{num}</h3>;
+      }
+
+      const ele = (
+        <>
+          {[1, 2, 3, 4, 5, 6, 7, 9, 10].map((num) => (
+            <Number num={num} selected={num === 3} />
+          ))}
+        </>
+      );
+
+      ReactDOM.render(ele, rootEle);
+    </script>
+  </body>
+</html>
