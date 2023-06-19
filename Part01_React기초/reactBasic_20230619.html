@@ -1,19 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <script
-      crossorigin
-      src="https://unpkg.com/react@18/umd/react.development.js"
-    ></script>
-    <script
-      crossorigin
-      src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"
-    ></script>
+    <script crossorigin src="https://unpkg.com/react@18/umd/react.development.js"></script>
+    <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
     <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
   </head>
   <body>
     <div id="root"></div>
-    <script type="text/babel">
+    <!-- <script type="text/babel">
       const rootEle = document.getElementById("root");
 
       // function Number({ num }) {
@@ -44,6 +38,38 @@
       );
 
       ReactDOM.render(ele, rootEle);
+    </script> -->
+
+        <!-- <script>
+      const rootEle = document.getElementById("root");
+
+      function random() {
+        const num = Math.floor(Math.random() * (10 - 1) + 1);
+        const ele = `
+        <button>${num}</button>
+        `;
+        rootEle.innerHTML = ele;
+      }
+      setInterval(random, 1000);
+    </script> -->
+
+    <script type="text/babel">
+      const rootEle = document.getElementById("root");
+
+      function random() {
+        const num = Math.floor(Math.random() * (10 - 1) + 1);
+        const ele = (
+          <>
+            <button>{num}</button>
+            <div>
+              <p>{num}</p>
+            </div>
+          </>
+        );
+
+        ReactDOM.render(ele, rootEle);
+      }
+      setInterval(random, 1000);
     </script>
   </body>
 </html>
