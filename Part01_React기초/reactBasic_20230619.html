@@ -60,7 +60,8 @@
         const num = Math.floor(Math.random() * (10 - 1) + 1);
         const ele = (
           <>
-            <button>{num}</button>
+            { /* <button>{num}</button> */}
+            <button children={num} />
             <div>
               <p>{num}</p>
             </div>
