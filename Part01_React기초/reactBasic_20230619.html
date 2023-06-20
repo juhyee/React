@@ -53,7 +53,7 @@
       setInterval(random, 1000);
     </script> -->
 
-    <script type="text/babel">
+    <!-- <script type="text/babel">
       const rootEle = document.getElementById("root");
 
       function random() {
@@ -71,6 +71,21 @@
         ReactDOM.render(ele, rootEle);
       }
       setInterval(random, 1000);
+    </script> -->
+
+
+    <script type="text/babel">
+      const rootEle = document.getElementById("root");
+      const handleMouseOut = () => alert("buy");
+      const ele = (
+        <button
+          onClick={() => alert("press")}
+          onMouseOut={handleMouseOut}
+          children={"press"}
+        />
+      );
+
+      ReactDOM.render(ele, rootEle);
     </script>
   </body>
 </html>
