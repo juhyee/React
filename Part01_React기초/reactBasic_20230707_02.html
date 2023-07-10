@@ -45,11 +45,12 @@
     <script type="text/babel">
       const rootEle = document.getElementById("root");
 
-      function Button({ className = "", style, ...rest }) {
+      // props = { className, style, children };
+      function Button({ className = "", color, style, ...rest }) {
         return (
           <button
-            className={`button ${className == "" ? "" : ` ${className}`}`}
-            style={style}
+            className={`button ${className} ${color}`}
+            style={{ borderRadius: "8px", backgroundColor: color, ...style }}
             {...rest}
           />
         );
@@ -57,12 +58,12 @@
       const element = (
         <>
           <Button style={{ borderRadius: "50%" }}>Green</Button>
-          <Button className="blue" style={{ borderRadius: "8px" }}>
+          <Button color="blue" style={{ fontSize: 20 }}>
             Blue
           </Button>
-          <Button className="red">Red</Button>
-          <Button className="gray">Gray</Button>
-          <Button className="black">Black</Button>
+          <Button color="red">Red</Button>
+          <Button color="gray">Gray</Button>
+          <Button color="black">Black</Button>
         </>
       );
       ReactDOM.render(element, rootEle);
