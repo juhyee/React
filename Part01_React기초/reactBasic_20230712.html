@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <script
+      crossorigin
+      src="https://unpkg.com/react@18/umd/react.development.js"
+    ></script>
+    <script
+      crossorigin
+      src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"
+    ></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+  </head>
+  <body>
+    <div id="root"></div>
+
+    <script type="text/babel">
+      const rootEle = document.getElementById("root");
+
+      const App = () => {
+        const [message, setMessage] = React.useState("");
+        const [phoneNumber, setPhoneNumber] = React.useState("");
+
+        const handleSubmit = (event) => {
+          event.preventDefault();
+          // const phoneNumber = event.target.elements.phone.value;
+          alert(phoneNumber);
+        };
+
+        const handleChange = (event) => {
+          if (event.target.value.startsWith(0)) {
+            setMessage("phone number is valid");
+            setPhoneNumber(event.target.value);
+            // alert("Good");
+          } else if (event.target.value.length == 0) {
+            setPhoneNumber("");
+            setMessage("");
+          } else {
+            setMessage("phone number is should starts with 0");
+            setPhoneNumber("");
+          }
+        };
+
+        return (
+          <form onSubmit={handleSubmit}>
+            <label htmlFor="phone">Phone Number:</label>
+            <br />
+            <input
+              id="phone"
+              name="phone"
+              defaultValue=""
+              onChange={handleChange}
+              value={phoneNumber}
+            />
+            <p>{message}</p>
+            <br />
+            <br />
+            <button
+              type="submit"
+              disabled={
+                phoneNumber.length === 0 || message !== "phone number is valid"
+              }
+            >
+              Submit
+            </button>
+            <p>{phoneNumber}</p>
+          </form>
+        );
+      };
+
+      ReactDOM.render(<App />, rootEle);
+    </script>
+  </body>
+</html>
