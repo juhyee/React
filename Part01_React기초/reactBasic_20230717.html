@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <script
+      crossorigin
+      src="https://unpkg.com/react@18/umd/react.development.js"
+    ></script>
+    <script
+      crossorigin
+      src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"
+    ></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+  </head>
+  <body>
+    <div id="root"></div>
+
+    <script type="text/babel">
+      const rootEle = document.getElementById("root");
+      const todos = [
+        [
+          { id: 1, value: "Whish dishes" },
+          { id: 2, value: "Clen the bed" },
+          { id: 3, value: "Running" },
+          { id: 4, value: "Leaning" }
+        ],
+        [
+          { id: 4, value: "Leaning" },
+          { id: 1, value: "Whish dishes" },
+          { id: 2, value: "Clen the bed" },
+          { id: 3, value: "Running" }
+        ],
+        [
+          { id: 3, value: "Running" },
+          { id: 1, value: "Whish dishes" },
+          { id: 2, value: "Clen the bed" },
+          { id: 4, value: "Leaning" }
+        ],
+        [
+          { id: 2, value: "Clen the bed" },
+          { id: 1, value: "Whish dishes" },
+          { id: 3, value: "Running" },
+          { id: 4, value: "Leaning" }
+        ]
+      ];
+      const App = () => {
+        const [items, setItems] = React.useState(todos[0]);
+        React.useEffect(() => {
+          const interval = setInterval(() => {
+            const random = Math.floor(Math.random() * 3);
+            setItems(todos[random]);
+          }, 1000);
+
+          return () => {
+            clearInterval(interval);
+          };
+        }, []);
+        const handelDoneClick = (todo) => {
+          setItems((items) => items.filter((item) => item !== todo));
+        };
+
+        const handelRestoreClick = () => {
+          setItems((items) => [
+            ...items,
+            todos.find((item) => !items.includes(item))
+          ]);
+        };
+
+        return (
+          <>
+            {items.map((todo) => (
+              <div key={todo.id}>
+                <button onClick={() => handelDoneClick(todo)}>
+                  {todo.value}
+                </button>
+              </div>
+            ))}
+            <br />
+            <br />
+            <button onClick={handelRestoreClick}>Restore</button>
+          </>
+        );
+      };
+
+      ReactDOM.render(<App />, rootEle);
+    </script>
+  </body>
+</html>
