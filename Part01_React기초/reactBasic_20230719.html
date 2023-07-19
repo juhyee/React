@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <script
+      crossorigin
+      src="https://unpkg.com/react@18/umd/react.development.js"
+    ></script>
+    <script
+      crossorigin
+      src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"
+    ></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+  </head>
+  <body>
+    <div id="root"></div>
+
+    <script type="text/babel">
+      const rootEle = document.getElementById("root");
+
+      const Id = ({ handelIdChange }) => {
+        return (
+          <>
+            <label htmlFor="id">ID: </label>
+            <input
+              id="id"
+              name="id"
+              defaultValue=""
+              onChange={handelIdChange}
+            />
+          </>
+        );
+      };
+
+      const Password = ({ handelPwChange }) => {
+        return (
+          <>
+            <label htmlFor="pw">PW: </label>
+            <input
+              id="pw"
+              name="pw"
+              type="password"
+              defaultValue=""
+              onChange={handelPwChange}
+            />
+          </>
+        );
+      };
+
+      const App = () => {
+        const [id, setId] = React.useState("");
+        const [password, setPassword] = React.useState("");
+
+        const handelIdChange = (event) => {
+          setId(event.target.value);
+          console.log(event.target.value.length);
+        };
+        const handelPwChange = (event) => {
+          setPassword(event.target.value);
+          console.log(event.target.value.length);
+        };
+
+        const handelLoginClick = () => {
+          console.log(`id: ${id}, pw: ${password}`);
+        };
+
+        return (
+          <>
+            <Id handelIdChange={handelIdChange} />
+            <br />
+            <Password handelPwChange={handelPwChange} />
+            <button
+              disabled={id.length == 0 || password.length == 0}
+              onClick={handelLoginClick}
+            >
+              LOGIN
+            </button>
+          </>
+        );
+      };
+
+      ReactDOM.render(<App />, rootEle);
+    </script>
+  </body>
+</html>
