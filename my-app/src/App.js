@@ -5,8 +5,8 @@ import './App.css';
 // import FunctionalComponent from './components/2-5.State/FunctionalComponent';
 // import ClassComponents2 from './components/2-6.LifeCtcle/ClassComponent';
 // import Event from './components/2-7.Event/Event';
-import Conditional from './components/2-8.ConditionalRendering/Conditional';
-
+// import Conditional from './components/2-8.ConditionalRendering/Conditional';
+import List from './components/2-9.List/List';
 
 function App() {
   return (
@@ -17,8 +17,8 @@ function App() {
       {/* <FunctionalComponent /> */}
       {/* <ClassComponents2 /> */}
       {/* <Event /> */}
-      <Conditional />
-
+      {/* <Conditional /> */}
+      <List />
     </div>
   );
 }
