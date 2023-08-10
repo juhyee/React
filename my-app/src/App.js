@@ -6,7 +6,9 @@ import './App.css';
 // import ClassComponents2 from './components/2-6.LifeCtcle/ClassComponent';
 // import Event from './components/2-7.Event/Event';
 // import Conditional from './components/2-8.ConditionalRendering/Conditional';
-import List from './components/2-9.List/List';
+// import List from './components/2-9.List/List';
+   import ControlledComponent from './components/2-10.Form/ControlledComponent';
+   import UncontrolledComponent from './components/2-10.Form/UncontrolledComponent';
 
 function App() {
   return (
@@ -18,7 +20,9 @@ function App() {
       {/* <ClassComponents2 /> */}
       {/* <Event /> */}
       {/* <Conditional /> */}
-      <List />
+      {/* <List /> */}
+      <ControlledComponent />
+      <UncontrolledComponent />
     </div>
   );
 }
