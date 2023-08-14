@@ -8,13 +8,13 @@ export default function ControlledComponent() {
   function handleChange(event) {
     const name = event.target.name;
 
-    if(name == 'name') {
+    if(name === 'name') {
       setName(event.target.value);
     }
-    if(name == 'essay') {
+    if(name === 'essay') {
       setEssay(event.target.value);
     }
-    if(name == 'flavor') {
+    if(name === 'flavor') {
       setFlavor(event.target.value);
     }
 
