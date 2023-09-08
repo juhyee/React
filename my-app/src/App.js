@@ -12,7 +12,9 @@ import './App.css';
   //  import State from './components/3-3.Hooks/State';
   //  import Reducer from './components/3-3.Hooks/Reducer';
   // import Dialog from './components/3-5.Composition/Dialog';
-  import ThankyouDialog from './components/3-6.Composition2/ThankyouDialog';
+  // import ThankyouDialog from './components/3-6.Composition2/ThankyouDialog';
+  import Input from './components/3-7.Hoc/Input';
+  import Button from './components/3-7.Hoc/Button';
 function App() {
   return (
     <div className="App">
@@ -29,7 +31,12 @@ function App() {
       {/* <State /> */}
       {/* <Reducer /> */}
       {/* <WelcomeDialog /> */}
-      <ThankyouDialog />
+      {/* <ThankyouDialog /> */}
+      <Input />
+      <br />
+      <br />
+    
+      <Button />
     </div>
   );
 }
