@@ -1,8 +1,12 @@
-import React from 'react'
+import React, { useCallback } from 'react'
 import CommentItem from './CommentItem'
 
 
 export default function Comments ({commentList}) {
+  const handleChange = useCallback = (() => {
+    console.log('눌림')
+  }, [])
+
 
   return (
     <div>
@@ -12,6 +16,7 @@ export default function Comments ({commentList}) {
               title={comment.title}
               content={comment.content}
               likes={comment.like}
+              onClick={handleChange}
           />
         )}
     </div>
