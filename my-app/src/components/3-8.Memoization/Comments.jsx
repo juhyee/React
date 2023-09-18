@@ -3,22 +3,22 @@ import CommentItem from './CommentItem'
 
 
 export default function Comments ({commentList}) {
-  const handleChange = useCallback = (() => {
+  const handleClick = useCallback = (() => {
     console.log('눌림')
   }, [])
 
 
   return (
     <div>
-        {commentList.map(comment => 
+        {commentList.map((comment) => (
         <CommentItem
               key={comment.title}
               title={comment.title}
               content={comment.content}
               likes={comment.like}
-              onClick={handleChange}
+              onClick={handleClick}
           />
-        )}
+        ))}
     </div>
   )
 }

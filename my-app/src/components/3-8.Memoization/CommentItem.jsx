@@ -1,4 +1,4 @@
-import React, { Profiler, memo, useState } from 'react'
+import React, { Profiler, memo, useMemo, useState } from 'react'
 import "./CommentItem.css"
 
 function CommentItem({title, content, likes, onClick}) {
@@ -23,9 +23,9 @@ function CommentItem({title, content, likes, onClick}) {
     alert(`${title} 눌림`)
   }
 
-  const rate = () => {
+  const rate = useMemo(() => {
     return likes > 10 ? "Good" : "Bad"
-  }
+  }, [likes])
 
   return (
     <Profiler id='CommentItem' onRender={onRenderCallback}>
@@ -36,7 +36,7 @@ function CommentItem({title, content, likes, onClick}) {
           <br />
           <span>{likes}</span>
           <br />
-          <span>{rate()}</span>
+          <span>{rate}</span>
           <br />
           <span>{clickCount}</span>
       </div>
