@@ -3,12 +3,12 @@ import React, { useState } from 'react'
 function Form(props) {
     const [name, setName] = useState('');
     function handleChange(e) {
-        console.log('Typing!')
+      setName(e.target.value);
     }
     function handleSubmit(e) {
-        e.preventDefault();
-        props.addTask(name);
-        setName('')
+      e.preventDefault();
+      props.addTask(name);
+      setName("");
     }
   return (
     <from onSubmit={handleSubmit}>
