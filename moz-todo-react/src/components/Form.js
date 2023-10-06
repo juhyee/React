@@ -3,12 +3,13 @@ import React, { useState } from 'react'
 function Form(props) {
     const [name, setName] = useState('');
     
-    const [newName, setNewName] = useState("");
+    // const [newName, setNewName] = useState("");
+    
     function handleSubmit(e){
       e.preventDefault();
-      props.addTask(props.id, newName);
+      props.addTask(name);
       setName("");
-      setNewName(false)
+      // setNewName(false)
     }
     
     function handleChange(e){
