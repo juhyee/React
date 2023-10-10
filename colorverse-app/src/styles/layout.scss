@@ -1,0 +1,29 @@
+button {
+    color: #fff;
+    font-size: 12px;
+    line-height: 32px;
+    font-weight: $font-bold;
+}
+
+.button--lg {
+    display: flex !important;
+    align-items: center;
+    justify-content: center;
+    display: inline-block;
+    min-width: 72px;
+    height: 32px;
+    border-radius: 32px;
+}
+
+.pagination {
+    display: flex;
+    &__button {
+        background-color: rgba($color: #fff, $alpha: 0.08);
+        border: 1px solid rgba($color: #fff, $alpha: 0.3);
+        min-width: 32px;
+        &--prev {
+            margin-right: 20px;
+            transform: rotate(-180deg);
+        }
+    }
+}

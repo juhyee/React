@@ -1,7 +1,7 @@
-@import "common";
+@import "./common.scss";
 @import "./mixins/flex";
-@import "layout";
-
+@import "./layout";
+@import "./icon";
 
   .builder-header {
     position: relative;
@@ -33,7 +33,7 @@
         .logo {
           width: 97px;
           height: 24px;
-          background: transparent url("../assets/icons/logo.svg") no-repeat center;
+          // background: transparent url("../assets/icons/logo.svg") no-repeat center;
         }
       }
       &__select {
@@ -82,13 +82,32 @@
               background: url("../assets/icons/assetsIcon.svg") no-repeat center;
               background-size: 100%;
             }
+            &::before {
+              content: "";
+              position: absolute;
+              top: 50%;
+              right: -16px;
+              width: 8px;
+              height: 5px;
+              background: url("../assets/icons/selectArrowIcon.svg") no-repeat
+                center;
+              background-size: 8px 5px;
+              transform: translateY(-50%);
+            }
           }
           .select-layer {
+            display: none;
+            position: absolute;
+            top: 34px;
+            left: 0;
             width: 124px;
             padding: 5px;
             border-radius: 10px;
+            background-color: #111;
             &__list {
               margin-bottom: 0;
+              color: rgba($color: #fff, $alpha: 0.6);
+              font-size: 12px;
               > .select-layer__item {
                 position: relative;
                 display: flex;
@@ -97,6 +116,7 @@
                 margin-top: 5px;
                 padding: 0 12px;
                 border-radius: 6px;
+                cursor: pointer;
                 span {
                   margin-left: 9px;
                 }
@@ -106,6 +126,7 @@
                 &:hover {
                   background-color: #7747ff;
                   color: #fff;
+                  font-weight: $font-bold;
                   .icon {
                     &_land {
                       background-image: url("../assets/icons/landIconActive.svg");
@@ -119,6 +140,9 @@
                   }
                 }
               }
+            }
+            &.on {
+              display: block;
             }
           }
           &.on {
@@ -142,10 +166,21 @@
       }
 
       .button--link {
+        position: relative;
         padding: 9px 14px;
         font-size: 12px;
         line-height: 12px;
         opacity: 0.6;
+        &::after {
+          content: '';
+          position: absolute;
+          top: 50%;
+          left: 0;
+          width: 2px;
+          height: 12px;
+          background-color: rgba($color: #fff, $alpha: 0.6);
+          transform: translateY(calc(-50% + 1px));
+        }
         &:first-of-type {
           margin-right: 1px;
           &::after {
@@ -192,9 +227,13 @@
             }
           }
           &-layer {
+            position: absolute;
+            top: 40px;
+            left: 67px;
             width: 229px;
+            background-color: #111;
             border-radius: 18px;
-            left: 0;
+            font-size: 11px;
             transform: translate(0);
             &::before {
               top: -8px;
@@ -212,11 +251,17 @@
               filter: blur(35px);
             }
             &__labal {
+              @include flex(row, space-between, center);
+              margin: 0;
               padding: 12px 42px 10px;
-              &::after {
+              border-bottom: 1px solid #3a3a3a;
+              font-size: 14px;
+              font-weight: $font-bold;
+              color: #fff;
+              &::before {
                 content: "";
                 position: absolute;
-                top: 9px;
+                top: 10px;
                 left: 22px;
                 width: 13px;
                 height: 21px;
@@ -231,10 +276,14 @@
                 padding: 0 10px;
                 margin-top: 8px;
                 border-radius: 4px;
+                color: rgba($color: #fff, $alpha: 0.6);
+                cursor:default;
                 &:first-child {
                   margin-top: 0;
                 }
-                &.on {
+                &:hover {
+                  background-color: #7747ff;
+                  color: #fff;
                   font-weight: $font-bold;
                 }
               }
@@ -362,37 +411,46 @@
       }
       &__toggle {
         @include flex(row, center, center);
-        margin-left: 13px;
-        font-size: 12px;
-        color: #414141;
-        button {
-          position: relative;
-          width: 30px;
-          height: 14px;
-          margin-left: 5px;
-          border-radius: 19px;
-          background-color: #acacac;
-          font-size: 0;
-          &::after {
-            content: "";
-            display: inline-block;
-            position: absolute;
-            top: -1px;
-            left: 0;
-            width: 16px;
-            height: 16px;
-            border-radius: 50%;
-            background: linear-gradient(180deg, #f5f5f5 0%, #cccccc 100%);
-            box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.15), inset 0px 0px 3px #ffffff;
-            transition: all 0.3s;
+        .toggle {
+          @include flex(row, center, center);
+          margin-left: 13px;
+          font-size: 12px;
+          color: #414141;
+          &__label {
+            color: #fff;
+            opacity: 0.6;
           }
-          &.on {
-            background-color: #7747ff;
+          &__button {
+            position: relative;
+            width: 30px;
+            height: 14px;
+            margin-left: 5px;
+            border-radius: 19px;
+            background-color: #acacac;
+            font-size: 0;
             &::after {
-              left: 15px;
+              content: "";
+              display: inline-block;
+              position: absolute;
+              top: -1px;
+              left: 0;
+              width: 16px;
+              height: 16px;
+              border-radius: 50%;
+              background: linear-gradient(180deg, #f5f5f5 0%, #cccccc 100%);
+              box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.15), inset 0px 0px 3px #ffffff;
+              transition: all 0.3s;
+            }
+            &.on {
+              background-color: #7747ff;
+              &::after {
+                left: 15px;
+              }
             }
           }
+        
         }
+       
       }
 
       
@@ -435,12 +493,16 @@
           width: 100%;
           height: 100%;
           background: linear-gradient(
-            226.39deg,
-            #6631fb 14.84%,
-            #ff72d7 77.85%
+            126.65deg,
+            #ff72d7 21.31%,
+            #49495a 63.06%,
+            #373744 80.24%
           );
           opacity: 0;
           transition: all 0.2s ease-in-out;
+        }
+        .button__text {
+          z-index: 12;
         }
         .icon {
           position: relative;
@@ -466,6 +528,8 @@
         &__button {
           position: relative;
           justify-content: center;
+          min-width: 32px;
+          height: 32px;
           margin-left: 10px;
           background: $gradient-primary;
           &::before {
