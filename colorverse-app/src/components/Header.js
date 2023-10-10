@@ -1,7 +1,15 @@
-import React from 'react'
+import React, { useState } from 'react'
 import '../styles/Header.scss'
 
 export default function Header() {
+
+  const [isOn, setIsOn] = useState(false);
+
+  const toggleHendler = () => {
+    setIsOn(!isOn)
+  }
+
+
   return (
     <>
      <div className="builder-header">
@@ -13,18 +21,24 @@ export default function Header() {
                 </div>
               </div>
               <div className="header-util__title">
-                안녕하세요.~컬러버스 랜드빌더 제목영역입니다.
+                {/* 안녕하세요.~컬러버스 랜드빌더 제목영역입니다. */}
+                안녕하세요.~ 랜드빌더 제목영역입니다.
               </div>
             </div>
             <div className="header-util__contents--center">
               <div className="header-util__select">
                 {/* D: select 활성화 시 add class on  */}
                 <div className="select">
-                  <button className="select__button">
+                  <button
+                    className="select__button"
+                    onClick={toggleHendler}
+                  >
                     {/* D: select__text addClass 랜드빌더 - land/ 아이템 - itme / 에셋 - assets  */}
-                    <span className="select__text itme">아이템 빌더</span>
+                    <span className="select__text assets">아이템 빌더</span>
                   </button>
-                  <div className="select-layer">
+                  <div
+                    className={`select-layer ${isOn ? "on" : ''}`}
+                  >
                     <ul className="select-layer__list">
                       <li className="select-layer__item">
                         <i className="icon icon_land"></i>
