@@ -1,7 +1,13 @@
 
 .icon {
     display: inline-block;
-    font-size: 0;
+    // width: 16px;
+    // height: 16px;
+    vertical-align: middle;
+    background-repeat: no-repeat;
+    background-position: center center;
+    text-indent: -999em;
+    overflow: hidden;
 }
 
 .icon_play {

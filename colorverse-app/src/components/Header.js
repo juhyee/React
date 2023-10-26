@@ -3,11 +3,12 @@ import '../styles/Header.scss'
 
 export default function Header() {
 
+  // useState 하나 사용 시 
   const [isOn, setIsOn] = useState(false);
-
-  const toggleHendler = () => {
-    setIsOn(!isOn)
+  const toggleHendler = (event) => {
+    setIsOn(!event.target.isOn)
   }
+
 
 
   return (

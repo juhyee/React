@@ -1,0 +1,44 @@
+.header__banner {
+  overflow: hidden;
+  height: 60px;
+  background-color: #00bbff;
+  text-align: center;
+}
+.header__banner.hide {
+  height: 0;
+  -webkit-transition: height 0.3s;
+  transition: height 0.3s;
+}
+.header__banner p {
+  position: relative;
+  display: inline-block;
+  padding: 0 43px 0 110px;
+  line-height: 60px;
+  color: #fff;
+  font-size: 18px;
+}
+.header__banner p::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 88px;
+  height: 60px;
+  background: url(../../../assets/images/banner_cpn.jpg) 0 0 no-repeat;
+}
+.header__banner p::before {
+  content: "";
+  position: absolute;
+  right: 0;
+  top: 0;
+  width: 43px;
+  height: 60px;
+  background: url(../../../assets/images/banner_icon.jpg) 0 0 no-repeat;
+}
+.header__banner--num {
+  position: absolute;
+  top: 0;
+  left: 89px;
+  width: 20px;
+  text-align: right;
+}

@@ -125,6 +125,12 @@ img {
   border-style: none;
 }
 
+a {
+  color: inherit;
+  text-decoration: none;
+  outline: none;
+}
+
 button,
 input,
 optgroup,
@@ -286,4 +292,28 @@ template {
   font-size: 0;
   line-height: 0;
   text-indent: -9999px;
+}
+
+.btn {
+  display: inline-block;
+  height: 36px;
+  padding: 5px 15px;
+  background-color: #242529;
+  border-radius: 6px;
+  border: 1px solid transparent;
+  font-size: 14px;
+  font-weight: 600;
+  letter-spacing: -0.025em;
+  text-align: center;
+  line-height: 23px;
+  color: #fff;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  cursor: pointer;
+}
+.btn:hover {
+  background-color: #61626a;
+}
+.btn:active {
+  background-color: #000000;
 }
