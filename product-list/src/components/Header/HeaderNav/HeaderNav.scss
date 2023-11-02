@@ -1,0 +1,19 @@
+.gnb {
+    display: flex;
+    flex: 1 0 0;
+    &__item {
+        margin-left: 18px;
+        a {
+            font-size: 16px;
+            font-weight: bold;
+            color: #2F3438;
+            
+            &:hover {
+                color: #00bbff;
+            }
+        }
+        &:first-child {
+            margin-left: 0;
+        }
+    }
+}

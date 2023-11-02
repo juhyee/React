@@ -212,62 +212,29 @@ input[type=number]::-webkit-inner-spin-button {
   letter-spacing: -1px;
 }
 
-.header {
-  border-bottom: 1px solid #ddd;
-}
-.header__banner {
-  overflow: hidden;
-  height: 60px;
-  background-color: #00bbff;
-  text-align: center;
-}
-.header__banner.hide {
-  height: 0;
-  -webkit-transition: height 0.3s;
-  transition: height 0.3s;
-}
-.header__banner p {
-  position: relative;
-  display: inline-block;
-  padding: 0 43px 0 110px;
-  line-height: 60px;
-  color: #fff;
-  font-size: 18px;
-}
-.header__banner p::after {
-  content: "";
-  position: absolute;
-  left: 0;
-  top: 0;
-  width: 88px;
-  height: 60px;
-  background: url(../../assets/images/banner_cpn.jpg) 0 0 no-repeat;
-}
-.header__banner p::before {
-  content: "";
-  position: absolute;
-  right: 0;
-  top: 0;
-  width: 43px;
-  height: 60px;
-  background: url(../../assets/images/banner_icon.jpg) 0 0 no-repeat;
-}
-.header__banner--num {
-  position: absolute;
-  top: 0;
-  left: 89px;
-  width: 20px;
-  text-align: right;
-}
 .header__content {
+  border-bottom: 1px solid #eeeeee;
+}
+.header__content--top {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  max-width: 1280px;
+  max-width: 1256px;
   height: 80px;
+  margin: 0 auto;
+}
+.header__content--bottom {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  max-width: 1256px;
+  height: 50px;
   margin: 0 auto;
 }
 .header__logo {
@@ -275,84 +242,6 @@ input[type=number]::-webkit-inner-spin-button {
 }
 .header__logo img {
   width: 100px;
-}
-.header .gnb ul {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-}
-.header .gnb__item {
-  margin-left: 15px;
-}
-.header .gnb__item a {
-  font-size: 20px;
-  font-weight: 600;
-  color: #2c2c2c;
-}
-.header .gnb__item.on a {
-  color: #00bbff;
-}
-.header__search {
-  position: relative;
-  margin-left: 80px;
-}
-.header__search--input {
-  width: 260px;
-  height: 36px;
-  padding: 0 40px 0 15px;
-  line-height: 36px;
-  border-radius: 6px;
-  border: 1px solid #aaa;
-  color: #222;
-}
-.header__search--input::-webkit-input-placeholder {
-  color: #aaa;
-}
-.header__search--input::-moz-placeholder {
-  color: #aaa;
-}
-.header__search--input:-ms-input-placeholder {
-  color: #aaa;
-}
-.header__search--input::-ms-input-placeholder {
-  color: #aaa;
-}
-.header__search--input::placeholder {
-  color: #aaa;
-}
-.header__search::before {
-  content: "";
-  position: absolute;
-  top: 50%;
-  right: 15px;
-  width: 20px;
-  height: 20px;
-  background: url(./../../assets/images/searchGrayIcon.svg) 0 0 no-repeat;
-  -webkit-transform: translateY(-50%);
-          transform: translateY(-50%);
-}
-.header__utill {
-  margin-left: auto;
-}
-.header__utill--cart {
-  position: relative;
-  width: 28px;
-  height: 31.2px;
-  background: url(../../assets/images/basketIcon.svg) no-repeat 0 0/100%;
-}
-.header__utill-count {
-  position: absolute;
-  top: -8px;
-  right: -10px;
-  padding: 2px 5px;
-  height: 20px;
-  min-width: 20px;
-  border-radius: 20px;
-  font-size: 13px;
-  background-color: #00bbff;
-  color: #fff;
-  font-weight: bold;
-  line-height: 17px;
 }
 
 .content {
@@ -584,58 +473,6 @@ input[type=number]::-webkit-inner-spin-button {
 }
 .content .product__tag .tag.time3::after {
   content: "3시간전";
-}
-
-.modal {
-  z-index: 1060;
-  position: relative;
-  z-index: 99999;
-  display: none;
-  position: fixed;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  left: 0;
-}
-.modal-wrap {
-  z-index: 99999;
-  overflow: hidden;
-  position: fixed;
-  top: 50%;
-  left: 50%;
-  border-radius: 16px;
-  background: #ffffff;
-  -webkit-box-shadow: 8px 8px 20px rgba(0, 0, 0, 0.2);
-          box-shadow: 8px 8px 20px rgba(0, 0, 0, 0.2);
-  transform: translate(-50%, -50%);
-  -webkit-transform: translate(-50%, -50%);
-}
-.modal-head {
-  position: relative;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  height: 78px;
-  padding: 0 40px;
-  border-bottom: 1px solid #ececec;
-}
-.modal-head h3 {
-  font-size: 22px;
-  font-weight: bold;
-  margin-bottom: 0;
-}
-.modal-head__btn--close {
-  position: absolute;
-  top: 50%;
-  right: 20px;
-  width: 28px;
-  height: 28px;
-  background: url("../../assets/images/modalHeadCloseIcon.svg") no-repeat center;
-  -webkit-transform: translateY(-50%);
-          transform: translateY(-50%);
 }
 
 /* cart modal  */

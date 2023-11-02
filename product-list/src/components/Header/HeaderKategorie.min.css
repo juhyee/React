@@ -1,0 +1,1 @@
+.kategorie ul{display:-webkit-box;display:-ms-flexbox;display:flex}.kategorie__item{margin-left:15px}.kategorie__item a{font-size:18px;font-weight:600;color:#2f3438}.kategorie__item a:hover{color:#0bf}.kategorie__item.on a{color:#0bf}

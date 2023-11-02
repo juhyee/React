@@ -1,0 +1,24 @@
+.kategorie {
+    ul {
+      display: flex;
+    }
+
+    &__item {
+      margin-left: 15px;
+
+      a {
+        font-size: 18px;
+        font-weight: 600;
+        color: #2F3438;
+        &:hover {
+          color: #00bbff;
+        }
+      }
+
+      &.on {
+        a {
+          color: #00bbff;
+        }
+      }
+    }
+  }

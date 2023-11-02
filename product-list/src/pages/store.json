@@ -1,0 +1,106 @@
+{
+  "products": [
+    {
+      "id": 0,
+      "title": "식기세척기",
+      "brand": "세척나라",
+      "photo": "pr1.png",
+      "price": 10000,
+      "sale": 36,
+      "star": 45,
+      "tag": ["bigSale", "gift",  "time3" ]
+    },
+    {
+      "id": 1,
+      "title": "원목 침대 프레임",
+      "brand": "침대나라",
+      "photo": "pr2.png",
+      "price": 20000,
+      "sale": 50,
+      "star": 30,
+      "tag":["bigSale", "time3" ]
+    },
+    {
+      "id": 2,
+      "title": "천연 디퓨저 세트",
+      "brand": "향기나라",
+      "photo": "pr3.png",
+      "price": 30000,
+      "sale": 40,
+      "star": 25,
+      "tag": ["gift",  "time3" ]
+    },
+    {
+      "id": 3,
+      "title": "시원한 서큘레이터",
+      "brand": "바람나라",
+      "photo": "pr4.png",
+      "price": 40000,
+      "sale": 10,
+      "star": 50,
+      "tag":  ["bigSale", "gift",  "time3" ]
+    },
+    {
+      "id": 4,
+      "title": "[당일출고] 순수원목 거실 테이블",
+      "brand": "먼데이하우스",
+      "photo": "pr5.png",
+      "price": 30000,
+      "sale": 64,
+      "star": 50,
+      "tag":  ["bigSale" ]
+    },
+    {
+      "id": 5,
+      "title": "하프문 테이블 식탁",
+      "brand": "다은담다",
+      "photo": "pr6.png",
+      "price": 40000,
+      "sale": 52,
+      "star": 30,
+      "tag":  ["bigSale", "gift",  "time3" ]
+    },
+    {
+      "id": 6,
+      "title": "국민 매트리스 침대 MS/SS/Q",
+      "brand": "024홈",
+      "photo": "pr7.png",
+      "price": 50000,
+      "sale": 44,
+      "star": 35,
+      "tag":  ["bigSale", "gift" ]
+    },
+    {
+      "id": 7,
+      "title": "맞춤제작 블라인드 시스템 드레스룸",
+      "brand": "큐브",
+      "photo": "pr8.png",
+      "price": 38000,
+      "sale": 41,
+      "star": 30,
+      "tag":  [ "time3" ]
+    },
+    {
+      "id": 8,
+      "title": "한샘몰 Pick 티렌토 리세 아쿠아텍스 패브릭 소파",
+      "brand": "한샘",
+      "photo": "pr9.png",
+      "price": 25000,
+      "sale": 35,
+      "star": 20,
+      "tag":  ["gift"]
+    },
+    {
+      "id": 9,
+      "title": "[1만원쿠폰] 클레어 LED 2단 수납침대",
+      "brand": "알파침대",
+      "photo": "pr10.png",
+      "price": 40000,
+      "sale": 31,
+      "star": 50,
+      "tag":  ["bigSale", "gift",  "time3" ]
+    }
+
+  ]
+}
+
