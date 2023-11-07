@@ -79,7 +79,6 @@
 }
 .prdCard-item__price .price {
   color: #000;
-  margin-right: 4px;
 }
 .prdCard-item__star {
   overflow: hidden;
@@ -96,39 +95,6 @@
   left: 0;
   height: 10px;
   background: url(http://simjuhye.com/portfolio/img/product_list/star_100.png) 0 0 no-repeat;
-}
-.prdCard-item__star .star50 {
-  width: 54px;
-}
-.prdCard-item__star .star45 {
-  width: 49px;
-}
-.prdCard-item__star .star40 {
-  width: 43px;
-}
-.prdCard-item__star .star35 {
-  width: 38px;
-}
-.prdCard-item__star .star30 {
-  width: 32px;
-}
-.prdCard-item__star .star25 {
-  width: 27px;
-}
-.prdCard-item__star .star20 {
-  width: 21px;
-}
-.prdCard-item__star .star15 {
-  width: 16px;
-}
-.prdCard-item__star .star10 {
-  width: 10px;
-}
-.prdCard-item__star .star05 {
-  width: 5px;
-}
-.prdCard-item__star .star00 {
-  width: 0px;
 }
 .prdCard-item__tag {
   display: -webkit-box;
