@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react'
 import uuid from 'react-uuid'
-import '../PrdCard/PrdCard.scss'
-import dummy from "../../data/store.json"
+import './PrdItem.scss'
+import dummy from "../../../data/store.json"
 
 
 function PrdCard() {
@@ -14,12 +14,13 @@ function PrdCard() {
     })
     return (
         <>
-            <div className='prdCard'>
+            <div className='prdCard__list'>
                 {dummy.products.map((item, _) => (
                     <div className='prdCard-item' key={uuid()}>
                         <a href='/' className='prdCard-item__overlay'>
                             <div className='prdCard-item__img' >
                                 <img src={item.img} alt='test' />
+                                <button type='button' className='prdCard-item__scrap'><span className='blind'>장바구니 담기</span></button>
                             </div>
                             <div className="prdCard-item__info">
                                 <span className="prdCard-item__brand">{item.brand}</span>
