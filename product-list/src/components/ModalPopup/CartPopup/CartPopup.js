@@ -1,8 +1,8 @@
-import React from 'react'
+import React, { useState } from 'react'
 import '../CartPopup/CartPopup.scss'
 
 function CartPopup() {
-  
+  const [cartitem, setCartItem] = useState([])
 
   return (
     <div className="cart-moodal modal">

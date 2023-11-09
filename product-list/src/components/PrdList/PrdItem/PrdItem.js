@@ -1,10 +1,18 @@
-import React, { useEffect } from 'react'
+import React, { useEffect, useState } from 'react'
 import uuid from 'react-uuid'
 import './PrdItem.scss'
 import dummy from "../../../data/store.json"
 
 
 function PrdCard() {
+    const [wishList, setWishList] = useState([])
+    const addToWishList = (obj) => {
+        const existingObject = wishList.find((ele) => ele.id === obj.id);
+        if (Boolean(existingObject) === false) {
+            setWishList((prevList) => [...prevList, obj]);
+        }
+        console.log(wishList)
+    }
 
     useEffect(() => {
         let priceNum = document.querySelectorAll('.price')
@@ -12,15 +20,26 @@ function PrdCard() {
             itme.innerText = itme.innerText.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",")
         ))
     })
+
+
+    const handleSubmit = (e) => {
+        e.preventDefault();
+    };
+
     return (
         <>
             <div className='prdCard__list'>
                 {dummy.products.map((item, _) => (
                     <div className='prdCard-item' key={uuid()}>
-                        <a href='/' className='prdCard-item__overlay'>
+                        <a href='/' className='prdCard-item__overlay' onClick={handleSubmit}>
                             <div className='prdCard-item__img' >
                                 <img src={item.img} alt='test' />
-                                <button type='button' className='prdCard-item__scrap'><span className='blind'>장바구니 담기</span></button>
+                                <button
+                                    type='button'
+                                    className='prdCard-item__scrap'
+                                    onClick={() => { addToWishList(item); }}>
+                                    <span className='blind'>장바구니 담기</span>
+                                </button>
                             </div>
                             <div className="prdCard-item__info">
                                 <span className="prdCard-item__brand">{item.brand}</span>
@@ -32,7 +51,7 @@ function PrdCard() {
                                 <div className="prdCard-item__tag">
                                     {
                                         item.tag.map((item) => (
-                                           <span className={`tag ${item}`} key={uuid()}></span>
+                                            <span className={`tag ${item}`} key={uuid()}></span>
                                         ))
                                     }
                                 </div>

@@ -26,7 +26,6 @@ function RankPopup() {
                       </div>
                   </div>
               </div>
-              <div className="filter"></div>
           </div>
     </>
   )

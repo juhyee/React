@@ -47,6 +47,10 @@
           &:hover {
             opacity: 0.5;
           }
+
+          &.on {
+            background-image: url(../../../assets/images/bookmark_on.png);
+          }
         }
     
         &__info {
