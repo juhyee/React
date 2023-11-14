@@ -8,7 +8,8 @@
       "price": 199000,
       "sale": 51,
       "star": 46,
-      "tag": ["bigSale", "gift",  "time3" ]
+      "tag": ["bigSale", "gift",  "time3" ],
+      "wish" : false
     },
     {
       "id": 1,
@@ -18,7 +19,8 @@
       "price": 268750,
       "sale": 46,
       "star": 46,
-      "tag":["bigSale", "time3" ]
+      "tag":["bigSale", "time3" ],
+      "wish" : false
     },
     {
       "id": 2,
@@ -28,7 +30,8 @@
       "price": 129000,
       "sale": 48,
       "star": 46,
-      "tag": ["gift",  "time3" ]
+      "tag": ["gift",  "time3" ],
+      "wish" : false
     },
     {
       "id": 3,
@@ -38,7 +41,8 @@
       "price": 40000,
       "sale": 10,
       "star": 50,
-      "tag":  ["bigSale", "gift",  "time3" ]
+      "tag":  ["bigSale", "gift",  "time3" ],
+      "wish" : false
     },
     {
       "id": 4,
@@ -48,7 +52,8 @@
       "price": 179000,
       "sale": 70,
       "star": 47,
-      "tag":  ["bigSale" ]
+      "tag":  ["bigSale" ],
+      "wish" : false
     },
     {
       "id": 5,
@@ -58,7 +63,8 @@
       "price": 688650,
       "sale": 41,
       "star": 47,
-      "tag":  ["bigSale", "gift",  "time3" ]
+      "tag":  ["bigSale", "gift",  "time3" ],
+      "wish" : false
     },
     {
       "id": 6,
@@ -68,7 +74,8 @@
       "price": 106900,
       "sale": 60,
       "star": 35,
-      "tag":  ["bigSale", "gift" ]
+      "tag":  ["bigSale", "gift" ],
+      "wish" : false
     },
     {
       "id": 7,
@@ -78,7 +85,8 @@
       "price": 349000,
       "sale": 72,
       "star": 30,
-      "tag":  [ "time3" ]
+      "tag":  [ "time3" ],
+      "wish" : false
     },
     {
       "id": 8,
@@ -88,7 +96,8 @@
       "price": 25000,
       "sale": 35,
       "star": 20,
-      "tag":  ["gift"]
+      "tag":  ["gift"],
+      "wish" : false
     },
     {
       "id": 9,
@@ -98,7 +107,8 @@
       "price": 179000,
       "sale": 30,
       "star": 50,
-      "tag":  ["bigSale", "gift",  "time3" ]
+      "tag":  ["bigSale", "gift",  "time3" ],
+      "wish" : false
     },
     {
       "id": 10,
@@ -108,7 +118,8 @@
       "price": 429000,
       "sale": 77,
       "star": 26,
-      "tag":  ["bigSale", "gift",  "time3" ]
+      "tag":  ["bigSale", "gift",  "time3" ],
+      "wish" : false
     },
     {
       "id": 11,
@@ -118,7 +129,8 @@
       "price": 40000,
       "sale": 31,
       "star": 50,
-      "tag":  ["bigSale", "gift",  "time3" ]
+      "tag":  ["bigSale", "gift",  "time3" ],
+      "wish" : false
     },
     {
       "id": 12,
@@ -128,7 +140,8 @@
       "price": 499000,
       "sale": 35,
       "star": 20,
-      "tag":  ["bigSale", "gift",  "time3" ]
+      "tag":  ["bigSale", "gift",  "time3" ],
+      "wish" : false
     },
     {
       "id": 13,
@@ -138,7 +151,8 @@
       "price": 349000,
       "sale": 57,
       "star": 36,
-      "tag":  ["bigSale", "gift",  "time3" ]
+      "tag":  ["bigSale", "gift",  "time3" ],
+      "wish" : false
     },
     {
       "id": 14,
@@ -149,6 +163,8 @@
       "sale": 70,
       "star": 26,
       "tag":  ["bigSale", "gift",  "time3" ]
+   ,
+      "wish" : false
     }
 
   ]

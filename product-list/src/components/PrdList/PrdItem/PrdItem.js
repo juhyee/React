@@ -10,9 +10,10 @@ function PrdCard() {
         const existingObject = wishList.find((ele) => ele.id === obj.id);
         if (Boolean(existingObject) === false) {
             setWishList((prevList) => [...prevList, obj]);
+            return wishList
         }
-        console.log(wishList)
     }
+
 
     useEffect(() => {
         let priceNum = document.querySelectorAll('.price')
