@@ -25,15 +25,28 @@
         }
     }
     .modal__contents {
-        width: 630px;
+        width: 580px;
         padding: 0;
       }
   
     .modal-body {
       overflow-y: auto;
       max-height: 560px;
-      padding: 40px 40px 98px;
-  
+      margin: 10px  0 92px;
+      padding: 30px 40px 0;
+
+      &::-webkit-scrollbar {
+        width: 6px;
+        height: 4px;
+      }
+      &::-webkit-scrollbar-thumb {
+        height: 10%; /* 스크롤바의 길이 */
+        background: rgba(0, 0, 0, 0.25);
+        border-radius: 10px;
+      }
+      &::-webkit-scrollbar-track {
+        background: transparent; /*스크롤바 뒷 배경 색상*/
+      }
       .product__item {
         position: relative;
         display: flex;
@@ -58,6 +71,7 @@
         }
   
         .product__info {
+          max-width: 290px;
           margin-left: 30px;
           text-align: left;
   
@@ -68,9 +82,15 @@
           }
   
           &--title {
+            overflow: hidden;
+            height: 18px;
             margin-top: 8px;
             font-size: 15px;
             color: #7e7e7e;
+            white-space: nowrap;
+            text-overflow: ellipsis;
+            word-break: break-all;
+            
           }
   
           &--price {
@@ -93,7 +113,15 @@
             width: 32px;
             height: 32px;
             padding: 4px;
+            background-size: 22px !important;
             box-sizing: border-box;
+
+            &--minus {
+              background: url(http://simjuhye.com/portfolio/img/product_detail/minus_icon.png) no-repeat center;
+            }
+            &--plus {
+              background: url(http://simjuhye.com/portfolio/img/product_detail/plus_icon.png) no-repeat center;
+            }
           }
   
           .count__input {
@@ -149,6 +177,7 @@
       align-items: center;
       justify-content: center;
       flex-direction: column;
+      text-align: center;
   
       &__contents {
         p {
@@ -157,6 +186,7 @@
           background: url(../../../assets/images/basketWhiteIcon.svg) center 15px no-repeat;
           background-size: 40px;
           font-size: 20px;
+          font-weight: bold;
           color: #222;
           z-index: 2;
         }

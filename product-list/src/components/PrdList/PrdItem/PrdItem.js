@@ -1,31 +1,13 @@
-import React, { useEffect, useState } from 'react'
+import React, { useContext } from 'react'
 import uuid from 'react-uuid'
 import './PrdItem.scss'
 import dummy from "../../../data/store.json"
-
+import { AppContext } from '../../../App'
 
 function PrdCard() {
-    const [wishList, setWishList] = useState([])
-    const addToWishList = (obj) => {
-        const existingObject = wishList.find((ele) => ele.id === obj.id);
-        if (Boolean(existingObject) === false) {
-            setWishList((prevList) => [...prevList, obj]);
-            return wishList
-        }
-    }
 
+    const { addToWishList, handleSubmit } = useContext(AppContext);
 
-    useEffect(() => {
-        let priceNum = document.querySelectorAll('.price')
-        priceNum.forEach((itme, _) => (
-            itme.innerText = itme.innerText.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",")
-        ))
-    })
-
-
-    const handleSubmit = (e) => {
-        e.preventDefault();
-    };
 
     return (
         <>
@@ -37,8 +19,9 @@ function PrdCard() {
                                 <img src={item.img} alt='test' />
                                 <button
                                     type='button'
-                                    className='prdCard-item__scrap'
-                                    onClick={() => { addToWishList(item); }}>
+                                    className={item.wish ? 'prdCard-item__scrap on' : 'prdCard-item__scrap'}
+                                    onClick={() => { addToWishList(item); }}
+                                >
                                     <span className='blind'>장바구니 담기</span>
                                 </button>
                             </div>
