@@ -44,6 +44,7 @@ function CartPopup(props) {
                   img={item.img}
                   price={item.price}
                   brand={item.brand}
+                  data={item}
                   onDelete={onDelete}
               /> ))}
             </div>

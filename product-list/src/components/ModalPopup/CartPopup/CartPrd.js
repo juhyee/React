@@ -1,7 +1,10 @@
-import React, { useState } from 'react'
+import React, { useState, useContext } from 'react'
+import { AppContext } from '../../../App';
 
-function CartPrd({ id, title, img, brand, price }) {
- 
+function CartPrd(props) {
+
+        const { onDelete } = useContext(AppContext);
+
         const [prdCount, setPrdCount] = useState(0)
         const prdIncrease = () => {
             return setPrdCount((prev) => prev + 1)
@@ -10,22 +13,19 @@ function CartPrd({ id, title, img, brand, price }) {
             return prdCount > 0 ? setPrdCount((prev) => prev - 1) : 0
         }
 
-        const delfuntcion = () => {
-          
-        }
 
     return (
         <>
             {
 
                 <div className="product__item">
-                    <div classN="product__thumb">
-                        <img src={img} alt={title} />
+                    <div className="product__thumb">
+                        <img src={props.img} alt={props.title} />
                     </div>
                     <div className="product__info">
-                        <span className="product__info--brand">{brand}</span>
-                        <p className="product__info--title">{title}</p>
-                        <p className="product__info--price price">{price}</p>
+                        <span className="product__info--brand">{props.brand}</span>
+                        <p className="product__info--title">{props.title}</p>
+                        <p className="product__info--price price">{props.price}</p>
                         <div className="product__info--count">
                             <button
                                 className="count__btn count__btn--minus"
@@ -45,8 +45,7 @@ function CartPrd({ id, title, img, brand, price }) {
                     </div>
                     <button
                         className="product__btn--del"
-                        data-id={id}
-                        onClick={delfuntcion}
+                        onClick={() => onDelete(props.data)}
                     >
                         <span className='blind'>장바구니 삭제</span>
                     </button>

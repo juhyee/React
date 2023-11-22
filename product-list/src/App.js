@@ -19,16 +19,13 @@ function App() {
 
   const addToWishList = (obj) => {
     const existingObject = wishList.find((ele) => ele.id === obj.id);
-    const existingObjectIndex = wishList.findIndex((ele) => ele.id ===  obj.id)
-    console.log(existingObjectIndex)
-    console.log(wishList)
-    if (Boolean(existingObject) === false) {
+    if (Boolean(existingObject) === false ) {
       obj.wish = true;
       setWishList((prevList) => [...prevList, obj]);
       return wishList
     }else if(Boolean(existingObject) === true){
       obj.wish = false;
-      setWishList(wishList.filter((item, _) => item.id === obj.id));
+      setWishList(() =>  wishList.filter((item, _) => item.id !== obj.id));
       return wishList
       
     }
@@ -38,14 +35,16 @@ function App() {
     e.preventDefault();
   };
 
-  const onDelete = (item2) => {
-    console.log(item2)
-    wishList.filter((item) => item.id !== item2.id);
+  const onDelete = (obj) => {
+    obj.wish = false;
+    setWishList(() =>  wishList.filter((item, _) => item.id !== obj.id));
+    console.log(wishList)
+    return wishList
   };
 
   return (
     <>
-      <AppContext.Provider value={{ wishList, handleSubmit }}>
+      <AppContext.Provider value={{ wishList, handleSubmit, onDelete }}>
         <Header />
       </AppContext.Provider>
       <div className="product__wrap prdCard">

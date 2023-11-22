@@ -1,7 +1,6 @@
 import React, { useContext } from 'react'
 import uuid from 'react-uuid'
 import './PrdItem.scss'
-import dummy from '../../data/store.json'
 import { AppContext } from '../../App'
 
 function PrdCard(props) {
@@ -32,11 +31,9 @@ function PrdCard(props) {
                         <p className="prdCard-item__price"><span className="sale">{props.sale}%</span> <span className="price">{props.price}</span>원</p>
                         <div className="prdCard-item__tag">
                             {
-                              
-                                    dummy.products.map((item) => (
-                                        <span className={`tag ${item}`} key={uuid()}></span>
-                                    ))
-                          
+                                props.data.tag.map((item) => (
+                                    <span className={`tag ${item}`} key={uuid()}></span>
+                                ))
                             }
                         </div>
                     </div>
