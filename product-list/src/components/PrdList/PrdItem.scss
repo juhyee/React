@@ -43,13 +43,13 @@
           right: 10px;
           width: 27px;
           height: 27px;
-          background: url(../../../assets/images/bookmark.png) no-repeat 0 0/100%;
+          background: url(../../assets/images/bookmark.png) no-repeat 0 0/100%;
           &:hover {
             opacity: 0.5;
           }
 
           &.on {
-            background-image: url(../../../assets/images/bookmark_on.png);
+            background-image: url(../../assets/images/bookmark_on.png);
           }
         }
     

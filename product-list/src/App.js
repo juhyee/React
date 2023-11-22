@@ -1,6 +1,6 @@
 import React, { createContext, useEffect, useState } from "react";
 import Header from "./components/Header/Header.js";
-import PrdList from "./components/PrdList/PrdItem/PrdItem.js";
+import PrdList from "./components/PrdList/PrdList.js";
 
 export const AppContext = createContext();
 
@@ -19,6 +19,9 @@ function App() {
 
   const addToWishList = (obj) => {
     const existingObject = wishList.find((ele) => ele.id === obj.id);
+    const existingObjectIndex = wishList.findIndex((ele) => ele.id ===  obj.id)
+    console.log(existingObjectIndex)
+    console.log(wishList)
     if (Boolean(existingObject) === false) {
       obj.wish = true;
       setWishList((prevList) => [...prevList, obj]);
@@ -35,14 +38,19 @@ function App() {
     e.preventDefault();
   };
 
+  const onDelete = (item2) => {
+    console.log(item2)
+    wishList.filter((item) => item.id !== item2.id);
+  };
+
   return (
     <>
-      <AppContext.Provider value={{ wishList, addToWishList, handleSubmit }}>
+      <AppContext.Provider value={{ wishList, handleSubmit }}>
         <Header />
       </AppContext.Provider>
       <div className="product__wrap prdCard">
         <p className="prdCard__total">총<span className="num"></span>개의 상품이 있습니다.</p>
-        <AppContext.Provider value={{ wishList, addToWishList, handleSubmit }}>
+        <AppContext.Provider value={{ wishList, addToWishList, handleSubmit, onDelete }}>
           <PrdList />
         </AppContext.Provider>
       </div>
