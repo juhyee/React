@@ -10,11 +10,12 @@ function CartPopup(props) {
     props.modalCloseHandel();
   }
 
-  const { wishList, onDelete } = useContext(AppContext);
+  const { wishList, onDelete, AddComma } = useContext(AppContext);
 
   const [isEmpty, setIsEmpty] = useState(true)
 
   useEffect(() => {
+    AddComma()
     if (wishList.length !== 0) {
       setIsEmpty(false)
       document.querySelector('.total-price__num').innerText = 0

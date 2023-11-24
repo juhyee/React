@@ -1,12 +1,14 @@
-import React,  { useContext } from 'react'
+import React,  { useContext, useEffect } from 'react'
 import dummy from "../../data/store.json"
 import PrdItem from "../PrdList/PrdItem.js"
 import { AppContext } from '../../App'
 
 function PrdCard() {
 
-    const { addToWishList } = useContext(AppContext);
-
+    const { addToWishList, AddComma } = useContext(AppContext);
+    useEffect(() => {
+        AddComma()
+    })
 
 
     return (

@@ -5,14 +5,16 @@ import PrdList from "./components/PrdList/PrdList.js";
 export const AppContext = createContext();
 
 function App() {
-  useEffect(() => {
+  const AddComma = () => {
     const totalNum = document.querySelectorAll('.prdCard-item').length;
     document.querySelector('.prdCard__total > .num').innerText = totalNum;
-
+  
     let priceNum = document.querySelectorAll('.price')
     priceNum.forEach((itme, _) => (
         itme.innerText = itme.innerText.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",")
     ))
+  }
+  useEffect(() => {
 
   })
   const [wishList, setWishList] = useState([])
@@ -44,12 +46,12 @@ function App() {
 
   return (
     <>
-      <AppContext.Provider value={{ wishList, handleSubmit, onDelete }}>
+      <AppContext.Provider value={{ wishList, handleSubmit, onDelete, AddComma }}>
         <Header />
       </AppContext.Provider>
       <div className="product__wrap prdCard">
         <p className="prdCard__total">총<span className="num"></span>개의 상품이 있습니다.</p>
-        <AppContext.Provider value={{ wishList, addToWishList, handleSubmit, onDelete }}>
+        <AppContext.Provider value={{ wishList, addToWishList, handleSubmit, onDelete, AddComma }}>
           <PrdList />
         </AppContext.Provider>
       </div>
