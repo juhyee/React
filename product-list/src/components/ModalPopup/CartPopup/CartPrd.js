@@ -4,15 +4,15 @@ import { AppContext } from '../../../App';
 function CartPrd(props) {
 
         const { onDelete } = useContext(AppContext);
-
-        const [prdCount, setPrdCount] = useState(0)
+        
         const prdIncrease = () => {
-            return setPrdCount((prev) => prev + 1)
-        }
-        const prdDecrease = () => {
-            return prdCount > 0 ? setPrdCount((prev) => prev - 1) : 0
-        }
-
+            console.log(props.prdCount)
+            return props.setPrdCount((prev) => prev + 1)
+          }
+          const prdDecrease = () => {
+            return props.prdCount > 0 ? props.setPrdCount((prev) => prev - 1) : 0
+          }
+          
 
     return (
         <>
@@ -34,7 +34,7 @@ function CartPrd(props) {
                             >
                             </button>
                             <span className="count__input">
-                                {prdCount}
+                                {props.prdCount}
                             </span>
                             <button
                                 className="count__btn count__btn--plus"

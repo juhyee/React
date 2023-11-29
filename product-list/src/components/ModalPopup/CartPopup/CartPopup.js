@@ -11,20 +11,13 @@ function CartPopup(props) {
   }
 
   const { wishList, onDelete, AddComma } = useContext(AppContext);
+  AddComma()
+  
+  const [prdCount, setPrdCount] = useState(1)
 
-  const [isEmpty, setIsEmpty] = useState(true)
-
-  useEffect(() => {
-    AddComma()
-    if (wishList.length !== 0) {
-      setIsEmpty(false)
-      document.querySelector('.total-price__num').innerText = 0
-    }
-  }, [isEmpty])
-
-
-
-
+  const total = wishList.reduce(function(res,item) {
+    return res + (item.price * prdCount);
+  }, 0);
 
   return (
     <div className="cart-moodal modal">
@@ -36,7 +29,7 @@ function CartPopup(props) {
         <div className="modal__contents">
           <div className="modal-body">
             <div className="cart-product__list">
-              {isEmpty ? <CartEmpty /> :
+              {wishList.length <= 0 ? <CartEmpty /> :
               wishList.map((item, _) => (
                 <CartPrd
                   className="card"
@@ -46,13 +39,16 @@ function CartPopup(props) {
                   price={item.price}
                   brand={item.brand}
                   data={item}
+                  // prdCount={prdCount}
                   onDelete={onDelete}
+                  // prdDecrease={prdDecrease}
+                  // prdIncrease={prdIncrease}
               /> ))}
             </div>
           </div>
           <div className="modal-footer">
             <button className="modal__btn modal__btn--buy">구매하기</button>
-            <p className="total-price">합계<span className="total-price__num price">0</span>원</p>
+            <p className="total-price">합계<span className="total-price__num price">{total}</span>원</p>
           </div>
         </div>
       </div>

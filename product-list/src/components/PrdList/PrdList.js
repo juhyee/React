@@ -13,6 +13,7 @@ function PrdCard() {
 
     return (
         <>
+            <p className="prdCard__total">총<span className="num">{dummy.products.length}</span>개의 상품이 있습니다.</p>
             <div className='prdCard__list'>
                 {dummy.products.map((item, _) => (
                   <PrdItem 

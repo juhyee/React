@@ -6,8 +6,8 @@ export const AppContext = createContext();
 
 function App() {
   const AddComma = () => {
-    const totalNum = document.querySelectorAll('.prdCard-item').length;
-    document.querySelector('.prdCard__total > .num').innerText = totalNum;
+    // const totalNum = document.querySelectorAll('.prdCard-item').length;
+    // document.querySelector('.prdCard__total > .num').innerText = totalNum;
   
     let priceNum = document.querySelectorAll('.price')
     priceNum.forEach((itme, _) => (
@@ -50,7 +50,7 @@ function App() {
         <Header />
       </AppContext.Provider>
       <div className="product__wrap prdCard">
-        <p className="prdCard__total">총<span className="num"></span>개의 상품이 있습니다.</p>
+      
         <AppContext.Provider value={{ wishList, addToWishList, handleSubmit, onDelete, AddComma }}>
           <PrdList />
         </AppContext.Provider>
