@@ -1,9 +1,10 @@
-import React, { useState, useContext, useEffect } from 'react'
+import React, { useEffect, useContext, createContext, useState } from 'react'
 import '../CartPopup/CartPopup.scss'
 import CartEmpty from './CartEmpty';
 import CartPrd from './CartPrd';
 import { AppContext } from '../../../App'
 
+export const cardPopupContext = createContext();
 
 function CartPopup(props) {
   function modalCloseHandel() {
@@ -12,12 +13,23 @@ function CartPopup(props) {
 
   const { wishList, onDelete, AddComma } = useContext(AppContext);
   AddComma()
-  
-  const [prdCount, setPrdCount] = useState(1)
 
-  const total = wishList.reduce(function(res,item) {
-    return res + (item.price * prdCount);
-  }, 0);
+  const [totalAllPrice, setTotalAllPrice] = useState(0)
+  const [prdCount, setPrdCount] = useState(1);
+  const prdIncrease = () => {
+    return setPrdCount((prev) => prev + 1)
+  }
+  const prdDecrease = () => {
+    return prdCount > 0 ? setPrdCount((prev) => prev - 1) : 0
+  }
+  useEffect(() => {
+    const total = wishList.reduce((acc, item) => {
+      const itemPrice = parseFloat(item.price);
+      return acc + itemPrice * prdCount;
+    }, 0);
+    setTotalAllPrice(total);
+  });
+
 
   return (
     <div className="cart-moodal modal">
@@ -39,16 +51,16 @@ function CartPopup(props) {
                   price={item.price}
                   brand={item.brand}
                   data={item}
-                  // prdCount={prdCount}
                   onDelete={onDelete}
-                  // prdDecrease={prdDecrease}
-                  // prdIncrease={prdIncrease}
+                  prdCount ={prdCount}
+                  prdDecrease = {() => prdDecrease()}
+                  prdIncrease = {() => prdIncrease()}
               /> ))}
             </div>
           </div>
           <div className="modal-footer">
             <button className="modal__btn modal__btn--buy">구매하기</button>
-            <p className="total-price">합계<span className="total-price__num price">{total}</span>원</p>
+            <p className="total-price">합계<span className="total-price__num price">{totalAllPrice}</span>원</p>
           </div>
         </div>
       </div>

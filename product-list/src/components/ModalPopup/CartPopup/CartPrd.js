@@ -1,19 +1,11 @@
-import React, { useState, useContext } from 'react'
+import React, { useState ,useContext } from 'react'
 import { AppContext } from '../../../App';
+import { cardPopupContext } from './CartPopup';
 
 function CartPrd(props) {
-
         const { onDelete } = useContext(AppContext);
-        
-        const prdIncrease = () => {
-            console.log(props.prdCount)
-            return props.setPrdCount((prev) => prev + 1)
-          }
-          const prdDecrease = () => {
-            return props.prdCount > 0 ? props.setPrdCount((prev) => prev - 1) : 0
-          }
-          
 
+        
     return (
         <>
             {
@@ -26,11 +18,12 @@ function CartPrd(props) {
                         <span className="product__info--brand">{props.brand}</span>
                         <p className="product__info--title">{props.title}</p>
                         <p className="product__info--price price">{props.price}</p>
+                        {/* <p className="product__info--price price">{totalPrice()}</p> */}
                         <div className="product__info--count">
                             <button
                                 className="count__btn count__btn--minus"
                                 title="수량 빼기"
-                                onClick={prdDecrease}
+                                onClick={props.prdDecrease}
                             >
                             </button>
                             <span className="count__input">
@@ -39,7 +32,7 @@ function CartPrd(props) {
                             <button
                                 className="count__btn count__btn--plus"
                                 title="수량 더하기"
-                                onClick={prdIncrease}
+                                onClick={props.prdIncrease}
                             ></button>
                         </div>
                     </div>
