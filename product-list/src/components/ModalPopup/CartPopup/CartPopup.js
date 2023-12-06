@@ -19,7 +19,7 @@ function CartPopup(props) {
 
 
   const getTotalAmount = () =>
-  wishList.reduce((acc, cur) => acc + cur.price * cur.quantity, 0);
+  [...wishList].reduce((acc, cur) => acc + cur.price * cur.quantity, 0);
 
   // const getTotalAmount = () =>
   //   wishList.reduce((acc, cur) => acc + cur.price * cur.quantity, 0);

@@ -1,25 +1,30 @@
-import React, { useEffect ,useContext, useState } from 'react'
+import React, { useEffect, useContext, useState } from 'react'
 import uuid from 'react-uuid'
 import { AppContext } from '../../../App';
 
 function CartPrd(props) {
-        const { onDelete } = useContext(AppContext);
+        const { onDelete, AddComma } = useContext(AppContext);
         
-        const [quantity, setQuantity] = useState(props.quantity);
+        let [quantity, setQuantity] = useState(props.quantity);
+    
         const prdIncrease = () => {
-            return setQuantity((prev) => prev + 1)
+            setQuantity((prev) => prev + 1)
         }
         const prdDecrease = () => {
-            return quantity > 0 ? setQuantity((prev) => prev - 1) : 0
+            setQuantity(quantity > 0 ? ((prev) => prev - 1) : 0)
         }
         
         const [total, setTotal] = useState(props.price);
+
         useEffect(() => {
             const totalPrice = props.price * quantity;
             console.log(totalPrice)
             setTotal(totalPrice);
-        }, [quantity]);
+            AddComma()
+
+        });
         
+
         
         
         return (

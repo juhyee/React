@@ -36,11 +36,10 @@ function App() {
   const handleSubmit = (e) => {
     e.preventDefault();
   };
-
+  
   const onDelete = (obj) => {
     obj.wish = false;
     setWishList(() =>  wishList.filter((item, _) => item.id !== obj.id));
-    console.log(wishList)
     return wishList
   };
 
