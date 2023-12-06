@@ -50,8 +50,7 @@ function App() {
         <Header />
       </AppContext.Provider>
       <div className="product__wrap prdCard">
-      
-        <AppContext.Provider value={{ wishList, addToWishList, handleSubmit, onDelete, AddComma }}>
+        <AppContext.Provider value={{ wishList, setWishList, addToWishList, handleSubmit, onDelete, AddComma }}>
           <PrdList />
         </AppContext.Provider>
       </div>

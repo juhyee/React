@@ -9,7 +9,8 @@
       "sale": 51,
       "star": 46,
       "tag": ["bigSale", "gift",  "time3" ],
-      "wish" : false
+      "wish" : false,
+      "quantity": 1
     },
     {
       "id": 1,
@@ -20,7 +21,8 @@
       "sale": 46,
       "star": 46,
       "tag":["bigSale", "time3" ],
-      "wish" : false
+      "wish" : false,
+      "quantity": 1
     },
     {
       "id": 2,
@@ -31,7 +33,8 @@
       "sale": 48,
       "star": 46,
       "tag": ["gift",  "time3" ],
-      "wish" : false
+      "wish" : false,
+      "quantity": 1
     },
     {
       "id": 3,
@@ -42,7 +45,8 @@
       "sale": 10,
       "star": 50,
       "tag":  ["bigSale", "gift",  "time3" ],
-      "wish" : false
+      "wish" : false,
+      "quantity": 1
     },
     {
       "id": 4,
@@ -53,7 +57,8 @@
       "sale": 70,
       "star": 47,
       "tag":  ["bigSale" ],
-      "wish" : false
+      "wish" : false,
+      "quantity": 1
     },
     {
       "id": 5,
@@ -64,7 +69,8 @@
       "sale": 41,
       "star": 47,
       "tag":  ["bigSale", "gift",  "time3" ],
-      "wish" : false
+      "wish" : false,
+      "quantity": 1
     },
     {
       "id": 6,
@@ -75,7 +81,8 @@
       "sale": 60,
       "star": 35,
       "tag":  ["bigSale", "gift" ],
-      "wish" : false
+      "wish" : false,
+      "quantity": 1
     },
     {
       "id": 7,
@@ -86,7 +93,8 @@
       "sale": 72,
       "star": 30,
       "tag":  [ "time3" ],
-      "wish" : false
+      "wish" : false,
+      "quantity": 1
     },
     {
       "id": 8,
@@ -97,7 +105,8 @@
       "sale": 35,
       "star": 20,
       "tag":  ["gift"],
-      "wish" : false
+      "wish" : false,
+      "quantity": 1
     },
     {
       "id": 9,
@@ -108,7 +117,8 @@
       "sale": 30,
       "star": 50,
       "tag":  ["bigSale", "gift",  "time3" ],
-      "wish" : false
+      "wish" : false,
+      "quantity": 1
     },
     {
       "id": 10,
@@ -119,7 +129,8 @@
       "sale": 77,
       "star": 26,
       "tag":  ["bigSale", "gift",  "time3" ],
-      "wish" : false
+      "wish" : false,
+      "quantity": 1
     },
     {
       "id": 11,
@@ -130,7 +141,8 @@
       "sale": 31,
       "star": 50,
       "tag":  ["bigSale", "gift",  "time3" ],
-      "wish" : false
+      "wish" : false,
+      "quantity": 1
     },
     {
       "id": 12,
@@ -141,7 +153,8 @@
       "sale": 35,
       "star": 20,
       "tag":  ["bigSale", "gift",  "time3" ],
-      "wish" : false
+      "wish" : false,
+      "quantity": 1
     },
     {
       "id": 13,
@@ -152,7 +165,8 @@
       "sale": 57,
       "star": 36,
       "tag":  ["bigSale", "gift",  "time3" ],
-      "wish" : false
+      "wish" : false,
+      "quantity": 1
     },
     {
       "id": 14,
@@ -164,7 +178,8 @@
       "star": 26,
       "tag":  ["bigSale", "gift",  "time3" ]
    ,
-      "wish" : false
+      "wish" : false,
+      "quantity": 1
     }
 
   ]
