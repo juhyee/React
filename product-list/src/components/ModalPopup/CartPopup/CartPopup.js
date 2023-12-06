@@ -14,24 +14,9 @@ function CartPopup(props) {
     props.modalCloseHandel();
   }
 
-  const { wishList, setWishList, onDelete, AddComma } = useContext(AppContext);
+  const { wishList, onDelete, AddComma } = useContext(AppContext);
   AddComma()
 
-  const [quantity, setQuantity] = useState(1);
-
-  const prdIncrease = (id) => {
-    let tempCart = [...wishList].map((item) => {
-      let result = item;
-      if (result.id === id) {
-        result.quantity = result.quantity + 1;
-      }
-      return result;
-    });
-    setWishList(tempCart);
-  }
-  const prdDecrease = () => {
-      return quantity > 0 ? setQuantity((prev) => prev - 1) : 0
-  }
 
   const getTotalAmount = () =>
   wishList.reduce((acc, cur) => acc + cur.price * cur.quantity, 0);
@@ -68,8 +53,6 @@ function CartPopup(props) {
                         brand={item.brand}
                         data={item}
                         quantity={item.quantity}
-                        onIncrement={prdIncrease}
-                        onDecrement={prdDecrease}
                         onDelete={onDelete}
                       />))}
                 </div>

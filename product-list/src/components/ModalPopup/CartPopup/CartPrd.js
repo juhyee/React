@@ -5,10 +5,9 @@ import { AppContext } from '../../../App';
 function CartPrd(props) {
         const { onDelete } = useContext(AppContext);
         
-        const [quantity, setQuantity] = useState(1);
+        const [quantity, setQuantity] = useState(props.quantity);
         const prdIncrease = () => {
-        const test = setQuantity((prev) => prev + 1)
-            return props.quantity = 6
+            return setQuantity((prev) => prev + 1)
         }
         const prdDecrease = () => {
             return quantity > 0 ? setQuantity((prev) => prev - 1) : 0
@@ -16,11 +15,10 @@ function CartPrd(props) {
         
         const [total, setTotal] = useState(props.price);
         useEffect(() => {
-            // props.quantity = setQuantity
-            const totalPrice = props.price * props.quantity;
+            const totalPrice = props.price * quantity;
             console.log(totalPrice)
             setTotal(totalPrice);
-        }, [props.quantity]);
+        }, [quantity]);
         
         
         
@@ -39,11 +37,11 @@ function CartPrd(props) {
                             <button
                                 className="count__btn count__btn--minus"
                                 title="수량 빼기"
-                                onClick={prdIncrease}
+                                onClick={prdDecrease}
                             >
                             </button>
                             <span className="count__input">
-                                {props.quantity}
+                                {quantity}
                             </span>
                             <button
                                 className="count__btn count__btn--plus"
