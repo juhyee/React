@@ -5,20 +5,18 @@ import PrdList from "./components/PrdList/PrdList.js";
 export const AppContext = createContext();
 
 function App() {
+  // 가격 관련 셋째자리 수에 , 추가
   const AddComma = () => {
-    // const totalNum = document.querySelectorAll('.prdCard-item').length;
-    // document.querySelector('.prdCard__total > .num').innerText = totalNum;
-  
     let priceNum = document.querySelectorAll('.price')
     priceNum.forEach((itme, _) => (
         itme.innerText = itme.innerText.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",")
     ))
   }
-  useEffect(() => {
 
-  })
+  // 장바구니 useState
   const [wishList, setWishList] = useState([])
 
+  // 장바구니에 상품 추가
   const addToWishList = (obj) => {
     const existingObject = wishList.find((ele) => ele.id === obj.id);
     if (Boolean(existingObject) === false ) {
@@ -33,16 +31,18 @@ function App() {
     }
   }
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
-  };
-  
+  // 장바구니에 추가된 상품 삭제
   const onDelete = (obj) => {
     obj.wish = false;
     setWishList(() =>  wishList.filter((item, _) => item.id !== obj.id));
     return wishList
   };
 
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+  };
+  
   return (
     <>
       <AppContext.Provider value={{ wishList, handleSubmit, onDelete, AddComma }}>

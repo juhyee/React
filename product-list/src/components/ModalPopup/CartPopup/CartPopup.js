@@ -14,9 +14,7 @@ function CartPopup(props) {
     props.modalCloseHandel();
   }
 
-  const { wishList, onDelete, AddComma } = useContext(AppContext);
-  AddComma()
-
+  const { wishList, onDelete } = useContext(AppContext);
 
   const getTotalAmount = () =>
   [...wishList].reduce((acc, cur) => acc + cur.price * cur.quantity, 0);

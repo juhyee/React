@@ -1,9 +1,33 @@
-import React, { createContext } from 'react'
+import React, { createContext, useState } from "react";
 
-function toastMessage() {
+export const ToastContext = createContext();
+
+export const ToastMessage = (props) => {
+  const [showToast, setShowToast] = useState("");
+  const [toastStyle, setToastStyle] = useState("");
+  const [toastMessage, setToastMessage] = useState("");
+
+  const handleToastVisibility = (style, duration, message) => {
+    if (showToast === "") {
+      setToastStyle(style);
+      setToastMessage(message);
+      setShowToast("show");
+      setTimeout(() => {
+        setShowToast("");
+      }, duration * 1000);
+    }
+  };
+
   return (
-    <div>toastMessage</div>
-  )
-}
-
-export default toastMessage
+    <>
+        <div className="toast">
+          <div className="toast-message">
+            <p>{props.type}</p>
+          </div>
+          <div className="toast-body">
+            <p>{props.info}</p>
+          </div>
+        </div>
+    </>
+  );
+};
