@@ -10,7 +10,7 @@
       "star": 46,
       "tag": ["bigSale", "gift",  "time3" ],
       "wish" : false,
-      "quantity": 1
+      "quantity": 0
     },
     {
       "id": 1,
@@ -22,7 +22,7 @@
       "star": 46,
       "tag":["bigSale", "time3" ],
       "wish" : false,
-      "quantity": 1
+      "quantity": 0
     },
     {
       "id": 2,
@@ -34,7 +34,7 @@
       "star": 46,
       "tag": ["gift",  "time3" ],
       "wish" : false,
-      "quantity": 1
+      "quantity": 0
     },
     {
       "id": 3,
@@ -46,7 +46,7 @@
       "star": 50,
       "tag":  ["bigSale", "gift",  "time3" ],
       "wish" : false,
-      "quantity": 1
+      "quantity": 0
     },
     {
       "id": 4,
@@ -58,7 +58,7 @@
       "star": 47,
       "tag":  ["bigSale" ],
       "wish" : false,
-      "quantity": 1
+      "quantity": 0
     },
     {
       "id": 5,
@@ -70,7 +70,7 @@
       "star": 47,
       "tag":  ["bigSale", "gift",  "time3" ],
       "wish" : false,
-      "quantity": 1
+      "quantity": 0
     },
     {
       "id": 6,
@@ -82,7 +82,7 @@
       "star": 35,
       "tag":  ["bigSale", "gift" ],
       "wish" : false,
-      "quantity": 1
+      "quantity": 0
     },
     {
       "id": 7,
@@ -94,7 +94,7 @@
       "star": 30,
       "tag":  [ "time3" ],
       "wish" : false,
-      "quantity": 1
+      "quantity": 0
     },
     {
       "id": 8,
@@ -106,7 +106,7 @@
       "star": 20,
       "tag":  ["gift"],
       "wish" : false,
-      "quantity": 1
+      "quantity": 0
     },
     {
       "id": 9,
@@ -118,7 +118,7 @@
       "star": 50,
       "tag":  ["bigSale", "gift",  "time3" ],
       "wish" : false,
-      "quantity": 1
+      "quantity": 0
     },
     {
       "id": 10,
@@ -130,7 +130,7 @@
       "star": 26,
       "tag":  ["bigSale", "gift",  "time3" ],
       "wish" : false,
-      "quantity": 1
+      "quantity": 0
     },
     {
       "id": 11,
@@ -142,7 +142,7 @@
       "star": 50,
       "tag":  ["bigSale", "gift",  "time3" ],
       "wish" : false,
-      "quantity": 1
+      "quantity": 0
     },
     {
       "id": 12,
@@ -154,7 +154,7 @@
       "star": 20,
       "tag":  ["bigSale", "gift",  "time3" ],
       "wish" : false,
-      "quantity": 1
+      "quantity": 0
     },
     {
       "id": 13,
@@ -166,7 +166,7 @@
       "star": 36,
       "tag":  ["bigSale", "gift",  "time3" ],
       "wish" : false,
-      "quantity": 1
+      "quantity": 0
     },
     {
       "id": 14,
@@ -179,7 +179,7 @@
       "tag":  ["bigSale", "gift",  "time3" ]
    ,
       "wish" : false,
-      "quantity": 1
+      "quantity": 0
     }
 
   ]

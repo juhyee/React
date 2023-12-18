@@ -5,23 +5,28 @@ import { AppContext } from '../../../App';
 function CartPrd(props) {
         const { onDelete, AddComma } = useContext(AppContext);
         
-        let [quantity, setQuantity] = useState(props.quantity);
-    
+        const [quantityValue, setQuantityValue] = useState(props.quantity + 1);
+
         const prdIncrease = () => {
-            setQuantity((prev) => prev + 1)
+            console.log(quantityValue)
+            setQuantityValue((prev) => prev + 1);
+            // props.quantity = setQuantity
+            // return quantity
         }
         const prdDecrease = () => {
-            setQuantity(quantity > 0 ? ((prev) => prev - 1) : 0)
+            setQuantityValue(quantityValue > 1 ? ((prev) => prev - 1) : 1)
+            // props.quantity = setQuantity
+            // return quantity
         }
         
         const [total, setTotal] = useState(props.price);
 
         useEffect(() => {
-            const totalPrice = props.price * quantity;
-            console.log(totalPrice)
+            const totalPrice = props.price * quantityValue;
             setTotal(totalPrice);
+            // props.quantity = quantityValue
             AddComma()
-
+            
         });
         
 
@@ -46,7 +51,7 @@ function CartPrd(props) {
                             >
                             </button>
                             <span className="count__input">
-                                {quantity}
+                                {quantityValue}
                             </span>
                             <button
                                 className="count__btn count__btn--plus"
@@ -54,7 +59,7 @@ function CartPrd(props) {
                                 onClick={prdIncrease}
                             ></button>
                         </div>
-                        <p className="product__info--price price">{total} 원</p>
+                        <p className="product__info--price price"><span>{total}</span> 원</p>
                     </div>
                     <button
                         className="product__btn--del"

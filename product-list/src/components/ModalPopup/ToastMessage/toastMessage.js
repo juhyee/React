@@ -1,33 +1,26 @@
-import React, { createContext, useState } from "react";
+import { useEffect, useState } from "react";
+import './ToastMessage.scss'
 
-export const ToastContext = createContext();
+function ToastMessage({ setToast, text, name }) {
 
-export const ToastMessage = (props) => {
-  const [showToast, setShowToast] = useState("");
-  const [toastStyle, setToastStyle] = useState("");
-  const [toastMessage, setToastMessage] = useState("");
-
-  const handleToastVisibility = (style, duration, message) => {
-    if (showToast === "") {
-      setToastStyle(style);
-      setToastMessage(message);
-      setShowToast("show");
-      setTimeout(() => {
-        setShowToast("");
-      }, duration * 1000);
-    }
-  };
+  const [animation, setAnimation] = useState(false)
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      setToast(false);
+      setAnimation(true);
+    }, 2000);
+    return () => {
+      clearTimeout(timer);
+      setAnimation(true);
+    };
+  }, [setToast]);
 
   return (
-    <>
-        <div className="toast">
-          <div className="toast-message">
-            <p>{props.type}</p>
-          </div>
-          <div className="toast-body">
-            <p>{props.info}</p>
-          </div>
-        </div>
-    </>
+    <div className={`toast ${name} ${animation ? 'on' : 'hide'}`}>
+      <p className="toast__text">{text}</p>
+    </div>
+
   );
-};
+}
+
+export default ToastMessage;

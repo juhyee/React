@@ -1,6 +1,7 @@
 import React, { createContext, useEffect, useState } from "react";
 import Header from "./components/Header/Header.js";
 import PrdList from "./components/PrdList/PrdList.js";
+import ToastMessage from "./components/ModalPopup/ToastMessage/ToastMessage.js";
 
 export const AppContext = createContext();
 
@@ -15,19 +16,24 @@ function App() {
 
   // 장바구니 useState
   const [wishList, setWishList] = useState([])
+  const [toast, setToast] = useState(false);
+  const [toastState, setToastState] = useState([])
 
   // 장바구니에 상품 추가
   const addToWishList = (obj) => {
     const existingObject = wishList.find((ele) => ele.id === obj.id);
-    if (Boolean(existingObject) === false ) {
+    if (Boolean(existingObject) === false) {
       obj.wish = true;
       setWishList((prevList) => [...prevList, obj]);
+      setToast(true)
+      setToastState(['상품이 장바구니에 담겼습니다.', 'notice'])
       return wishList
     }else if(Boolean(existingObject) === true){
       obj.wish = false;
       setWishList(() =>  wishList.filter((item, _) => item.id !== obj.id));
-      return wishList
-      
+      setToast(true)
+      setToastState(['상품이 장바구니에서 삭제되었습니다.', 'caution'])
+      return wishList 
     }
   }
 
@@ -45,6 +51,8 @@ function App() {
   
   return (
     <>
+      {toast && <ToastMessage setToast={setToast} text={toastState[0]} name={toastState[1]}/>}
+      
       <AppContext.Provider value={{ wishList, handleSubmit, onDelete, AddComma }}>
         <Header />
       </AppContext.Provider>

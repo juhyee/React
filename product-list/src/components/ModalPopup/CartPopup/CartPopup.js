@@ -15,16 +15,15 @@ function CartPopup(props) {
   }
 
   const { wishList, onDelete } = useContext(AppContext);
+  const { totalPrice, setTotalPrice } = useState('')
 
-  const getTotalAmount = () =>
-  [...wishList].reduce((acc, cur) => acc + cur.price * cur.quantity, 0);
-
-  // const getTotalAmount = () =>
-  //   wishList.reduce((acc, cur) => acc + cur.price * cur.quantity, 0);
-
-  // console.log(getTotalAmount())
-
-
+  const getTotalAmount = () => {
+    let res = [...wishList].reduce((acc, cur) => {
+      return acc + cur.price * cur.quantity
+    }, 0);
+    
+    setTotalPrice(res)
+  }
 
 
   return (
@@ -57,7 +56,7 @@ function CartPopup(props) {
               </div>
               <div className="modal-footer">
                 <button className="modal__btn modal__btn--buy">구매하기</button>
-                <p className="total-price">합계<span className="total-price__num price">{getTotalAmount()}</span>원</p>
+                <p className="total-price">합계<span className="total-price__num price">{totalPrice}</span>원</p>
               </div>
             </div>
           </div>
