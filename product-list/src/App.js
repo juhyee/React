@@ -40,7 +40,7 @@ function App() {
   // 장바구니에 추가된 상품 삭제
   const onDelete = (obj) => {
     obj.wish = false;
-    setWishList(() =>  wishList.filter((item, _) => item.id !== obj.id));
+    setWishList(() => wishList.filter((item, _) => item.id !== obj.id));
     return wishList
   };
 
@@ -53,7 +53,7 @@ function App() {
     <>
       {toast && <ToastMessage setToast={setToast} text={toastState[0]} name={toastState[1]}/>}
       
-      <AppContext.Provider value={{ wishList, handleSubmit, onDelete, AddComma }}>
+      <AppContext.Provider value={{ wishList, setWishList, handleSubmit, onDelete, AddComma }}>
         <Header />
       </AppContext.Provider>
       <div className="product__wrap prdCard">

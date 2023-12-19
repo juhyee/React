@@ -5,32 +5,18 @@ import { AppContext } from '../../../App';
 function CartPrd(props) {
         const { onDelete, AddComma } = useContext(AppContext);
         
-        const [quantityValue, setQuantityValue] = useState(props.quantity + 1);
+        const prdIncrease = () => props.updateQuantity(props.id, props.quantity + 1);
+        const prdDecrease = () => props.updateQuantity(props.id, props.quantity > 1 ? props.quantity - 1 : 1);
 
-        const prdIncrease = () => {
-            console.log(quantityValue)
-            setQuantityValue((prev) => prev + 1);
-            // props.quantity = setQuantity
-            // return quantity
-        }
-        const prdDecrease = () => {
-            setQuantityValue(quantityValue > 1 ? ((prev) => prev - 1) : 1)
-            // props.quantity = setQuantity
-            // return quantity
-        }
-        
-        const [total, setTotal] = useState(props.price);
-
+        const [total, setTotal] = useState(1);
         useEffect(() => {
-            const totalPrice = props.price * quantityValue;
+            const totalPrice = props.price * props.quantity;
             setTotal(totalPrice);
-            // props.quantity = quantityValue
             AddComma()
             
         });
-        
 
-        
+
         
         return (
             <>
@@ -51,7 +37,7 @@ function CartPrd(props) {
                             >
                             </button>
                             <span className="count__input">
-                                {quantityValue}
+                                {props.quantity}
                             </span>
                             <button
                                 className="count__btn count__btn--plus"

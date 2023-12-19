@@ -14,16 +14,17 @@ function CartPopup(props) {
     props.modalCloseHandel();
   }
 
-  const { wishList, onDelete } = useContext(AppContext);
-  const { totalPrice, setTotalPrice } = useState('')
+  const { wishList, setWishList, onDelete } = useContext(AppContext);
 
-  const getTotalAmount = () => {
-    let res = [...wishList].reduce((acc, cur) => {
-      return acc + cur.price * cur.quantity
-    }, 0);
-    
-    setTotalPrice(res)
-  }
+  const updateQuantity = (id, newQty) => {
+    const newItems = wishList.map((item) => {
+      if (item.id === id) return { ...item, quantity: newQty };
+      return item;
+    });
+    setWishList(newItems);
+  };
+
+  const totalPirce = wishList.reduce((total, item) => total + item.price * item.quantity, 0)
 
 
   return (
@@ -42,21 +43,22 @@ function CartPopup(props) {
                     wishList.map((item, _) => (
                       <CartPrd  
                         key={uuid()}
+                        data={item}
                         className="card"
                         id={item.id}
                         title={item.title}
                         img={item.img}
                         price={item.price}
                         brand={item.brand}
-                        data={item}
                         quantity={item.quantity}
                         onDelete={onDelete}
+                        updateQuantity = {updateQuantity}
                       />))}
                 </div>
               </div>
               <div className="modal-footer">
                 <button className="modal__btn modal__btn--buy">구매하기</button>
-                <p className="total-price">합계<span className="total-price__num price">{totalPrice}</span>원</p>
+                <p className="total-price">합계<span className="total-price__num price">{totalPirce}</span>원</p>
               </div>
             </div>
           </div>
