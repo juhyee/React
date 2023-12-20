@@ -2,7 +2,7 @@ import React, { createContext, useEffect, useState } from "react";
 import Header from "./components/Header/Header.js";
 import PrdList from "./components/PrdList/PrdList.js";
 import ToastMessage from "./components/ModalPopup/ToastMessage/ToastMessage.js";
-import dummy from "./data/store.json"
+import dummy from './data/store.json'
 
 export const AppContext = createContext();
 
@@ -46,14 +46,22 @@ function App() {
     obj.wish ? obj.wish = false : obj.wish = true
     return wishList
   };
-
-
+  
   // 키워드 관련
   const [keyword, setKeyword] = useState("");
+  const [searchResults, setSearchResults] = useState([]);
+
   const getSearchKeyword = (input) => {
-    setKeyword(input)
+      setKeyword(input.target.value)
+      console.log(keyword)
   }
 
+  useEffect(() => {
+    const results = dummy.products.filter((item, _) => {
+      return item.title.includes(keyword) || item.brand.includes(keyword)
+  }) 
+    setSearchResults(results);
+  }, [keyword]);
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -63,11 +71,11 @@ function App() {
     <>
       {toast && <ToastMessage setToast={setToast} text={toastState[0]} name={toastState[1]}/>}
       
-      <AppContext.Provider value={{ wishList, setWishList, handleSubmit, onDelete, AddComma }}>
+      <AppContext.Provider value={{ wishList, setWishList, handleSubmit, onDelete, AddComma, getSearchKeyword, keyword }}>
         <Header />
       </AppContext.Provider>
       <div className="product__wrap prdCard">
-        <AppContext.Provider value={{ wishList, setWishList, addToWishList, handleSubmit, onDelete, AddComma }}>
+        <AppContext.Provider value={{ wishList, setWishList, addToWishList, handleSubmit, onDelete, AddComma, keyword, searchResults }}>
           <PrdList />
         </AppContext.Provider>
       </div>

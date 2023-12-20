@@ -1,12 +1,9 @@
-import React, { useState } from 'react'
+import React, { useContext } from 'react'
 import './HeaderSearch.scss'
+import { AppContext } from '../../../App'
 
-function HeaderSearch(props) {
-
-    const updateSearchKeyword = () => {
-        // props.set
-    }
-
+function HeaderSearch() {
+    const { getSearchKeyword } = useContext(AppContext);
 
     return (
         <>
@@ -15,7 +12,7 @@ function HeaderSearch(props) {
                  type="text"
                  placeholder="상품명을 입력하세요."
                  className="header__search--input"
-                 onKeyUp={updateSearchKeyword}
+                 onKeyUp={getSearchKeyword}
                 />
             </div>
         </>

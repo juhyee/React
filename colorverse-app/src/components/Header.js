@@ -22,8 +22,8 @@ export default function Header() {
                 </div>
               </div>
               <div className="header-util__title">
-                {/* 안녕하세요.~컬러버스 랜드빌더 제목영역입니다. */}
-                안녕하세요.~ 랜드빌더 제목영역입니다.
+                안녕하세요.~컬러버스 랜드빌더 제목영역입니다.
+                {/* 안녕하세요.~ 랜드빌더 제목영역입니다. */}
               </div>
             </div>
             <div className="header-util__contents--center">

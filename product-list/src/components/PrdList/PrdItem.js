@@ -5,7 +5,7 @@ import { AppContext } from '../../App'
 
 function PrdCard(props) {
 
-    const { addToWishList, handleSubmit } = useContext(AppContext);
+    const { addToWishList, handleSubmit, keyword } = useContext(AppContext);
 
     return (
         <>
@@ -22,8 +22,14 @@ function PrdCard(props) {
                         </button>
                     </div>
                     <div className="prdCard-item__info">
-                        <span className="prdCard-item__brand">{props.brand}</span>
-                        <p className="prdCard-item__name">{props.title}</p>
+                        {props.brand.includes(keyword) ? <span className="prdCard-item__brand">
+                            <span className='highlight'>{keyword}</span> {props.brand.split(keyword)}</span> :
+                            <span className="prdCard-item__brand">{props.brand}</span>
+                        }
+                        {props.title.includes(keyword) ? <span className="prdCard-item__name">
+                            <span className='highlight'>{keyword}</span> {props.title.split(keyword)}</span> :
+                            <span className="prdCard-item__name">{props.title}</span>
+                        }
                         <div className="prdCard-item__star">
                             <div className="star" style={{ width: props.star * 2 + '%' }}><span className="blind"></span></div>
                         </div>

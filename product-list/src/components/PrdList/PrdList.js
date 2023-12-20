@@ -5,18 +5,24 @@ import { AppContext } from '../../App'
 
 function PrdCard() {
 
-    const { addToWishList, AddComma } = useContext(AppContext);
+    const { addToWishList, AddComma, searchResults } = useContext(AppContext);
+
     useEffect(() => {
         AddComma()
     })
 
-    
 
     return (
         <>
-            <p className="prdCard__total">총<span className="num">{dummy.products.length}</span>개의 상품이 있습니다.</p>
+            <p className="prdCard__total">총<span className="num">{searchResults.length}</span>개의 상품이 있습니다.</p>
             <div className='prdCard__list'>
-                {dummy.products.map((item, _) => (
+                {searchResults.length === 0 ? 
+                <div className='prdCard__nodata'>
+                    <p>검색 결과가 없습니다.</p> 
+                    <span>검색어를 다시 확인해주세요.</span>
+                </div>
+                :
+                searchResults.map((item, _) => (
                   <PrdItem 
                   className="prdCard-item"
                   id={item.id}
