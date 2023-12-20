@@ -10,6 +10,7 @@ function PrdCard() {
         AddComma()
     })
 
+    
 
     return (
         <>

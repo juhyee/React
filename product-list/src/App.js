@@ -2,6 +2,7 @@ import React, { createContext, useEffect, useState } from "react";
 import Header from "./components/Header/Header.js";
 import PrdList from "./components/PrdList/PrdList.js";
 import ToastMessage from "./components/ModalPopup/ToastMessage/ToastMessage.js";
+import dummy from "./data/store.json"
 
 export const AppContext = createContext();
 
@@ -27,22 +28,31 @@ function App() {
       setWishList((prevList) => [...prevList, obj]);
       setToast(true)
       setToastState(['상품이 장바구니에 담겼습니다.', 'notice'])
+      console.log(obj.wish)
       return wishList
     }else if(Boolean(existingObject) === true){
       obj.wish = false;
       setWishList(() =>  wishList.filter((item, _) => item.id !== obj.id));
       setToast(true)
       setToastState(['상품이 장바구니에서 삭제되었습니다.', 'caution'])
+      console.log(obj.wish)
       return wishList 
     }
   }
 
   // 장바구니에 추가된 상품 삭제
-  const onDelete = (obj) => {
-    obj.wish = false;
+  function onDelete(obj){
     setWishList(() => wishList.filter((item, _) => item.id !== obj.id));
+    obj.wish ? obj.wish = false : obj.wish = true
     return wishList
   };
+
+
+  // 키워드 관련
+  const [keyword, setKeyword] = useState("");
+  const getSearchKeyword = (input) => {
+    setKeyword(input)
+  }
 
 
   const handleSubmit = (e) => {

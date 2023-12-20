@@ -7,7 +7,7 @@ function CartPrd(props) {
         
         const prdIncrease = () => props.updateQuantity(props.id, props.quantity + 1);
         const prdDecrease = () => props.updateQuantity(props.id, props.quantity > 1 ? props.quantity - 1 : 1);
-
+    
         const [total, setTotal] = useState(1);
         useEffect(() => {
             const totalPrice = props.price * props.quantity;
@@ -16,8 +16,6 @@ function CartPrd(props) {
             
         });
 
-
-        
         return (
             <>
             {

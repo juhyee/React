@@ -7,7 +7,6 @@ function PrdCard(props) {
 
     const { addToWishList, handleSubmit } = useContext(AppContext);
 
-
     return (
         <>
             <div className='prdCard-item' key={uuid()}>
@@ -37,7 +36,6 @@ function PrdCard(props) {
                             }
                         </div>
                     </div>
-
                 </a>
             </div>
         </>
@@ -45,4 +43,3 @@ function PrdCard(props) {
 }
 
 export default PrdCard
-

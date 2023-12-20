@@ -3,7 +3,8 @@ import './ToastMessage.scss'
 
 function ToastMessage({ setToast, text, name }) {
 
-  const [animation, setAnimation] = useState(false)
+  const [animation, setAnimation] = useState(false);
+  
   useEffect(() => {
     const timer = setTimeout(() => {
       setToast(false);
