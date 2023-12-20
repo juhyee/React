@@ -19,7 +19,7 @@ function PrdCard() {
                 {searchResults.length === 0 ? 
                 <div className='prdCard__nodata'>
                     <p>검색 결과가 없습니다.</p> 
-                    <span>검색어를 다시 확인해주세요.</span>
+                    <span>검색어를 다시 확인해 주세요.</span>
                 </div>
                 :
                 searchResults.map((item, _) => (
