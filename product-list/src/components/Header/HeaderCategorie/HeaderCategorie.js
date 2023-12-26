@@ -1,7 +1,7 @@
 import React from 'react'
-import './HeaderKategorie.scss'
+import './HeaderCategorie.scss'
 
-const HeaderKategorie = [
+const HeaderCategorie = [
   {
       id: 1, 
       title: "커뮤니티",
@@ -22,10 +22,10 @@ const HeaderKategorie = [
 function HeaderNav() {
   return (
    <>
-    <nav className="kategorie">
+    <nav className="categorie">
         <ul>
-          {HeaderKategorie.map((item, idx) => (
-            <li key={item.id} className={`kategorie__item kategorie__item${idx + 1}`}>
+          {HeaderCategorie.map((item, idx) => (
+            <li key={item.id} className={`categorie__item categorie__item${idx + 1}`}>
               <a href={item.url}>{item.title}</a>
             </li>
           ))}

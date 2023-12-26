@@ -1,7 +1,7 @@
 import React from 'react'
 import HeaderBanner from './HeaderBanner/HeaderBanner.js'
 import Logo from '../../assets/images/logo.jpg'
-import HeaderKategorie from './HeaderKategorie/HeaderKategorie'
+import HeaderCategorie from './HeaderCategorie/HeaderCategorie.js'
 import HeaderSearch from './HeaderSearch/HeaderSearch'
 import HeaderCart from './HeaderCart/HeaderCart.js'
 import HeaderNav from './HeaderNav/HeaderNav.js'
@@ -18,7 +18,7 @@ const Header = () => {
             <h1 className="logo header__logo">
               <img src={Logo} alt='오늘의 집' />
             </h1>
-            <HeaderKategorie />
+            <HeaderCategorie />
             <HeaderSearch />
             <HeaderCart />
           </div>
