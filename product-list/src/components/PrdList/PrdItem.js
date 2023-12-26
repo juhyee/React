@@ -7,12 +7,14 @@ function PrdCard(props) {
 
     const { addToWishList, handleSubmit, keyword } = useContext(AppContext);
 
+    console.log(typeof keyword)
+    
     return (
         <>
             <div className='prdCard-item' key={uuid()}>
                 <a href='/' className='prdCard-item__overlay' onClick={handleSubmit}>
                     <div className='prdCard-item__img' >
-                        <img src={props.img} alt='test' />
+                        <img src={props.img} alt={props.title} />
                         <button
                             type='button'
                             className={props.wish ? 'prdCard-item__scrap on' : 'prdCard-item__scrap'}
@@ -22,13 +24,13 @@ function PrdCard(props) {
                         </button>
                     </div>
                     <div className="prdCard-item__info">
-                        {props.brand.includes(keyword) ? <span className="prdCard-item__brand">
-                            <span className='highlight'>{keyword}</span> {props.brand.split(keyword)}</span> :
-                            <span className="prdCard-item__brand">{props.brand}</span>
+                        {keyword !== '' && props.brand.includes(keyword) ? (<span className="prdCard-item__brand">
+                        {props.brand.split(keyword)[0]}<span className='highlight'>{keyword}</span> {props.brand.split(keyword)[1]}</span>) :
+                            (<span className="prdCard-item__brand">{props.brand}</span>)
                         }
-                        {props.title.includes(keyword) ? <span className="prdCard-item__name">
-                            <span className='highlight'>{keyword}</span> {props.title.split(keyword)}</span> :
-                            <span className="prdCard-item__name">{props.title}</span>
+                        {keyword !== '' && props.title.includes(keyword) ? (<span className="prdCard-item__name">
+                            {props.title.split(keyword)[0]}<span className='highlight'>{keyword}</span> {props.title.split(keyword)[1]}</span>) :
+                            (<span className="prdCard-item__name">{props.title}</span>)
                         }
                         <div className="prdCard-item__star">
                             <div className="star" style={{ width: props.star * 2 + '%' }}><span className="blind"></span></div>

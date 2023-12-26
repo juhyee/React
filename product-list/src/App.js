@@ -53,7 +53,6 @@ function App() {
 
   const getSearchKeyword = (input) => {
       setKeyword(input.target.value)
-      console.log(keyword)
   }
 
   useEffect(() => {
