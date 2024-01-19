@@ -2,7 +2,9 @@ import React, { createContext, useEffect, useState } from "react";
 import Header from "./components/Header/Header.js";
 import PrdList from "./components/PrdList/PrdList.js";
 import ToastMessage from "./components/ModalPopup/ToastMessage/ToastMessage.js";
+import Aside from "./components/Header/Aside/Aside.js";
 import dummy from './data/store.json'
+
 
 export const AppContext = createContext();
 
@@ -73,10 +75,15 @@ function App() {
       <AppContext.Provider value={{ wishList, setWishList, handleSubmit, onDelete, AddComma, getSearchKeyword, keyword }}>
         <Header />
       </AppContext.Provider>
-      <div className="product__wrap prdCard">
-        <AppContext.Provider value={{ wishList, setWishList, addToWishList, handleSubmit, onDelete, AddComma, keyword, searchResults }}>
-          <PrdList />
-        </AppContext.Provider>
+      <div className="container" id="container">
+        <div className="content" id="content">
+          <Aside />
+          <div className="product__wrap prdCard">
+            <AppContext.Provider value={{ wishList, setWishList, addToWishList, handleSubmit, onDelete, AddComma, keyword, searchResults }}>
+              <PrdList />
+            </AppContext.Provider>
+          </div>
+        </div>
       </div>
     </>
   );

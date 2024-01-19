@@ -1,0 +1,19 @@
+{
+    "HeaderCategorie" : [
+    {
+        "id": 1, 
+        "title": "커뮤니티",
+        "url": "/community"
+    },
+    {
+        "id": 2, 
+        "title": "쇼핑",
+        "url": "/shopping"
+    },
+    {
+        "id": 3, 
+        "title": "이사/시공/생활",
+        "url": "/etc"
+    }
+  ]
+}
