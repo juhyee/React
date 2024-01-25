@@ -1,9 +1,15 @@
-import React, {useEffect} from 'react'
+import React, { useState, useCallback } from 'react'
 import './Aside.scss'
 import dummy from './data.json'
 import AsideItem from './AsideItem';
 
 function Aside() {
+
+  const [activeIndex, setActiveIndex] = useState(undefined)
+
+  const toggleActive = (index) => {
+    activeIndex === index ? setActiveIndex(undefined) : setActiveIndex(index);
+  }
 
   return (
     <>
@@ -16,11 +22,13 @@ function Aside() {
         <ul className='aside-list'>
           {
             dummy.aside.map((item, _) => (
-              item.children.map((item, _) => (
+              item.children.map((item, idx) => (
                 <AsideItem 
                   url={item.url}
                   title={item.title}
                   data={item}
+                  isActive={activeIndex === idx}
+                  onShow={() => toggleActive(idx)}
                 />
               ))
             ))

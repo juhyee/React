@@ -31,6 +31,7 @@
             background: url(../../../assets/images/aside_arrow.png) center 0 no-repeat;
             background-size: 100%;
             transition: all 0.3s;
+            cursor: pointer;
         }
 
         &:hover {
@@ -44,18 +45,20 @@
         }
         
         &.on {
-            & > a .aside__item--name {
-                font-weight: bold;
-                color: #00bbff;
-
-                &:hover {
-                    opacity: 0.8;
-                }
-            }
-            .aside__item--arrow {
-                background: url(../../../assets/images/aside_arrow_active.png) center 0 no-repeat;
-                background-size: 100%;
-                transform: rotate(-180deg);
+            & > .aside__item {
+                .aside__item--name {
+                   font-weight: bold;
+                   color: #00bbff;
+   
+                   &:hover {
+                       opacity: 0.8;
+                   }
+               }
+               .aside__item--arrow {
+                   background: url(../../../assets/images/aside_arrow_active.png) center 0 no-repeat;
+                   background-size: 100%;
+                   transform: rotate(-180deg);
+               }
             }
             .aside--depth02 {
                 display: block;
