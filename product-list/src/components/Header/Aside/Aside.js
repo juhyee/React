@@ -1,19 +1,22 @@
-import React, { useState, useCallback } from 'react'
+import React, { useState, useEffect } from 'react'
 import './Aside.scss'
 import dummy from './data.json'
 import AsideItem from './AsideItem';
 
+
 function Aside() {
-
-  const [activeIndex, setActiveIndex] = useState(undefined)
-
+  
+  // 임시 쇼파 영역 on 
+  const [activeIndex, setActiveIndex] = useState(4)
+  
   const toggleActive = (index) => {
     activeIndex === index ? setActiveIndex(undefined) : setActiveIndex(index);
   }
+  
 
+  
   return (
     <>
-    
       <div className='aside'>
         {
           dummy.aside.map((item, _) => (

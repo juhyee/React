@@ -1,13 +1,10 @@
 import React, { useContext } from 'react'
 import uuid from 'react-uuid'
-import './PrdItem.scss'
 import { AppContext } from '../../App'
 
 function PrdCard(props) {
 
     const { addToWishList, handleSubmit, keyword } = useContext(AppContext);
-
-    console.log(typeof keyword)
     
     return (
         <>

@@ -1,5 +1,5 @@
 import React,  { useContext, useEffect } from 'react'
-import dummy from "../../data/store.json"
+import './PrdList.scss'
 import PrdItem from "../PrdList/PrdItem.js"
 import { AppContext } from '../../App'
 

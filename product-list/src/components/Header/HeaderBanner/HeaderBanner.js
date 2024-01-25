@@ -36,8 +36,8 @@ const HeaderBanner = () => {
       <div className="header__banner">
               <a href='/'> 
                 <p><span className="header__banner--num"><Timer time={20} /></span>초 뒤면 사라져요! <b>2만원 할인받기</b></p>
+                <button type='button' className="close_btn" onClick={popupClose}><span className="blind">닫기</span></button>
               </a>
-              <button type='button' className="close_btn" onClick={popupClose}><span className="blind">닫기</span></button>
         </div>
    </>
   )

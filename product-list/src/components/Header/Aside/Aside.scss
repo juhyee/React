@@ -54,9 +54,15 @@
 
     &--depth01 {
         .aside--depth02 {
-            max-height: 0px;
             overflow: hidden;
+            max-height: 0px;
+            padding-left: 15px;
             transition: all 0.3s;
+            .aside__item {
+                &--name {
+                    color: #424242;
+                }
+            }
         }
         
         &.on {
@@ -81,10 +87,5 @@
                 max-height: 100vh;
             }
         }
-    }
-
-
-    &--depth02 {
-        padding-left: 15px;
     }
 }
