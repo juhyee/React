@@ -14,7 +14,9 @@
     }
 
     &__item {
+        position: relative;
         display: flex;
+        padding: 0 0 10px 0;
         align-items: center;
         line-height: 23px;
         white-space: nowrap;
@@ -25,13 +27,24 @@
         }
 
         &--arrow {
-            width: 13px;
-            height: 13px;
-            margin-left: auto;
-            background: url(../../../assets/images/aside_arrow.png) center 0 no-repeat;
-            background-size: 100%;
-            transition: all 0.3s;
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
             cursor: pointer;
+            &::after {
+                content: '';
+                position: absolute;
+                top: 50%;
+                right: 0;
+                width: 13px;
+                height: 13px;
+                background: url(../../../assets/images/aside_arrow.png) 0 0 no-repeat;
+                background-size: 13px 13px;
+                transform: translateY(calc(-50% - 5px));
+                transition: all 0.3s;
+            }
         }
 
         &:hover {
@@ -41,7 +54,9 @@
 
     &--depth01 {
         .aside--depth02 {
-            display: none;
+            max-height: 0px;
+            overflow: hidden;
+            transition: all 0.3s;
         }
         
         &.on {
@@ -55,13 +70,15 @@
                    }
                }
                .aside__item--arrow {
-                   background: url(../../../assets/images/aside_arrow_active.png) center 0 no-repeat;
-                   background-size: 100%;
-                   transform: rotate(-180deg);
+                &::after {
+                    background: url(../../../assets/images/aside_arrow_active.png) 0 0 no-repeat;
+                    background-size: 13px 13px;
+                    transform: translateY(calc(-50% - 5px)) rotate(180deg);
+                }
                }
             }
             .aside--depth02 {
-                display: block;
+                max-height: 100vh;
             }
         }
     }

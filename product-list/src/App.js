@@ -5,7 +5,6 @@ import ToastMessage from "./components/ModalPopup/ToastMessage/ToastMessage.js";
 import Aside from "./components/Header/Aside/Aside.js";
 import dummy from './data/store.json'
 
-
 export const AppContext = createContext();
 
 function App() {
@@ -71,7 +70,6 @@ function App() {
   return (
     <>
       {toast && <ToastMessage setToast={setToast} text={toastState[0]} name={toastState[1]}/>}
-      
       <AppContext.Provider value={{ wishList, setWishList, handleSubmit, onDelete, AddComma, getSearchKeyword, keyword }}>
         <Header />
       </AppContext.Provider>

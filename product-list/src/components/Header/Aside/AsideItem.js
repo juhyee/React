@@ -15,7 +15,7 @@ function AsideItem(porps) {
               : ''
           }
         </div>
-        {porps.isActive && <ul className="aside--depth02">
+        {porps.data.hasOwnProperty('children') ? <ul className="aside--depth02">
           {
             porps.data.children.map((item, _) => (
               <li>
@@ -25,7 +25,7 @@ function AsideItem(porps) {
               </li>
             ))
           }
-        </ul>}
+        </ul> : ''}
       </li>
     </>
   )
