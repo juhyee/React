@@ -26,7 +26,8 @@ const HeaderBanner = () => {
   
   // 상단 배너 닫기
   const [close, setClose] = useState(true)
-  const popupClose = () => {
+  const popupClose = (e) => {
+    e.preventDefault();
     setClose(!close)
     document.querySelector('.header__banner').classList.add('hide')
   }
@@ -43,4 +44,4 @@ const HeaderBanner = () => {
   )
 }
 
-export default HeaderBanner
+export default React.memo(HeaderBanner);

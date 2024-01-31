@@ -18,12 +18,11 @@ const Header = () => {
   function scrollEvent(){
     let isScroll; //스크롤 상태 체크
     let scrollPosition = 0; //스크롤 위치
-    const banner = document.querySelector('.header__banner').offsetHeight;
-    const delta = banner; // 스크롤 감지 시작 위치
+    // const banner = document.querySelector('.header__banner').offsetHeight;
+    const delta = 0; // 스크롤 감지 시작 위치
     const header = document.querySelector('.header__content--top') // scroll element
     const headerH = header.offsetHeight;
 
-    console.log(headerH)
     window.onscroll = function () {
       isScroll = true;
     };
