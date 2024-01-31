@@ -1,5 +1,6 @@
 import React, { useEffect } from 'react'
 import './HeaderCategorie.scss'
+import uuid from 'react-uuid'
 import dummy from './data.json'
 
 function HeaderNav() {
@@ -14,7 +15,7 @@ function HeaderNav() {
     <nav className="categorie">
         <ul>
           {dummy.HeaderCategorie.map((item, idx) => (
-            <li key={item[idx]} className={`categorie__item categorie__item${idx + 1}`}>
+            <li key={uuid()} className={`categorie__item categorie__item0${idx + 1}`}>
               <a href={item.url}>{item.title}</a>
             </li>
           ))}

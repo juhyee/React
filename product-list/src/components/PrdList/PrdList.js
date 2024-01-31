@@ -1,6 +1,7 @@
 import React,  { useContext, useEffect } from 'react'
 import './PrdList.scss'
 import PrdItem from "../PrdList/PrdItem.js"
+import uuid from 'react-uuid'
 import { AppContext } from '../../App'
 
 function PrdCard() {
@@ -24,8 +25,9 @@ function PrdCard() {
                 :
                 searchResults.map((item, _) => (
                   <PrdItem 
-                  className="prdCard-item"
                   id={item.id}
+                  className="prdCard-item"
+                  key={uuid()}
                   title={item.title}
                   img={item.img}
                   price={item.price}

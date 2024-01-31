@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react'
 import './Aside.scss'
 import dummy from './data.json'
 import AsideItem from './AsideItem';
-
+import uuid from 'react-uuid'
 
 function Aside() {
   
@@ -20,7 +20,7 @@ function Aside() {
       <div className='aside'>
         {
           dummy.aside.map((item, _) => (
-            <h3 className='aside-title'>{item.title}</h3>
+            <h3 className='aside-title' key={uuid()}>{item.title}</h3>
           ))
         }
         <ul className='aside-list'>
@@ -28,6 +28,7 @@ function Aside() {
             dummy.aside.map((item, _) => (
               item.children.map((item, idx) => (
                 <AsideItem 
+                  key={uuid()}
                   url={item.url}
                   title={item.title}
                   data={item}

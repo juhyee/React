@@ -44,7 +44,8 @@ function App() {
   // 장바구니에 추가된 상품 삭제
   function onDelete(obj){
     setWishList(() => wishList.filter((item, _) => item.id !== obj.id));
-    obj.wish ? obj.wish = false : obj.wish = true
+    obj.wish ? obj.wish = false : obj.wish = true;
+    console.log(obj.wish)
     return wishList
   };
   
