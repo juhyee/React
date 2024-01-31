@@ -22,6 +22,8 @@ function CartPopup(props) {
       return item;
     });
     setWishList(newItems);
+
+    return wishList
   };
 
   const totalPirce = wishList.reduce((total, item) => total + item.price * item.quantity, 0)

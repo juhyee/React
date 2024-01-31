@@ -11,17 +11,23 @@ import '../Header/Header.scss'
 const Header = () => {
 
   useEffect(() => {
-    window.addEventListener('scroll', scrollEvent);
-    return () => window.removeEventListener('scroll', scrollEvent);
+    window.addEventListener('scroll', scorllHeader);
+    return () => window.removeEventListener('scroll', scorllHeader);
   }, [])
   
-  function scrollEvent(){
+  function scorllHeader(){
     let isScroll; //스크롤 상태 체크
     let scrollPosition = 0; //스크롤 위치
-    // const banner = document.querySelector('.header__banner').offsetHeight;
-    const delta = 0; // 스크롤 감지 시작 위치
-    const header = document.querySelector('.header__content--top') // scroll element
-    const headerH = header.offsetHeight;
+    const delta = 5; // 스크롤 감지 시작 위치
+    const headerContent = document.querySelectorAll('.header__content')
+    const bannerH = document.querySelector('.header__banner').clientHeight
+    const headerTop = headerContent[0]
+    const headerBottom = headerContent[1]
+    const header = document.querySelector('.header') // scroll element
+    const headerH = header.clientHeight;
+    const scrollStart = bannerH + headerH
+    
+    console.log(scrollStart)
 
     window.onscroll = function () {
       isScroll = true;
@@ -32,24 +38,24 @@ const Header = () => {
         scrollCheck();
         isScroll = false;
       }
-    }, 150);
+    }, 250);
     
     function scrollCheck() {
       var currentScrollTop = window.scrollY;
-      console.log(currentScrollTop + window.innerHeight )
+
+      if (currentScrollTop > scrollPosition && currentScrollTop >= scrollStart) { //내리는거
+        headerTop.classList.add('fixed');
+        headerBottom.classList.remove('scroll');
       
-      if (Math.abs(scrollPosition - currentScrollTop) <= delta) {
-        return;
-      }else if (currentScrollTop > delta) {
-        header.classList.add('fixed');
-      }else if(currentScrollTop <= headerH ){
-        header.classList.remove('fixed');
+      } else if (currentScrollTop <= scrollStart) { //상단고정
+        headerTop.classList.remove('fixed');
+        headerBottom.classList.remove('scroll');
       }
-      
+    
       scrollPosition = currentScrollTop;
     }
   }
-      
+  
   return (
     <>
       <header id="header" className="header">
