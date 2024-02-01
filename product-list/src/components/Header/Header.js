@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react'
+import React, { useEffect, useState } from 'react'
 import HeaderBanner from './HeaderBanner/HeaderBanner.js'
 import Logo from '../../assets/images/logo.jpg'
 import HeaderCategorie from './HeaderCategorie/HeaderCategorie.js'
@@ -10,52 +10,46 @@ import '../Header/Header.scss'
 
 const Header = () => {
 
-  useEffect(() => {
-    window.addEventListener('scroll', scorllHeader);
-    return () => window.removeEventListener('scroll', scorllHeader);
-  }, [])
-  
-  function scorllHeader(){
-    let isScroll; //스크롤 상태 체크
-    let scrollPosition = 0; //스크롤 위치
-    const delta = 5; // 스크롤 감지 시작 위치
-    const headerContent = document.querySelectorAll('.header__content')
-    const bannerH = document.querySelector('.header__banner').clientHeight
-    const headerTop = headerContent[0]
-    const headerBottom = headerContent[1]
-    const header = document.querySelector('.header') // scroll element
-    const headerH = header.clientHeight;
-    const scrollStart = bannerH + headerH
-    
-    console.log(scrollStart)
+  const [scrollDirection, setScrollDirection] = useState("up");
 
-    window.onscroll = function () {
-      isScroll = true;
+  useEffect(() => {
+    window.addEventListener("scroll", updateScrollDirection); 
+    return () => {
+      window.removeEventListener("scroll", updateScrollDirection); 
     };
     
-    setInterval(function () {
-      if (isScroll) {
-        scrollCheck();
-        isScroll = false;
-      }
-    }, 250);
-    
-    function scrollCheck() {
-      var currentScrollTop = window.scrollY;
+  }, [scrollDirection]);
 
-      if (currentScrollTop > scrollPosition && currentScrollTop >= scrollStart) { //내리는거
-        headerTop.classList.add('fixed');
-        headerBottom.classList.remove('scroll');
-      
-      } else if (currentScrollTop <= scrollStart) { //상단고정
-        headerTop.classList.remove('fixed');
-        headerBottom.classList.remove('scroll');
-      }
+  let lastScrollY = window.pageYOffset;
+  const updateScrollDirection = () => {
+    const scrollY = window.pageYOffset;
     
-      scrollPosition = currentScrollTop;
+    const direction = () => {
+      const headerContent = document.querySelectorAll('.header__content')
+      const headerTop = headerContent[0]
+      const headerBottom = headerContent[1]
+      const headerH = document.querySelector('header').clientHeight
+      
+      if(scrollY > lastScrollY){
+        headerTop.classList.add('fixed')
+        headerBottom.classList.remove('scroll')
+      }else {
+        headerBottom.classList.add('scroll')
+        if (scrollY <= headerH){
+          headerTop.classList.remove('fixed')
+          headerBottom.classList.remove('scroll')
+        }
+      }  
     }
-  }
+    
+    if (direction !== scrollDirection) {
+      setScrollDirection(direction);
+    }
+
+    lastScrollY = scrollY > 0 ? scrollY : 0; 
+  };
   
+
   return (
     <>
       <header id="header" className="header">

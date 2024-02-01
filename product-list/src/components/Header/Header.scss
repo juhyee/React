@@ -10,11 +10,12 @@
 .header {
   position: relative;
   &__content {
+    top: 0;
     width: 100%;
     min-width: 1280px;
     background-color: #fff;
     border-bottom: 1px solid #eeeeee;
-
+    transition: top 0.1s ease 0s;
     &--top {
       display: flex;
       align-items: center;
@@ -35,10 +36,17 @@
       position: fixed;
       top: 0;
       left: 0;
-      transition: top 0.1s ease 0s;
+     
+    }
+    &.scroll {
+      z-index: 1000;
+      position: fixed;
+      left: 0;
+      top: 81px;
+      transition: top 0.3s ease 0s;
     }
   }
-
+  
   &__logo {
     margin-right: 60px;
 

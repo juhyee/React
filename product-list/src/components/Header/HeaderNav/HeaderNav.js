@@ -7,7 +7,7 @@ function HeaderNav() {
   useEffect(() => {
     const menuEle = document.querySelectorAll('.gnb__item')
     menuEle[1].classList.add('on')
-  }, [])
+  })
 
   return (
     <>

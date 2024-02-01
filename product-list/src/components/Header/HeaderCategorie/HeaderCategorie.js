@@ -5,11 +5,12 @@ import dummy from './data.json'
 
 function HeaderNav() {
   
-    {/* 임시 on */}
-    useEffect(() => {
-      const gnbEle = document.querySelectorAll('.categorie__item')
-      gnbEle[1].classList.add('on')
-    }, [])
+  {/* 임시 on */}
+  useEffect(() => {
+    const gnbEle = document.querySelectorAll('.categorie__item')
+    gnbEle[1].classList.add('on')
+  })
+  
   return (
    <>
     <nav className="categorie">
