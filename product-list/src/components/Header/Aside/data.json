@@ -367,6 +367,74 @@
                     ]
                 }
             ]
+        },
+        {
+            "title": "패브릭",
+            "url": "./00.html"
+        },
+        {
+            "title": "가전·디지털",
+            "url": "./00.html"
+        },
+        {
+            "title": "주방용품",
+            "url": "./00.html"
+        },
+        {
+            "title": "식품",
+            "url": "./00.html"
+        },
+        {
+            "title": "데코·식물",
+            "url": "./00.html"
+        },
+        {
+            "title": "조명",
+            "url": "./00.html"
+        },
+        {
+            "title": "수납·정리",
+            "url": "./00.html"
+        },
+        {
+            "title": "생활용품",
+            "url": "./00.html"
+        },
+        {
+            "title": "생필품",
+            "url": "./00.html"
+        },
+        {
+            "title": "유아·아동",
+            "url": "./00.html"
+        },
+        {
+            "title": "반려동물",
+            "url": "./00.html"
+        },
+        {
+            "title": "캠핑·레저",
+            "url": "./00.html"
+        },
+        {
+            "title": "공구·DIY",
+            "url": "./00.html"
+        },
+        {
+            "title": "인테리어시공",
+            "url": "./00.html"
+        },
+        {
+            "title": "렌탈",
+            "url": "./00.html"
+        },
+        {
+            "title": "장보기",
+            "url": "./00.html"
+        },
+        {
+            "title": "혼수·신혼",
+            "url": "./00.html"
         }
     ]
 }
