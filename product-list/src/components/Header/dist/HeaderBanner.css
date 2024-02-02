@@ -1,7 +1,7 @@
 .header__banner {
   position: relative;
   overflow: hidden;
-  height: 60px;
+  height: 50px;
   background-color: #00bbff;
   text-align: center;
 }
@@ -10,40 +10,47 @@
   -webkit-transition: height 0.3s;
   transition: height 0.3s;
 }
-.header__banner p {
+.header__banner a {
   position: relative;
   display: inline-block;
-  padding: 0 43px 0 110px;
-  line-height: 60px;
-  color: #fff;
-  font-size: 18px;
+  width: 1280px;
+  min-width: 1280px;
+  margin: 0 auto;
 }
-.header__banner p::after {
+.header__banner a p {
+  position: relative;
+  display: inline-block;
+  padding: 0 43px 0 80px;
+  line-height: 50px;
+  color: #fff;
+  font-size: 16px;
+}
+.header__banner a p::after {
   content: "";
   position: absolute;
   left: 0;
   top: 0;
-  width: 88px;
-  height: 60px;
-  background: url(../../../assets/images/banner_cpn.jpg) 0 0 no-repeat;
+  width: 73px;
+  height: 50px;
+  background: url(../../../assets/images/banner_cpn.jpg) no-repeat 0 0/100%;
 }
-.header__banner p::before {
+.header__banner a p::before {
   content: "";
   position: absolute;
   right: 0;
   top: 0;
-  width: 43px;
-  height: 60px;
-  background: url(../../../assets/images/banner_icon.jpg) 0 0 no-repeat;
+  width: 36px;
+  height: 50px;
+  background: url(../../../assets/images/banner_icon.jpg) no-repeat 0 0/100%;
 }
-.header__banner--num {
+.header__banner a--num {
   position: absolute;
   top: 0;
   left: 89px;
   width: 20px;
   text-align: right;
 }
-.header__banner .close_btn {
+.header__banner a .close_btn {
   position: absolute;
   right: 30px;
   top: 50%;
@@ -53,7 +60,7 @@
   -webkit-transform: rotate(-45deg);
           transform: rotate(-45deg);
 }
-.header__banner .close_btn::after, .header__banner .close_btn::before {
+.header__banner a .close_btn::after, .header__banner a .close_btn::before {
   content: "";
   position: absolute;
   top: 0;
@@ -61,11 +68,11 @@
   right: 0;
   bottom: 0;
   margin: auto;
-  width: 3px;
-  height: 30px;
+  width: 2px;
+  height: 24px;
   background-color: #fff;
 }
-.header__banner .close_btn::before {
+.header__banner a .close_btn::before {
   -webkit-transform: rotate(-90deg);
           transform: rotate(-90deg);
 }

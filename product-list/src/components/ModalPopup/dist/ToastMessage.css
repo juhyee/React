@@ -1,0 +1,76 @@
+.toast {
+  z-index: 1060;
+  position: fixed;
+  bottom: -160px;
+  left: 50%;
+  padding: 10px 40px;
+  border-radius: 10px;
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
+}
+.toast__text {
+  position: relative;
+  display: inline-block;
+  padding-left: 26px;
+  font-size: 16px;
+  line-height: 18px;
+  color: #fff;
+}
+.toast.notice {
+  background-color: rgba(0, 187, 255, 0.8);
+}
+.toast.notice .toast__text::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 16px;
+  height: 18px;
+  background: url(../../../assets/images/cartFillWhite.svg) no-repeat 0 0/100%;
+}
+.toast.caution {
+  background-color: rgba(255, 44, 44, 0.8);
+}
+.toast.caution .toast__text::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 16px;
+  height: 18px;
+  background: url(../../../assets/images/basketWhiteIcon.svg) no-repeat 0 0/100%;
+}
+.toast.on {
+  -webkit-animation: slideIn 2s ease-in-out 1 normal forwards;
+          animation: slideIn 2s ease-in-out 1 normal forwards;
+}
+
+@-webkit-keyframes slideIn {
+  from {
+    bottom: -160px;
+  }
+  25% {
+    bottom: 40px;
+  }
+  75% {
+    bottom: 40px;
+  }
+  100% {
+    bottom: -160px;
+  }
+}
+
+@keyframes slideIn {
+  from {
+    bottom: -160px;
+  }
+  25% {
+    bottom: 40px;
+  }
+  75% {
+    bottom: 40px;
+  }
+  100% {
+    bottom: -160px;
+  }
+}

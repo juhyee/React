@@ -1,0 +1,21 @@
+.categorie ul {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+.categorie__item {
+  margin-left: 15px;
+}
+.categorie__item a {
+  padding: 4px;
+  font-size: 18px;
+  font-weight: 600;
+  color: #2F3438;
+}
+.categorie__item a:hover {
+  color: #00bbff;
+}
+.categorie__item.on a {
+  font-weight: bold;
+  color: #00bbff;
+}

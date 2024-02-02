@@ -1,9 +1,10 @@
-@charset "utf-8";
+@charset "UTF-8";
 /* //reset css */
 *,
 *::before,
 *::after {
-  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
 }
 
 html,
@@ -96,10 +97,10 @@ video {
 }
 
 article,
-aside, 
+aside,
 details,
 figcaption,
-figure, 
+figure,
 footer,
 header,
 hgroup,
@@ -170,7 +171,8 @@ img {
 button {
   background: inherit;
   border: none;
-  box-shadow: none;
+  -webkit-box-shadow: none;
+          box-shadow: none;
   border-radius: 0;
   padding: 0;
   font-family: "Noto Sans KR", sans-serif;
@@ -178,23 +180,25 @@ button {
   cursor: pointer;
 }
 
-input[type="number"] {
+input[type=number] {
   text-align: center;
   padding: 0;
   border-radius: 0;
   font-size: 16px;
 }
- input[type="number"]::-webkit-outer-spin-button,
- input[type="number"]::-webkit-inner-spin-button {
-    -webkit-appearance: none;
-    margin: 0;
+
+input[type=number]::-webkit-outer-spin-button,
+input[type=number]::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
 }
 
 /* 웹접근성을 고려한 .blind(hidden) 처리 */
 .blind {
   border: 0;
   clip: rect(0 0 0 0);
-  clip-path: inset(50%);
+  -webkit-clip-path: inset(50%);
+          clip-path: inset(50%);
   width: 1px;
   height: 1px;
   margin: -1px;

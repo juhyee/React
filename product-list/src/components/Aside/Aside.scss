@@ -45,7 +45,7 @@
                     right: 0;
                     width: 13px;
                     height: 13px;
-                    background: url(../../../assets/images/aside_arrow.png) 0 0 no-repeat;
+                    background: url(../../assets/images/aside_arrow.png) 0 0 no-repeat;
                     background-size: 13px 13px;
                     transform: translateY(calc(-50% - 5px));
                     transition: all 0.3s;
@@ -82,7 +82,7 @@
                    }
                    .aside__item--arrow {
                     &::after {
-                        background: url(../../../assets/images/aside_arrow_active.png) 0 0 no-repeat;
+                        background: url(../../assets/images/aside_arrow_active.png) 0 0 no-repeat;
                         background-size: 13px 13px;
                         transform: translateY(calc(-50% - 5px)) rotate(180deg);
                     }

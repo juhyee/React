@@ -1,0 +1,259 @@
+@charset "UTF-8";
+/* cart modal  */
+.cart-moodal .modal-head {
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  height: 78px;
+  padding: 0 40px;
+  border-bottom: 1px solid #ececec;
+}
+.cart-moodal .modal-head h3 {
+  font-size: 22px;
+  font-weight: bold;
+  margin-bottom: 0;
+}
+.cart-moodal .modal-head__btn--close {
+  position: absolute;
+  top: 50%;
+  right: 20px;
+  width: 28px;
+  height: 28px;
+  background: url(../../../assets/images/modalHeadCloseIcon.svg) no-repeat center;
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
+}
+.cart-moodal .modal__contents {
+  width: 580px;
+  padding: 0;
+}
+.cart-moodal .modal-body {
+  overflow-y: auto;
+  max-height: 560px;
+  margin: 10px 0 92px;
+  padding: 30px 40px 0;
+}
+.cart-moodal .modal-body::-webkit-scrollbar {
+  width: 6px;
+  height: 4px;
+}
+.cart-moodal .modal-body::-webkit-scrollbar-thumb {
+  height: 10%; /* 스크롤바의 길이 */
+  background: rgba(0, 0, 0, 0.25);
+  border-radius: 10px;
+}
+.cart-moodal .modal-body::-webkit-scrollbar-track {
+  background: transparent; /*스크롤바 뒷 배경 색상*/
+}
+.cart-moodal .modal-body .product__item {
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin-bottom: 20px;
+}
+.cart-moodal .modal-body .product__item .product__thumb {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  overflow: hidden;
+  width: 150px;
+  height: 120px;
+  border-radius: 6px;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+}
+.cart-moodal .modal-body .product__item .product__thumb img {
+  min-height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  -webkit-transition: -webkit-transform 0.3s;
+  transition: -webkit-transform 0.3s;
+  transition: transform 0.3s;
+  transition: transform 0.3s, -webkit-transform 0.3s;
+}
+.cart-moodal .modal-body .product__item .product__info {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  max-width: 290px;
+  margin-left: 30px;
+  text-align: left;
+}
+.cart-moodal .modal-body .product__item .product__info--brand {
+  font-size: 13px;
+  color: #222;
+  font-weight: 500;
+}
+.cart-moodal .modal-body .product__item .product__info--title {
+  overflow: hidden;
+  height: 18px;
+  margin-top: 8px;
+  font-size: 15px;
+  color: #7e7e7e;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  word-break: break-all;
+}
+.cart-moodal .modal-body .product__item .product__info--price {
+  margin: 10px 0 0 auto;
+  font-size: 18px;
+  font-weight: bold;
+  line-height: 32px;
+  vertical-align: bottom;
+  letter-spacing: -1px;
+  color: #333333;
+}
+.cart-moodal .modal-body .product__item .product__info--count {
+  display: inline-block;
+  margin-top: 10px;
+  border: 1px solid #eee;
+  color: #333;
+  text-align: center;
+}
+.cart-moodal .modal-body .product__item .product__info--count .count__btn {
+  display: inline-block;
+  width: 32px;
+  height: 32px;
+  padding: 4px;
+  background-size: 22px !important;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+.cart-moodal .modal-body .product__item .product__info--count .count__btn--minus {
+  background: url(http://simjuhye.com/portfolio/img/product_detail/minus_icon.png) no-repeat center;
+}
+.cart-moodal .modal-body .product__item .product__info--count .count__btn--plus {
+  background: url(http://simjuhye.com/portfolio/img/product_detail/plus_icon.png) no-repeat center;
+}
+.cart-moodal .modal-body .product__item .product__info--count .count__input {
+  display: inline-block;
+  width: 44px;
+  height: 32px;
+  line-height: 32px;
+  border: none;
+  border-right: 1px solid #eee;
+  border-left: 1px solid #eee;
+  text-align: center;
+  vertical-align: top;
+}
+.cart-moodal .modal-body .product__item .product__btn--del {
+  position: absolute;
+  right: 0;
+  top: 4px;
+  width: 20px;
+  height: 20px;
+  background: url(../../../assets/images/deleteIcon.svg) no-repeat 0 0/100%;
+}
+.cart-moodal .total-price {
+  width: calc(100% - 147px);
+  height: 47px;
+  margin-left: 20px;
+  padding: 0 40px;
+  border-radius: 6px;
+  background-color: #eee;
+  font-size: 16px;
+  line-height: 47px;
+  text-align: right;
+}
+.cart-moodal .total-price__num {
+  padding: 0 4px 0 10px;
+  font-weight: 900;
+  letter-spacing: -1px;
+  font-size: 20px;
+}
+.cart-moodal .nodata {
+  width: 100%;
+  height: 422px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  text-align: center;
+}
+.cart-moodal .nodata__contents p {
+  position: relative;
+  padding-top: 96px;
+  background: url(../../../assets/images/basketWhiteIcon.svg) center 15px no-repeat;
+  background-size: 40px;
+  font-size: 20px;
+  font-weight: bold;
+  color: #222;
+  z-index: 2;
+}
+.cart-moodal .nodata__contents span {
+  position: relative;
+  display: inline-block;
+  margin-top: 10px;
+  font-size: 14px;
+  color: #8d8d8d;
+}
+.cart-moodal .nodata__contents span::before {
+  content: "";
+  position: absolute;
+  top: -125px;
+  left: 50%;
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  background-color: #6bd8ff;
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
+  z-index: 0;
+}
+.cart-moodal .modal-footer {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 78px;
+  padding: 15px 40px;
+  border-top: 1px solid #ececec;
+  background-color: #fff;
+}
+.cart-moodal .modal__btn {
+  display: inline-block;
+  height: 37px;
+  width: 122px;
+  border-radius: 42px;
+  margin-right: 5px;
+  background-color: #242529;
+  color: #fff;
+  font-family: "Noto Sans KR", sans-serif;
+  font-weight: 500;
+}
+.cart-moodal .modal__btn:hover {
+  background-color: #61626a;
+}
+.cart-moodal .modal__btn:active {
+  background-color: #000000;
+}

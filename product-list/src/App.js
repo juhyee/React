@@ -2,8 +2,9 @@ import React, { createContext, useEffect, useState } from "react";
 import Header from "./components/Header/Header.js";
 import PrdList from "./components/PrdList/PrdList.js";
 import ToastMessage from "./components/ModalPopup/ToastMessage/ToastMessage.js";
-import Aside from "./components/Header/Aside/Aside.js";
+import Aside from "./components/Aside/Aside.js";
 import dummy from './data/store.json'
+
 
 export const AppContext = createContext();
 

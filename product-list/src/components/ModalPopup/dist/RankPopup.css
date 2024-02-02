@@ -1,23 +1,23 @@
 @import url(../Modal.scss);
-.modal {
+.rank_modal {
   display: block;
   position: absolute;
-  top: -10px;
+  top: 0;
   left: auto;
   right: 0;
   bottom: auto;
-  width: 250px;
+  width: 280px;
   border-radius: 4px;
   background-color: #fff;
   -webkit-box-shadow: 0px 3px 8px rgba(0, 0, 0, 0.15);
           box-shadow: 0px 3px 8px rgba(0, 0, 0, 0.15);
 }
-.modal-head {
+.rank_modal .modal-head {
   position: relative;
   height: 56px;
   padding: 0 20px;
 }
-.modal-head::after {
+.rank_modal .modal-head::after {
   content: "";
   position: absolute;
   top: 50%;
@@ -28,13 +28,13 @@
   -webkit-transform: translateY(-50%);
           transform: translateY(-50%);
 }
-.modal-head h3 {
+.rank_modal .modal-head h3 {
   font-size: 18px;
 }
-.modal-body {
+.rank_modal .modal-body {
   padding: 0 0 30px;
 }
-.modal-body .rank_list .rank__item {
+.rank_modal .modal-body .rank_list .rank__item {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -43,16 +43,16 @@
           align-items: flex-start;
   padding: 12px 20px;
 }
-.modal-body .rank_list .rank__item:hover {
+.rank_modal .modal-body .rank_list .rank__item:hover {
   background-color: #fcfcfc;
 }
-.modal-body .rank_list .rank__item:first-of-type {
+.rank_modal .modal-body .rank_list .rank__item:first-of-type {
   margin-top: 0;
 }
-.modal-body .rank_list .rank__item .rank__num {
+.rank_modal .modal-body .rank_list .rank__item .rank__num {
   width: 18px;
   text-align: center;
 }
-.modal-body .rank_list .rank__item .rank__name {
+.rank_modal .modal-body .rank_list .rank__item .rank__name {
   max-width: 145px;
 }
