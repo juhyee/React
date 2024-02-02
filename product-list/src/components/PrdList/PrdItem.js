@@ -1,21 +1,23 @@
-import React, { useContext } from 'react'
+import React, { useContext, useEffect } from 'react'
 import uuid from 'react-uuid'
 import { AppContext } from '../../App'
 
 function PrdCard(props) {
 
-    const { addToWishList, handleSubmit, keyword } = useContext(AppContext);
-    
+    const { addToWishList, handleSubmit, keyword, wishList } = useContext(AppContext);
+
+
     return (
         <>
             <div className='prdCard-item' key={uuid()}>
                 <a href='/' className='prdCard-item__overlay' onClick={handleSubmit}>
-                    <div className='prdCard-item__img' >
+                    <div className='prdCard-item__img'>
                         <img src={props.img} alt={props.title} />
                         <button
                             type='button'
-                            className={props.wish ? 'prdCard-item__scrap on' : 'prdCard-item__scrap'}
                             onClick={() => addToWishList(props.data)}
+                            className={"prdCard-item__scrap " + (props.wish && "on")}
+                            // className='prdCard-item__scrap'
                         >
                             <span className='blind'>장바구니 담기</span>
                         </button>

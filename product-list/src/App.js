@@ -21,22 +21,24 @@ function App() {
   const [toast, setToast] = useState(false);
   const [toastState, setToastState] = useState([])
 
-  // 장바구니에 상품 추가
+  // 장바구니에 상품 추가 (스크랩)
   const addToWishList = (obj) => {
     const existingObject = wishList.find((ele) => ele.id === obj.id);
-    if (Boolean(existingObject) === false) {
+    
+    if (Boolean(existingObject) === false) { // 장바구니 상품 중복 체크(장바구니에 담기)
       obj.wish = true;
       setWishList((prevList) => [...prevList, obj]);
       setToast(true)
       setToastState(['상품이 장바구니에 담겼습니다.', 'notice'])
-      console.log(obj.wish)
+  
       return wishList
-    }else if(Boolean(existingObject) === true){
+   
+    }else if(Boolean(existingObject) === true){  // 장바구니 상품 중복 체크(장바구니에서 제거)
       obj.wish = false;
       setWishList(() =>  wishList.filter((item, _) => item.id !== obj.id));
       setToast(true)
       setToastState(['상품이 장바구니에서 삭제되었습니다.', 'caution'])
-      console.log(obj.wish)
+    
       return wishList 
     }
   }
@@ -45,7 +47,6 @@ function App() {
   function onDelete(obj){
     setWishList(() => wishList.filter((item, _) => item.id !== obj.id));
     obj.wish ? obj.wish = false : obj.wish = true;
-    console.log(obj.wish)
     return wishList
   };
   

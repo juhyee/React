@@ -15,7 +15,7 @@ function CartPopup(props) {
   }
 
   const { wishList, setWishList, onDelete } = useContext(AppContext);
-
+  
   const updateQuantity = (id, newQty) => {
     const newItems = wishList.map((item) => {
       if (item.id === id) return { ...item, quantity: newQty };
