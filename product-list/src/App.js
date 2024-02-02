@@ -1,4 +1,5 @@
 import React, { createContext, useEffect, useState } from "react";
+import { Reset } from 'styled-reset'
 import Header from "./components/Header/Header.js";
 import PrdList from "./components/PrdList/PrdList.js";
 import ToastMessage from "./components/ModalPopup/ToastMessage/ToastMessage.js";
@@ -72,6 +73,7 @@ function App() {
   
   return (
     <>
+      <Reset />
       {toast && <ToastMessage setToast={setToast} text={toastState[0]} name={toastState[1]}/>}
       <AppContext.Provider value={{ wishList, setWishList, handleSubmit, onDelete, AddComma, getSearchKeyword, keyword }}>
         <Header />
