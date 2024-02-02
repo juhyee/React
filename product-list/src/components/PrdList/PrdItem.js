@@ -1,10 +1,10 @@
-import React, { useContext, useEffect } from 'react'
+import React, { useContext } from 'react'
 import uuid from 'react-uuid'
 import { AppContext } from '../../App'
 
 function PrdCard(props) {
 
-    const { addToWishList, handleSubmit, keyword, wishList } = useContext(AppContext);
+    const { addToWishList, handleSubmit, keyword } = useContext(AppContext);
 
 
     return (
