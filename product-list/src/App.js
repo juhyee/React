@@ -1,11 +1,10 @@
 import React, { createContext, useEffect, useState } from "react";
-import { Reset } from 'styled-reset'
 import Header from "./components/Header/Header.js";
 import PrdList from "./components/PrdList/PrdList.js";
 import ToastMessage from "./components/ModalPopup/ToastMessage/ToastMessage.js";
 import Aside from "./components/Aside/Aside.js";
 import dummy from './data/store.json'
-
+import GlobalStyle from './style/GlobalStyle'
 
 export const AppContext = createContext();
 
@@ -73,7 +72,7 @@ function App() {
   
   return (
     <>
-      <Reset />
+      <GlobalStyle />
       {toast && <ToastMessage setToast={setToast} text={toastState[0]} name={toastState[1]}/>}
       <AppContext.Provider value={{ wishList, setWishList, handleSubmit, onDelete, AddComma, getSearchKeyword, keyword }}>
         <Header />
