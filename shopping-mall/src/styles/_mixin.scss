@@ -16,6 +16,12 @@
     flex-wrap: $wrap;
 }
 
+
+@mixin gap($row, $column) {
+    row-gap: $row;
+    column-gap: $column;
+}
+
 // position 관련 mixin
 @mixin position-center-x($type: absolute) {
     @if ($type ==fixed or $type ==absolute) {
