@@ -1,0 +1,79 @@
+// display flex 관련 mixin
+@mixin flexbox {
+    display: -webkit-box;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+}
+
+
+@mixin flex($direction, $justify, $align, $wrap) {
+    display: flex;
+    flex-direction: $direction;
+    justify-content: $justify;
+    align-items: $align;
+    flex-wrap: $wrap;
+}
+
+// position 관련 mixin
+@mixin position-center-x($type: absolute) {
+    @if ($type ==fixed or $type ==absolute) {
+        position: $type;
+        left: 50%;
+        transform: translateX(-50%);
+    }
+}
+
+@mixin position-center-y($type: absolute) {
+    @if ($type ==fixed or $type ==absolute) {
+        position: $type;
+        top: 50%;
+        transform: translateY(-50%);
+    }
+}
+
+@mixin position-center($type: absolute) {
+    @if ($type ==fixed or $type ==absolute) {
+        position: $type;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+    }
+}
+
+
+// border 관련 mixin
+@mixin solid-line($width: 1px, $color: black) {
+    border: $width solid $color;
+}
+
+@mixin dash-line($width: 1px, $color: black) {
+    border: $width dashed $color;
+}
+
+
+// round 관련 mixin
+@mixin circlecircle($size) {
+    border-radius: 50%;
+    width: $size;
+    height: $size;
+    box-sizing: border-box;
+}
+
+
+//  말줄임 관련 mixin
+@mixin ellipsis($line: 1) {
+    @if ($line == 1) {
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+    } @else {
+      display: -webkit-box;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      word-wrap: break-word;
+      -webkit-box-orient: vertical;
+      -webkit-line-clamp: $line;
+    }
+  }
