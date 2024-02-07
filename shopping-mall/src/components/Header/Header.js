@@ -25,7 +25,7 @@ function Header() {
       const headerContent = document.querySelectorAll('.header__content')
       const headerTop = headerContent[0]
       const headerBottom = headerContent[1]
-      const headerH = document.querySelector('header').clientHeight
+      const headerH = document.querySelector('.header').clientHeight
       
       if(scrollY > lastScrollY){
         headerTop.classList.add('fixed')
@@ -53,7 +53,7 @@ function Header() {
 
   return (
     <>
-    <div className='header' id='header'>
+    <header className='header' id='header'>
       <HeaderBanner />
       <HeaderTop 
         toggleActive={toggleActive}
@@ -63,7 +63,7 @@ function Header() {
         toggleActive={toggleActive}
         activeIndex={activeIndex}
       />
-    </div>
+    </header>
     </>
   )
 }
