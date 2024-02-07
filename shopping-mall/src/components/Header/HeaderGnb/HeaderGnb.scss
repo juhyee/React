@@ -1,0 +1,50 @@
+@charset "utf-8";
+@import "styles/_mixin.scss";
+@import "styles/_variable.scss";
+
+.header {
+    &__content {
+        .lnb {
+            @include flex(row, start, center, wrap);
+            flex: 1 0 0;
+            @include gap(0, 13px);
+
+            &__item {
+                position: relative;
+                height: 50px;
+                line-height: 50px;
+                a {
+                    padding: 5px;
+                    font-size: 16px;
+                    font-weight: $font-B;
+                    color: $color-dark;
+
+                    &:hover {
+                        color: $color-primary;
+                    }
+                }
+
+                &:first-child {
+                    margin-left: 0;
+                }
+
+
+                &.on {
+                    &::after {
+                        content: '';
+                        position: absolute;
+                        bottom: -1.5px;
+                        left: 0;
+                        width: 100%;
+                        height: 3px;
+                        background-color: $color-primary;
+                    }
+
+                    a {
+                        color: $color-primary;
+                    }
+                }
+            }
+        }
+    }
+}

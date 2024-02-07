@@ -1,0 +1,64 @@
+{
+    "HeaderRank": [
+        {
+            "id": 1,
+            "rank": 1,
+            "title": "문고리",
+            "state": "up"
+        },
+        {
+            "id": 2,
+            "rank": 2,
+            "title": "사무실",
+            "state": "up"
+        },
+        {
+            "id": 3,
+            "rank": 3,
+            "title": "스타우브꼬꼬떼",
+            "state": "new"
+        },
+        {
+            "id": 4,
+            "rank": 4,
+            "title": "스위치",
+            "state": "up"
+        },
+        {
+            "id": 5,
+            "rank": 5,
+            "title": "벽장식",
+            "state": "up"
+        },
+        {
+            "id": 6,
+            "rank": 6,
+            "title": "스탠바이미",
+            "state": "off"
+        },
+        {
+            "id": 7,
+            "rank": 7,
+            "title": "인테리어 의자",
+            "state": "up"
+        },
+        {
+            "id": 8,
+            "rank": 8,
+            "title": "주방 수납",
+            "state": "up"
+        },
+        {
+            "id": 9,
+            "rank": 9,
+            "title": "리퍼",
+            "state": "up"
+        },
+        {
+            "id": 10,
+            "rank": 10,
+            "title": "키친타올",
+            "state": "up"
+        }
+    ]
+}

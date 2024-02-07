@@ -1,0 +1,58 @@
+@charset "utf-8";
+@import "styles/_mixin.scss";
+@import "styles/_variable.scss";
+
+.rank {
+    position: relative;
+    @include flex(row, space-between, center, wrap);
+    height: 30px;
+    min-width: 180px;
+    &-swiper {
+        overflow: hidden;
+        height: 100%;
+        margin: 0 !important;
+        cursor: pointer;
+    }
+
+    &__button {
+        @include position-center-y(absolute);
+        right: 0;
+        width: 18px;
+        height: 18px;
+        background: url($url-images + 'rankIcon_arrow.png') 0 0 no-repeat;
+    }
+    &__item {
+        a {
+            display: flex !important;
+            align-items: center;
+            height: 100%;
+    
+        }
+    }
+    &__name {
+        display: inline-block;
+        overflow: hidden;
+        max-width: 100px;
+        white-space: nowrap;
+        text-overflow: ellipsis;
+        word-break: break-all;
+    }
+    &__state {
+        display: inline-block;
+        width: 40px;
+        height: 8px;
+        &--up {
+            background: url($url-images + 'rankIcon_up.png') center -1px no-repeat;
+        }
+
+        &--off {
+            background: url($url-images + 'rankIcon_off.png') center no-repeat;
+        }
+
+        
+        &--new {
+            background: url($url-images + 'rankIcon_new.png') center no-repeat;
+        }
+    }
+
+}
