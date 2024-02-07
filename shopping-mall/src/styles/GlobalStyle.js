@@ -106,8 +106,7 @@ body {
   }
 
   .wrap {
-    min-width: 1280px;
-    letter-spacing: -1px;
+    min-width: 1136px;
   }
 `;
 
