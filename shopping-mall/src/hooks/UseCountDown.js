@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react'
 
 function useCountDown(initiaCount) {
+    
     const [getCount, setGetCount] = useState(initiaCount);
     const [isClose, setIsClose] = useState(false);
 
@@ -16,8 +17,12 @@ function useCountDown(initiaCount) {
         return () => clearInterval(countDown)
     }, [getCount])
     
+    const BannerClose = (e) => {
+        e.preventDefault();
+        setIsClose(!isClose)
+    }
 
-  return {getCount, isClose}
+  return {getCount, isClose, BannerClose}
 }
 
 export default useCountDown
