@@ -1,3 +1,8 @@
+@charset "utf-8";
+@import "styles/_mixin.scss";
+@import "styles/_variable.scss";
+
+
 /* common Modal style  */ 
 .modal {
     z-index: 1060;
@@ -12,34 +17,28 @@
     &-wrap {
       z-index: 99999;
       overflow: hidden;
-      position: fixed;
-      top: 50%;
-      left: 50%;
+      @include position-center(fixed);
       border-radius: 16px;
-      background: #ffffff;
+      background: $color-white;
       box-shadow: 8px 8px 20px rgba(0, 0, 0, 0.2);
-      transform: translate(-50%, -50%);
-      -webkit-transform: translate(-50%, -50%);
+      
     }
   
     &-head {
       position: relative;
-      display: flex;
-      align-items: center;
+      @include flex(row, start, center, wrap);
 
       h3 {
-        font-weight: bold;
+        font-weight: $font-B;
         margin-bottom: 0;
       }
   
       &__btn--close {
-        position: absolute;
-        top: 50%;
+        @include position-center-y(absolute);
         right: 20px;
         width: 28px;
         height: 28px;
-        background: url("../../assets/images/modalHeadCloseIcon.svg") no-repeat center;
-        transform: translateY(-50%);
+        background: url($url-images + "modalHeadCloseIcon.svg") no-repeat center;
       }
     }
     &.on {

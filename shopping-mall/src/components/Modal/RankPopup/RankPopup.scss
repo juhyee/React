@@ -1,3 +1,8 @@
+@charset "utf-8";
+@import "../Modal.scss";
+@import "styles/_mixin.scss";
+@import "styles/_variable.scss";
+
 .rank_modal {
     display: block;
     position: absolute;
@@ -7,7 +12,7 @@
     bottom: auto;
     width: 280px;
     border-radius: 4px;
-    background-color: #fff;
+    background-color: $color-white;
     box-shadow: 0px 3px 8px rgba(0, 0, 0, 0.15);
     .modal-head {
         position: relative;
@@ -15,13 +20,11 @@
         padding: 0 20px;
         &::after {
             content: '';
-            position: absolute;
-            top: 50%;
+            @include position-center-y(absolute);
             right: 20px;
             width: 18px;
             height: 18px;
-            background: url(../../../assets/images/rankIcon_arrow.png) 0 0 no-repeat;
-            transform: translateY(-50%);
+            background: url($url-images+"rankIcon_arrow.png") 0 0 no-repeat;
         }
         h3 {
           font-size: 18px;
@@ -32,8 +35,7 @@
         padding: 0 0 30px;
         .rank_list {
             .rank__item { 
-                display: flex;
-                align-items: flex-start;
+                @include flex(row, start, flex-start, wrap);
                 padding: 12px 20px;
                 &:hover {
                     background-color: #fcfcfc;
