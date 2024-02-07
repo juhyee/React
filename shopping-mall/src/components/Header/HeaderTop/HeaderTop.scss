@@ -1,0 +1,98 @@
+@charset "utf-8";
+@import "styles/_mixin.scss";
+@import "styles/_variable.scss";
+
+.header {
+    &__content {
+        &--top {
+            top: 0;
+            height: 80px;
+        }
+    }
+
+    &__logo {
+        margin-right: 60px;
+
+        img {
+            width: 100px;
+        }
+    }
+
+    &__gnb {
+        @include flex(row, start, center, wrap);
+
+        .gnb__item {
+            a {
+                margin: 0 10px;
+                padding:21px 5px 15px;
+                font-size: 18px;
+                font-weight: $font-B;
+                color: $color-xdark;
+            }
+
+            &.on {
+                a {
+                    font-weight: $font-B;
+                    color: $color-primary;
+                }
+            }
+        }
+    }
+
+    &__search {
+        position: relative;
+        margin-left: 80px;
+
+        &--input {
+            width: 290px;
+            height: 40px;
+            padding: 0 40px 0 15px;
+            line-height: 40px;
+            border-radius: 4px;
+            @include solid-line(1px, $color-gray);
+            font-size: 15px;
+            color: $color-xdark;
+
+            &::placeholder {
+                color: #aaa;
+            }
+
+            &:focus {
+                @include solid-line(1px, $color-primary);
+            }
+        }
+
+        &::before {
+            content: '';
+            @include position-center-y(absolute);
+            right: 15px;
+            width: 20px;
+            height: 20px;
+            background: url($url-images + '/searchGrayIcon.svg') 0 0 no-repeat;
+        }
+    }
+
+
+    &__utill--cart {
+        position: relative;
+        width: 28px;
+        margin-left: auto;
+        height: 31.2px;
+        background: url($url-images + '/basketIcon.svg') no-repeat 0 0/100%;
+    }
+
+    .header__utill-count {
+        position: absolute;
+        top: -8px;
+        right: -10px;
+        padding: 2px 5px;
+        height: 20px;
+        min-width: 20px;
+        border-radius: 20px;
+        font-size: 13px;
+        background-color: $color-primary;
+        color: $color-white;
+        font-weight: $font-B;
+        line-height: 15px;
+    }
+}

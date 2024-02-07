@@ -1,0 +1,180 @@
+{
+    "HeaderCategorie" : [
+    {
+        "id": 1, 
+        "title": "커뮤니티",
+        "url": "/community",
+        "lnb": [
+            {
+                "id": 1, 
+                "title": "홈",
+                "url": "/community"
+            },
+            {
+                "id": 2, 
+                "title": "추천",
+                "url": "/shopping"
+            },
+            {
+                "id": 3, 
+                "title": "#채널",
+                "url": "/etc"
+            },
+            {
+                "id": 4, 
+                "title": "집들이",
+                "url": "/etc"
+            },
+            {
+                "id": 5, 
+                "title": "집사진",
+                "url": "/etc"
+            },
+            {
+                "id": 6, 
+                "title": "3D인테리어",
+                "url": "/etc"
+            },
+            {
+                "id": 7, 
+                "title": "살림수납",
+                "url": "/etc"
+            },
+            {
+                "id": 8, 
+                "title": "콜렉터블",
+                "url": "/etc"
+            },
+            {
+                "id": 9, 
+                "title": "홈스토랑",
+                "url": "/etc"
+            },
+            {
+                "id": 10, 
+                "title": "핫플레이스",
+                "url": "/etc"
+            },
+            {
+                "id": 11, 
+                "title": "육아",
+                "url": "/etc"
+            },{
+                "id": 12, 
+                "title": "플랜테리어",
+                "url": "/etc"
+            },
+            {
+                "id": 13, 
+                "title": "반려동물",
+                "url": "/etc"
+            }
+
+        ]
+    },
+    {
+        "id": 2, 
+        "title": "쇼핑",
+        "url": "/shopping",
+        "lnb": [
+            {
+                "id": 1, 
+                "title": "쇼핑홈",
+                "url": "/community"
+            },
+            {
+                "id": 2, 
+                "title": "카테고리",
+                "url": "/shopping"
+            },
+            {
+                "id": 3, 
+                "title": "베스트",
+                "url": "/etc"
+            },
+            {
+                "id": 4, 
+                "title": "오늘의딜",
+                "url": "/etc"
+            },
+            {
+                "id": 5, 
+                "title": "리퍼마켓",
+                "url": "/etc"
+            },
+            {
+                "id": 6, 
+                "title": "오!굿즈",
+                "url": "/etc"
+            },
+            {
+                "id": 7, 
+                "title": "빠른배송",
+                "url": "/etc"
+            },
+            {
+                "id": 8, 
+                "title": "오!쇼룸",
+                "url": "/etc"
+            },
+            {
+                "id": 9, 
+                "title": "프리미엄",
+                "url": "/etc"
+            },
+            {
+                "id": 10, 
+                "title": "기획전",
+                "url": "/etc"
+            }
+        ]
+    },
+    {
+        "id": 3, 
+        "title": "인테리어/생활",
+        "url": "/etc",
+        "lnb": [
+            {
+                "id": 1, 
+                "title": "홈",
+                "url": "/community"
+            },
+            {
+                "id": 2, 
+                "title": "주거공간시공",
+                "url": "/shopping"
+            },
+            {
+                "id": 3, 
+                "title": "상업공간시공",
+                "url": "/etc"
+            },
+            {
+                "id": 4, 
+                "title": "시공자재랭킹",
+                "url": "/etc"
+            },
+            {
+                "id": 5, 
+                "title": "제품설치",
+                "url": "/etc"
+            },
+            {
+                "id": 6, 
+                "title": "이사",
+                "url": "/etc"
+            },
+            {
+                "id": 7, 
+                "title": "집보기체크리스트",
+                "url": "/etc"
+            },
+            {
+                "id": 8, 
+                "title": "아파트시공사례",
+                "url": "/etc"
+            }
+        ]
+    }
+  ]
+}
