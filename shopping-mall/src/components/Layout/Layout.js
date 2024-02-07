@@ -1,4 +1,5 @@
 import React from 'react'
+import './Layout.scss'
 import Header from 'components/Header/Header'
 
 function index(props) {

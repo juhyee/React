@@ -1,0 +1,10 @@
+@charset "utf-8";
+@import "styles/_mixin.scss";
+@import "styles/_variable.scss";
+
+
+.container {
+  min-width: 1136px;
+  margin: 40px auto;
+  padding: 0 392px;
+}
