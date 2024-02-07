@@ -60,7 +60,7 @@ body {
   input,
   textarea {
     outline: none;
-    font-family: "Noto Sans KR", sans-serif;
+    font-family: "Pretendard", sans-serif;
   }
   
   img {
@@ -74,7 +74,7 @@ body {
     box-shadow: none;
     border-radius: 0;
     padding: 0;
-    font-family: "Noto Sans KR", sans-serif;
+    font-family: "Pretendard", sans-serif;
     overflow: visible;
     cursor: pointer;
   }
@@ -103,6 +103,11 @@ body {
     padding: 0;
     position: absolute;
     white-space: nowrap;
+  }
+
+  .wrap {
+    min-width: 1280px;
+    letter-spacing: -1px;
   }
 `;
 
