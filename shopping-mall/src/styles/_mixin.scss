@@ -49,13 +49,26 @@
 }
 
 
+
 // border 관련 mixin
 @mixin solid-line($width: 1px, $color: black) {
     border: $width solid $color;
 }
 
-@mixin dash-line($width: 1px, $color: black) {
-    border: $width dashed $color;
+@mixin solid-line-left ($width: 1px, $color: black) {
+    border-left: $width solid $color;
+}
+
+@mixin solid-line-top ($width: 1px, $color: black) {
+    border-top: $width solid $color;
+}
+
+@mixin solid-line-bottom($width: 1px, $color: black) {
+    border-bottom: $width solid $color;
+}
+
+@mixin solid-line-right($width: 1px, $color: black) {
+    border-right: $width solid $color;
 }
 
 
