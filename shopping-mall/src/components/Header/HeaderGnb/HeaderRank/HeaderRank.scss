@@ -23,26 +23,23 @@
     }
     &__item {
         a {
+            @include flex(row, start, center, wrap);
             display: flex !important;
-            align-items: center;
             height: 100%;
     
         }
     }
     &__name {
         display: inline-block;
-        overflow: hidden;
+        @include ellipsis(1);
         max-width: 100px;
-        white-space: nowrap;
-        text-overflow: ellipsis;
-        word-break: break-all;
     }
     &__state {
         display: inline-block;
         width: 40px;
         height: 8px;
         &--up {
-            background: url($url-images + 'rankIcon_up.png') center -1px no-repeat;
+            background: url($url-images + 'rankIcon_up.png') center 0 no-repeat;
         }
 
         &--off {

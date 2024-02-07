@@ -1,10 +1,10 @@
 import React, { useState } from 'react'
 import './HeaderRank.scss'
 import dummy from 'data/headerRank.json';
-import RankPopup from 'components/ModalPopup/RankPopup/RankPopup.js'
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Autoplay } from 'swiper/modules';
 import 'swiper/css';
+import RankPopup from 'components/Modal/RankPopup/RankPopup.js'
 
 function HeaderLank() {
     const [isOpen, setIsOpen] = useState(false);
