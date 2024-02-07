@@ -1,0 +1,33 @@
+@charset "utf-8";
+@import "styles/_mixin.scss";
+@import "styles/_variable.scss";
+
+
+.header {
+    &__content {
+        @include flex(row, start, center, wrap);
+        min-width: 1136px;
+        margin: 0 auto;
+        padding: 0 392px;
+        background-color: $color-white;
+        @include solid-line-bottom(1px, $color-gray);
+        transition: top 0.1s ease 0s;
+        box-sizing: content-box;
+
+        &.fixed {
+            z-index: 1001;
+            position: fixed;
+            top: 0;
+            left: 0;
+
+        }
+
+        &.scroll {
+            z-index: 1000;
+            position: fixed;
+            left: 0;
+            top: 81px;
+            transition: top 0.3s ease 0s;
+        }
+    }
+}
