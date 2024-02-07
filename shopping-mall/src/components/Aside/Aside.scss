@@ -1,0 +1,99 @@
+@charset "utf-8";
+@import "styles/_mixin.scss";
+@import "styles/_variable.scss";
+
+.aside__wrap {
+    @include flex(column, start, start, wrap);
+    flex: 0 0 25%;
+    max-width: 25%;
+    padding-right: 5px;
+    padding-left: 5px;
+    .aside {
+        &-title {
+            margin: 0 0 27px;
+            font-size: 20px;
+            font-weight: $font-B;
+        }
+    
+        &-list {
+            max-width: 160px;
+            margin: 15px 0 30px;
+            padding-bottom: 30px;
+            @include solid-line-bottom(1px, #dbdbdb);
+        }
+    
+        &__item {
+            position: relative;
+            @include flex(row, start, center, wrap);
+            padding: 0 0 10px 0;
+            line-height: 23px;
+            @include ellipsis(1);
+    
+            &--name {
+                font-size: 13px;
+            }
+    
+            &--arrow {
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                cursor: pointer;
+                &::after {
+                    content: '';
+                    @include position-center-y(absolute);
+                    right: 0;
+                    width: 13px;
+                    height: 13px;
+                    background: url($url-images + 'aside_arrow.png') 0 0 no-repeat;
+                    background-size: 13px 13px;
+                    transform: translateY(calc(-50% - 5px));
+                    transition: all 0.3s;
+                }
+            }
+    
+            &:hover {
+                opacity: 0.8;
+            }
+        }
+    
+        &--depth01 {
+            .aside--depth02 {
+                overflow: hidden;
+                max-height: 0px;
+                padding-left: 15px;
+                transition: all 0.3s;
+                .aside__item {
+                    &--name {
+                        color: $color-dark;
+                    }
+                }
+            }
+            
+            &.on {
+                & > .aside__item {
+                    .aside__item--name {
+                       font-weight: $font-B;
+                       color: $color-primary;
+       
+                       &:hover {
+                           opacity: 0.8;
+                       }
+                   }
+                   .aside__item--arrow {
+                    &::after {
+                        background: url($url-images + 'aside_arrow_active.png') 0 0 no-repeat;
+                        background-size: 13px 13px;
+                        transform: translateY(calc(-50% - 5px)) rotate(180deg);
+                    }
+                   }
+                }
+                .aside--depth02 {
+                    max-height: 100vh;
+                }
+            }
+        }
+    }
+
+}
