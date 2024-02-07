@@ -1,8 +1,16 @@
 import React from 'react'
+import GlobalStyle from '../styles/GlobalStyle.js'
+import Layout from 'components/Layout/Layout'
+
 
 function ProductListPage() {
   return (
-    <div>ProductListPage</div>
+   <>
+    <GlobalStyle />
+    <Layout>
+
+    </Layout>
+   </>
   )
 }
 
