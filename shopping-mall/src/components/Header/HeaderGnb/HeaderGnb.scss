@@ -5,7 +5,7 @@
 .header {
     &__content {
         .lnb {
-            @include flex(row, start, center, wrap);
+            @include flex(row, flex-start, center, wrap);
             flex: 1 0 0;
             @include gap(0, 13px);
 

@@ -23,7 +23,7 @@
     }
     &__item {
         a {
-            @include flex(row, start, center, wrap);
+            @include flex(row, flex-start, center, wrap);
             display: flex !important;
             height: 100%;
     

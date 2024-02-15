@@ -7,4 +7,5 @@
   min-width: 1136px;
   margin: 40px auto;
   padding: 0 392px;
+  @include flex(row, space-between, flex-start, wrap);
 }

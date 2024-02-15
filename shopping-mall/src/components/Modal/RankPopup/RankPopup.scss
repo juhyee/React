@@ -24,7 +24,7 @@
             right: 20px;
             width: 18px;
             height: 18px;
-            background: url($url-images+"rankIcon_arrow.png") 0 0 no-repeat;
+            background: url($url-images + "rankIcon_arrow.png") 0 0 no-repeat;
         }
         h3 {
           font-size: 18px;
@@ -35,7 +35,7 @@
         padding: 0 0 30px;
         .rank_list {
             .rank__item { 
-                @include flex(row, start, flex-start, wrap);
+                @include flex(row, flex-start, flex-start, wrap);
                 padding: 12px 20px;
                 &:hover {
                     background-color: #fcfcfc;

@@ -5,7 +5,7 @@
 
 .header {
     &__content {
-        @include flex(row, start, center, wrap);
+        @include flex(row, flex-start, center, wrap);
         min-width: 1136px;
         margin: 0 auto;
         padding: 0 392px;

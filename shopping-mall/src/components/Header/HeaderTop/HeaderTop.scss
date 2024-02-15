@@ -19,7 +19,7 @@
     }
 
     &__gnb {
-        @include flex(row, start, center, wrap);
+        @include flex(row, flex-start, center, wrap);
 
         .gnb__item {
             a {
