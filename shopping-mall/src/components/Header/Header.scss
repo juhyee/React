@@ -5,14 +5,20 @@
 
 .header {
     &__content {
-        @include flex(row, flex-start, center, wrap);
+        width: 100%;
         min-width: 1136px;
-        margin: 0 auto;
-        padding: 0 392px;
         background-color: $color-white;
         @include solid-line-bottom(1px, $color-gray);
         transition: top 0.1s ease 0s;
-        box-sizing: content-box;
+        box-sizing: border-box;
+        
+        .header__inner {
+            @include flex(row, flex-start, center, wrap);
+            width: 1136px;
+            height: 100%;
+            margin: 0 auto;
+        }
+
 
         &.fixed {
             z-index: 1001;

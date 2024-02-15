@@ -9,18 +9,20 @@ function HeaderGnb(porps) {
     return (
         <>
             <div className='header__content header__content--lnb'>
-                <ul className='lnb'>
-                    {dummy.HeaderCategorie.map((item, idx) => (
-                        porps.activeIndex === idx ?
-                            item.lnb.map((item, idx) => (
-                                <li key={item.title} className={`lnb__item lnb__item0${idx + 1}`}>
-                                    <a href={item.url}>{item.title}</a>
-                                </li>
-                            ))
-                            : ''
-                    ))}
-                </ul>
-                <HeaderRank />             
+                <div className='header__inner'>
+                    <ul className='lnb'>
+                        {dummy.HeaderCategorie.map((item, idx) => (
+                            porps.activeIndex === idx ?
+                                item.lnb.map((item, idx) => (
+                                    <li key={item.title} className={`lnb__item lnb__item0${idx + 1}`}>
+                                        <a href={item.url}>{item.title}</a>
+                                    </li>
+                                ))
+                                : ''
+                        ))}
+                    </ul>
+                    <HeaderRank />             
+                </div>
             </div>
         </>
     )

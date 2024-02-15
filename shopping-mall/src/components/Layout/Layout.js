@@ -8,7 +8,9 @@ function index(props) {
     <div className='wrap'>
       <Header />
       <div className='container' id='container'>
-        {props.children}
+        <div className='container__inner'>
+          {props.children}
+        </div>
       </div>
     </div>
     </>

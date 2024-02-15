@@ -9,36 +9,38 @@ function HeaderTop(porps) {
     return (
         <>
             <div className='header__content header__content--top'>
-                <h1 className="logo header__logo">
-                    <img src={logo} alt='오늘의 집' />
-                </h1>
+                <div className='header__inner'>
+                    <h1 className="logo header__logo">
+                        <img src={logo} alt='오늘의 집' />
+                    </h1>
 
-                <ul className='header__gnb'>
-                    {dummy.HeaderCategorie.map((item, idx) => (
-                        <li 
-                            key={item.id}
-                            className={`gnb__item gnb__item0${idx + 1}${porps.activeIndex === idx  ? ' on' : ''}`}
-                            onMouseEnter={() => porps.toggleActive(idx)}
-                            onMouseLeave={() => porps.toggleActive(0)}
-                        >
-                            <a href={item.url}>{item.title}</a>
-                        </li>
-                    ))}
-                </ul>
+                    <ul className='header__gnb'>
+                        {dummy.HeaderCategorie.map((item, idx) => (
+                            <li 
+                                key={item.id}
+                                className={`gnb__item gnb__item0${idx + 1}${porps.activeIndex === idx  ? ' on' : ''}`}
+                                onMouseEnter={() => porps.toggleActive(idx)}
+                                onMouseLeave={() => porps.toggleActive(0)}
+                            >
+                                <a href={item.url}>{item.title}</a>
+                            </li>
+                        ))}
+                    </ul>
 
-                <div className="header__search">
-                    <input
-                        type="text"
-                        placeholder="상품명을 입력하세요."
-                        className="header__search--input"
-                    />
+                    <div className="header__search">
+                        <input
+                            type="text"
+                            placeholder="상품명을 입력하세요."
+                            className="header__search--input"
+                        />
+                    </div>
+
+                    <button className="header__utill--cart">
+                        <span className="header__utill-count">
+                            <span className='blind'>{ }개의 담은 상품</span>
+                        </span>
+                    </button>
                 </div>
-
-                <button className="header__utill--cart">
-                    <span className="header__utill-count">
-                        <span className='blind'>{ }개의 담은 상품</span>
-                    </span>
-                </button>
             </div>
         </>
     )
