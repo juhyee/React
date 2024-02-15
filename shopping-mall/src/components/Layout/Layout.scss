@@ -11,6 +11,6 @@
   &__inner {
     width: 1136px;
     margin: 0 auto;
-    @include flex(row, space-between, flex-start, wrap);
+    @include flex(row, space-between, flex-start, nowrap);
   }
 }
