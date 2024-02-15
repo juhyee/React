@@ -7,35 +7,49 @@ import useToggleList from 'hooks/useToggleList';
 function Aside() {
   // 임시 [소파] 메뉴 활성화
   const { toggleActive, activeIndex } = useToggleList(4);
+  const asideActive = 0
 
   return (
     <>
       <div className='aside__wrap'>
         {
-          dummy.aside.map((item, idx) => {
-            return <div className='aside'>
+          dummy.aside.map((item, idx) => (
+            <>
               {
-                !idx ? <h3 className='aside-title'>{item.title}</h3>
-                  : <h3 className='aside-title'><a href={item.url}>{item.title}</a></h3>
+                asideActive === idx &&
+                <div className='aside'>
+                  <h3 className='aside-title'>{item.title}</h3>
+                  <ul className='aside-list'>
+                    {
+                      item.children.map((item, idx) => (
+                        <AsideItem
+                          url={item.url}
+                          title={item.title}
+                          data={item}
+                          isActive={activeIndex === idx}
+                          onShow={() => toggleActive(idx)}
+                        />
+                      ))
+                    }
+                  </ul>
+                </div>
               }
-              {
-                !idx ? <ul className='aside-list'>
-                  {
-                    item.children.map((item, idx) => (
-                      <AsideItem
-                        url={item.url}
-                        title={item.title}
-                        data={item}
-                        isActive={activeIndex === idx}
-                        onShow={() => toggleActive(idx)}
-                      />
-                    ))
-                  }
-                </ul>
-                  : ""}
-            </div>
-          })
+            </>
+          ))
+
         }
+        <div className="aside__other">
+          {
+            dummy.aside.map((item, idx) => (
+              <>
+                {
+                  asideActive !== idx &&
+                  <h3 className='aside-title'>{item.title}</h3>
+                }
+              </>
+            ))
+          }
+        </div>
       </div>
     </>
   )
