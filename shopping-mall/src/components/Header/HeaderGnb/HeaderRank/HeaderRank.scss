@@ -19,7 +19,7 @@
         right: 0;
         width: 18px;
         height: 18px;
-        background: url($url-images + 'rankIcon_arrow.png') 0 0 no-repeat;
+        background: url($url-images + 'header/rankIcon_arrow.png') 0 0 no-repeat;
     }
     &__item {
         a {
@@ -39,16 +39,16 @@
         width: 40px;
         height: 8px;
         &--up {
-            background: url($url-images + 'rankIcon_up.png') center 0 no-repeat;
+            background: url($url-images + 'header/rankIcon_up.png') center 0 no-repeat;
         }
 
         &--off {
-            background: url($url-images + 'rankIcon_off.png') center no-repeat;
+            background: url($url-images + 'header/rankIcon_off.png') center no-repeat;
         }
 
         
         &--new {
-            background: url($url-images + 'rankIcon_new.png') center no-repeat;
+            background: url($url-images + 'header/rankIcon_new.png') center no-repeat;
         }
     }
 

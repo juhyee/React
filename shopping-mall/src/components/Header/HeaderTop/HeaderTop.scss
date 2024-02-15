@@ -68,7 +68,7 @@
             right: 15px;
             width: 20px;
             height: 20px;
-            background: url($url-images + '/searchGrayIcon.svg') 0 0 no-repeat;
+            background: url($url-images + '/header/searchGrayIcon.svg') 0 0 no-repeat;
         }
     }
 
@@ -78,17 +78,17 @@
         width: 28px;
         margin-left: auto;
         height: 31.2px;
-        background: url($url-images + '/basketIcon.svg') no-repeat 0 0/100%;
+        background: url($url-images + '/header/basketIcon.svg') no-repeat 0 0/100%;
     }
 
     .header__utill-count {
         position: absolute;
-        top: -8px;
-        right: -10px;
+        top: -6px;
+        right: -8px;
         padding: 2px 5px;
-        height: 20px;
-        min-width: 20px;
-        border-radius: 20px;
+        height: 18px;
+        min-width: 18px;
+        border-radius: 18px;
         font-size: 13px;
         background-color: $color-primary;
         color: $color-white;
