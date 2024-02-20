@@ -106,7 +106,7 @@ body {
   }
 
   .wrap {
-   
+    overflow: hidden;
     min-width: 1136px;
   }
 `;

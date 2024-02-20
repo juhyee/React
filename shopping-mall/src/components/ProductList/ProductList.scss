@@ -1,6 +1,21 @@
-.contents {
-    width: 100%;
-    max-width: 75%;
-    padding: 0 10px;
+@charset "utf-8";
+@import "styles/_mixin.scss";
+@import "styles/_variable.scss";
+
+
+.prdCard {
     flex: 0 0 75%;
+    width: 100%;
+    margin: 0 auto;
+    &__total {
+      margin: 60px 0 20px 12px;
+      font-size: 13px;
+      color: $color-xdark;
+  
+      .num {
+        padding-left: 3px;
+        color: $color-primary;
+        font-weight: $font-B;
+      }
+    }
 }

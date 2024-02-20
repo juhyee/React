@@ -1,6 +1,6 @@
 import React from 'react'
 import './Aside.scss'
-import dummy from 'data/Aside.json'
+import dummy from 'data/aside.json'
 import AsideItem from './AsideItem';
 import useToggleList from 'hooks/useToggleList';
 

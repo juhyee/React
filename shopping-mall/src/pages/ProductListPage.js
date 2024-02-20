@@ -1,15 +1,15 @@
 import React from 'react'
 import GlobalStyle from '../styles/GlobalStyle.js'
 import Layout from 'components/Layout/Layout'
-import Aside from 'components/Aside/Aside.js'
 import ProductList from 'components/ProductList/ProductList.js'
+import SliderBanner from 'components/SliderBanner/SliderBanner'
 
 function ProductListPage() {
   return (
    <>
     <GlobalStyle />
     <Layout>
-      <Aside />
+      <SliderBanner />
       <ProductList />
     </Layout>
    </>

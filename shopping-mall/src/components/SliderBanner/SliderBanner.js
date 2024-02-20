@@ -5,11 +5,7 @@ import { Autoplay, Navigation, Pagination } from 'swiper/modules';
 import 'swiper/css';
 import 'swiper/css/pagination';
 
-function SliderBanner() {
-  const pagination = {
-    clickable: true,
-  };
-  
+function SliderBanner() {  
   return (
     <>
       <div className='prdBanner'>
@@ -23,7 +19,7 @@ function SliderBanner() {
           modules={[Autoplay, Navigation, Pagination]}
           loop={true}
           navigation={true}
-          pagination={pagination}
+          pagination={{clickable: true}}
         
         >
           <SwiperSlide> <img src='https://image.ohou.se/i/bucketplace-v2-development/uploads/store/banners/category_banners/170766228811235400.png' alt='해당 이미지의 저작권은 오늘의집 어플에 있습니다. '/></SwiperSlide>

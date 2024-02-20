@@ -1,14 +1,34 @@
 import React from 'react'
 import './ProductList.scss'
-import SliderBanner from 'components/SliderBanner/SliderBanner'
+import ProductItem from './ProductItem/ProductItem'
+import dummy from 'data/prdList.json'
+
 
 function ProductList() {
+  console.log(dummy.products)
   return (
     <>
-        <div className='contents' id='contents'>
-        <SliderBanner />
-        
-        </div>
+      <div className='product__wrap prdCard'>
+        <p className="prdCard__total">총<span className="num">{dummy.products.length}</span>개의 상품이 있습니다.</p>
+        <ul className='prdCard__list'>
+          {
+            dummy.products.map((item, idx) => (
+              <ProductItem 
+                id={item.id}
+                className="prdCard-item"
+                title={item.title}
+                img={item.img}
+                price={item.price}
+                brand={item.brand}
+                sale={item.sale}
+                star={item.star}
+                wish={item.wish}
+                data={item}
+              />
+            ))
+          }
+        </ul>
+      </div>
     </>
   )
 }
