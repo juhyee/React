@@ -23,6 +23,7 @@ function useAddWishList() {
             return wishList
         }
     }
+    console.log(wishList)
     return { wishList, setWishList, addToWishList }
 
 }

@@ -2,11 +2,8 @@ import React from 'react'
 import './Layout.scss'
 import Header from 'components/Header/Header'
 import Aside from 'components/Aside/Aside'
-import useAddWishList from 'hooks/useAddWishList';
 
 function index(props) {
-  // const {addToWishList, wishList, setWishList} = useAddWishList();
-
   return (
     <>
     <div className='wrap'>

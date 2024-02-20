@@ -3,14 +3,12 @@ import './ProductList.scss'
 import addToWishList from 'hooks/useAddWishList';
 import ProductItem from './ProductItem/ProductItem'
 import dummy from 'data/prdList.json'
-// import useAddWishList from 'hooks/useAddWishList';
+import useAddWishList from 'hooks/useAddWishList';
 
 
-function ProductList(porps) {
+function ProductList() {
 
-  // const {addToWishList, wishList, setWishList} = useAddWishList()
-  // console.log(wishList.length)
-
+  const {addToWishList, wishList, setWishList} = useAddWishList()
   return (
     <>
       <div className='product__wrap prdCard'>
@@ -29,7 +27,7 @@ function ProductList(porps) {
                 star={item.star}
                 wish={item.wish}
                 data={item}
-                addToWishList= {() => this.porps.addToWishList(item)}
+                addToWishList= {() => addToWishList(item)}
               />
             ))
           }

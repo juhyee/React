@@ -2,12 +2,11 @@ import React, { useEffect } from 'react'
 import './HeaderTop.scss'
 import logo from 'assets/images/logo.jpg'
 import dummy from 'data/headerGnb.json'
-
+import useAddWishList from 'hooks/useAddWishList';
 
 
 function HeaderTop(porps) {
-
-
+    const {addToWishList, wishList, setWishList} = useAddWishList;
     return (
         <>
             <div className='header__content header__content--top'>
@@ -19,10 +18,10 @@ function HeaderTop(porps) {
                     <ul className='header__gnb'>
                         {dummy.HeaderCategorie.map((item, idx) => (
                             <li 
-                                key={item.id}
-                                className={`gnb__item gnb__item0${idx + 1}${porps.activeIndex === idx  ? ' on' : ''}`}
-                                onMouseEnter={() => porps.toggleActive(idx)}
-                                onMouseLeave={() => porps.toggleActive(0)}
+                            key={item.id}
+                            className={`gnb__item gnb__item0${idx + 1}${porps.activeIndex === idx  ? ' on' : ''}`}
+                            onMouseEnter={() => porps.toggleActive(idx)}
+                            onMouseLeave={() => porps.toggleActive(0)}
                             >
                                 <a href={item.url}>{item.title}</a>
                             </li>
@@ -34,13 +33,13 @@ function HeaderTop(porps) {
                             type="text"
                             placeholder="상품명을 입력하세요."
                             className="header__search--input"
-                        />
+                            />
                     </div>
 
                     <button className="header__utill--cart">
                         <span className="header__utill-count">
-                        {porps.wishList}
-                            <span className='blind'>{porps.setWishList}개의 담은 상품</span>
+                        {wishList.length}
+                            <span className='blind'>{wishList.length}개의 담은 상품</span>
                         </span>
                     </button>
                 </div>
