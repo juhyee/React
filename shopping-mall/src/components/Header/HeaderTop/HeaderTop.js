@@ -1,10 +1,12 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import './HeaderTop.scss'
 import logo from 'assets/images/logo.jpg'
 import dummy from 'data/headerGnb.json'
 
 
+
 function HeaderTop(porps) {
+
 
     return (
         <>
@@ -37,7 +39,8 @@ function HeaderTop(porps) {
 
                     <button className="header__utill--cart">
                         <span className="header__utill-count">
-                            <span className='blind'>{ }개의 담은 상품</span>
+                        {porps.wishList}
+                            <span className='blind'>{porps.setWishList}개의 담은 상품</span>
                         </span>
                     </button>
                 </div>

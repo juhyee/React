@@ -5,6 +5,8 @@ import ProductList from 'components/ProductList/ProductList.js'
 import SliderBanner from 'components/SliderBanner/SliderBanner'
 
 function ProductListPage() {
+
+  
   return (
    <>
     <GlobalStyle />

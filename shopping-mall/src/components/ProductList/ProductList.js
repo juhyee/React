@@ -1,11 +1,16 @@
 import React from 'react'
 import './ProductList.scss'
+import addToWishList from 'hooks/useAddWishList';
 import ProductItem from './ProductItem/ProductItem'
 import dummy from 'data/prdList.json'
+// import useAddWishList from 'hooks/useAddWishList';
 
 
-function ProductList() {
-  console.log(dummy.products)
+function ProductList(porps) {
+
+  // const {addToWishList, wishList, setWishList} = useAddWishList()
+  // console.log(wishList.length)
+
   return (
     <>
       <div className='product__wrap prdCard'>
@@ -24,6 +29,7 @@ function ProductList() {
                 star={item.star}
                 wish={item.wish}
                 data={item}
+                addToWishList= {() => this.porps.addToWishList(item)}
               />
             ))
           }
