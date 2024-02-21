@@ -1,14 +1,14 @@
 import React from 'react'
 import './ProductList.scss'
-import addToWishList from 'hooks/useAddWishList';
+import useAddWishList from 'hooks/useAddWishList';
 import ProductItem from './ProductItem/ProductItem'
 import dummy from 'data/prdList.json'
-import useAddWishList from 'hooks/useAddWishList';
+
 
 
 function ProductList() {
+  const {addToWishList} = useAddWishList()
 
-  const {addToWishList, wishList, setWishList} = useAddWishList()
   return (
     <>
       <div className='product__wrap prdCard'>

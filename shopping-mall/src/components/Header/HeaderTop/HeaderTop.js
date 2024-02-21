@@ -1,12 +1,12 @@
 import React, { useEffect } from 'react'
 import './HeaderTop.scss'
 import logo from 'assets/images/logo.jpg'
+import HeaderCart from './HeaderCart/HeaderCart'
 import dummy from 'data/headerGnb.json'
-import useAddWishList from 'hooks/useAddWishList';
-
 
 function HeaderTop(porps) {
-    const {addToWishList, wishList, setWishList} = useAddWishList;
+
+    
     return (
         <>
             <div className='header__content header__content--top'>
@@ -35,13 +35,8 @@ function HeaderTop(porps) {
                             className="header__search--input"
                             />
                     </div>
-
-                    <button className="header__utill--cart">
-                        <span className="header__utill-count">
-                        {wishList.length}
-                            <span className='blind'>{wishList.length}개의 담은 상품</span>
-                        </span>
-                    </button>
+                    
+                    <HeaderCart />
                 </div>
             </div>
         </>
