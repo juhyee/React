@@ -1,8 +1,9 @@
-import React, { useState, useEffect } from 'react'
+import React, { useState, useEffect, useCallback } from 'react'
 
-function useAddWishList(init) {
+function useAddWishList() {
     
     const [wishList, setWishList] = useState([])
+    const test = useCallback(() => addToWishList(wishList), [wishList])
     
     const addToWishList = (obj) => {
         // obj.preventDefault();
@@ -25,12 +26,14 @@ function useAddWishList(init) {
         }
     }
 
+    
     useEffect(() => {
         document.querySelector('.header__utill-count').innerText = wishList.length
     })
     
+    console.log(wishList)
 
-    return { wishList, setWishList, addToWishList }
+    return { wishList, setWishList, addToWishList, test }
 
 }
 

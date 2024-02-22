@@ -7,6 +7,7 @@ import useAddWishList from 'hooks/useAddWishList';
 
 function CartPopup(props) {
     const [wishList, setWishList] = useAddWishList()
+    console.log(wishList)
 //   const updateQuantity = (id, newQty) => {
 //     const newItems = wishList.map((item) => {
 //       if (item.id === id) return { ...item, quantity: newQty };
