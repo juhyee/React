@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <script crossorigin src="https://unpkg.com/react@18/umd/react.development.js"></script>
+<script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+<script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+
+    <title>06.js jsx 섞어쓰기</title>
+</head>
+<body>
+    <div id="root"></div>
+
+    <script type="text/babel">
+        const rootElement = document.getElementById("root");
+
+        // const Text = ({text}) => {
+        //    //text의 첫 글자가 대문자면 h1 태그, 아니면 h3 태그
+        //     if(text.charAt(0) === text.charAt(0).toUpperCase()){
+        //         return <h1>{text}</h1>
+        //     }else{
+        //         return <h3>{text}</h3>
+        //     }
+        // }
+         
+        // const element = (
+        //     <>
+        //         <Text text="Text"/>
+        //         <Text text="text"/>
+        //     </>
+        // )
+
+
+       const Number = ({number}) => (
+             number % 2 === 0 ? <h1>{number}</h1> : <h3>{number}</h3> 
+       )
+
+        const element = (
+            <>
+                {[1,2, 3, 4, 5, 5].map((number) => 
+                    <Number number={number} />
+                )}
+               
+            </>
+        )
+        ReactDOM.render(element, rootElement)
+    </script>
+</body>
+</html>
