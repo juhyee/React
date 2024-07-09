@@ -5,7 +5,6 @@
 <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
 <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
 
-
     <title>05.Element 찍어내기</title>
 </head>
 <body>
@@ -13,24 +12,26 @@
 
     <script type="text/babel">
         const rootElement = document.getElementById("root");
-        const element = (
-            // <React.Fragment 
-            //     children={[
-            //         <h1>Hi</h1>,
-            //         <h3>Bye</h3>,
-            //         <h5>Children</h5>
-            //             // React.createElement("h1", null, "hi"),
-            //             // React.createElement("h3", null, "bye"),
-            //             // React.createElement("h5", null, "children")
-            //     ]}
-            // />
+        const Stemp = ({title, desc, children}) => (
             <>
-                <h1>Hi</h1>
-                <h3>Bye</h3>
-                <h5>Children</h5>
+                <h1>{title}</h1>
+                <h3>{desc}</h3>
+                {children}
             </>
-            
-            
+        )
+
+        const element = (
+            <>
+                <Stemp title={"Good"} desc={"good"}>
+                  <h1>Hi</h1>  
+                </Stemp>
+                <Stemp title={"So so"} desc={"so so"}/>
+                <Stemp title={"Bad"} desc={"bad"}/>
+
+               {/* {stemp("Good", "good")}
+                {stemp("So so", "so so")}
+                {stemp("Bad", "bad")}*/}
+            </>
         )
         ReactDOM.render(element, rootElement)
     </script>
