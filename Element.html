@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <script crossorigin src="https://unpkg.com/react@18/umd/react.development.js"></script>
+<script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+    <title>02.DOM 다루기 Element</title>
+</head>
+<body>
+    <div id="root"></div>
+
+    <script>
+        const rootElement = document.getElementById("root");
+        const elementV = document.createElement("h1");
+        const element = React.createElement("h1", 
+            {   
+                className: "title",
+                children: ["Hello world!!!", "It's me!"]
+            },
+            ["Hello world!!!", "It's me!!!!!"] // 우선순위
+        );
+        // element.textContent= "Hello world!";
+        console.log(elementV)
+        console.log(element)
+        // rootElement.appendChild(element);
+        ReactDOM.render(element, rootElement)
+    </script>
+</body>
+</html>
