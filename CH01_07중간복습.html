@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <script crossorigin src="https://unpkg.com/react@18/umd/react.development.js"></script>
+<script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+<script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+
+    <title>07.중간복습</title>
+</head>
+<body>
+    <div id="root"></div>
+
+    <script type="text/babel">
+       const rootElement = document.getElementById("root")
+       
+       const Number = ({number}) => (
+         number % 2 === 0 ? <h1>{number}</h1> : <h5>{number}</h5>
+       )
+       
+       const element = (
+           <>
+           {
+                [1, 2, 3, 4, 5, 6, 7, 8, 9, 10].map((number, _) => 
+                    <Number 
+                        number={number}
+                        key={number}  //map 사용시 key 값을 넣어야한다.
+                        selected={number === 3}/>
+                )
+            }
+        </>
+        );
+
+        console.log(element)
+
+
+       ReactDOM.render(element, rootElement)
+    </script>
+</body>
+</html>

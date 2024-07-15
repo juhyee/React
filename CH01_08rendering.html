@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <script crossorigin src="https://unpkg.com/react@18/umd/react.development.js"></script>
+    <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+
+    <title>08.리액트의 리랜더링 알아보기</title>
+</head>
+
+<body>
+    <div id="root"></div>
+    <!-- <script>
+        const rootElement = document.getElementById("root")
+
+        function random(){
+           
+                const number = Math.floor(Math.random() * (10 - 1) + 1);
+        
+                const element = `
+                    <button>${number}</button>
+                `
+                rootElement.innerHTML = element;
+         }
+
+        setInterval(random, 1000); // 버튼을 계속 새로 뿌려줌
+        
+    </script> -->
+
+    <script type="text/babel">
+        const rootElement = document.getElementById("root")
+
+        function random() {
+            const number = Math.floor(Math.random() * (10 - 1) + 1);
+            const element = 
+            <>
+                <button>{number}</button>
+                <div><p>{number}</p></div>
+            </>
+            ReactDOM.render(element, rootElement)
+        }
+
+        setInterval(random, 1000); // 버튼 안 텍스트만 다시 뿌려줌
+    </script>
+</body>
+
+</html>
