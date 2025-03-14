@@ -1,0 +1,157 @@
+[
+  {
+    "itemName": "해변 바로 앞",
+    "itemLink": "#01",
+    "itemImg": "../src/assets/carousel/carousel01.jpg"
+  },
+   {
+    "itemName": "컬처 아이콘",
+    "itemLink": "#02",
+    "itemImg": "../src/assets/carousel/carousel02.webp"
+  },
+   {
+    "itemName": "멋진 수영장",
+    "itemLink": "#03",
+    "itemImg": "../src/assets/carousel/carousel03.jpg"
+  },
+  {
+    "itemName": "방",
+    "itemLink": "#04",
+    "itemImg": "../src/assets/carousel/carousel04.jpg"
+  },
+  {
+    "itemName": "농장",
+    "itemLink": "#05",
+    "itemImg": "../src/assets/carousel/carousel05.jpg"
+  },
+   {
+    "itemName": "인기 급상승",
+    "itemLink": "#06",
+    "itemImg": "../src/assets/carousel/carousel06.jpg"
+  },
+  {
+    "itemName": "한적한 시골",
+    "itemLink": "#07",
+    "itemImg": "../src/assets/carousel/carousel07.jpg"
+  },
+  {
+    "itemName": "한옥",
+    "itemLink": "#07",
+    "itemImg": "../src/assets/carousel/carousel08.jpg"
+  },
+  {
+    "itemName": "최고의 전망",
+    "itemLink": "#08",
+    "itemImg": "../src/assets/carousel/carousel08.jpg"
+  },
+  {
+    "itemName": "기상천외한 숙소",
+    "itemLink": "#09",
+    "itemImg": "../src/assets/carousel/carousel09.jpg"
+  },
+   {
+    "itemName": "국립공원",
+    "itemLink": "#10",
+    "itemImg": "../src/assets/carousel/carousel10.jpg"
+  },
+   {
+    "itemName": "섬",
+    "itemLink": "#11",
+    "itemImg": "../src/assets/carousel/carousel11.jpg"
+  },
+   {
+    "itemName": "캐슬",
+    "itemLink": "#12",
+    "itemImg": "../src/assets/carousel/carousel12.jpg"
+  },
+  {
+    "itemName": "키즈",
+    "itemLink": "#13",
+    "itemImg": "../src/assets/carousel/carousel13.jpg"
+  },
+  {
+    "itemName": "동굴",
+    "itemLink": "#14",
+    "itemImg": "../src/assets/carousel/carousel14.jpg"
+  },
+  {
+    "itemName": "통나무집",
+    "itemLink": "#15",
+    "itemImg": "../src/assets/carousel/carousel15.jpg"
+  },
+  {
+    "itemName": "트리하우스",
+    "itemLink": "#16",
+    "itemImg": "../src/assets/carousel/carousel16.jpg"
+  },
+  {
+    "itemName": "호수 근처",
+    "itemLink": "#17",
+    "itemImg": "../src/assets/carousel/carousel17.jpg"
+  },
+  {
+    "itemName": "유르트",
+    "itemLink": "#18",
+    "itemImg": "../src/assets/carousel/carousel18.jpg"
+  },
+  {
+    "itemName": "스키 타고 출입",
+    "itemLink": "#19",
+    "itemImg": "../src/assets/carousel/carousel19.jpg"
+  },
+  {
+    "itemName": "보트",
+    "itemLink": "#20",
+    "itemImg": "../src/assets/carousel/carousel20.jpg"
+  },
+  {
+    "itemName": "컨테이너",
+    "itemLink": "#21",
+    "itemImg": "../src/assets/carousel/carousel21.jpg"
+  },
+  {
+    "itemName": "세상의 꼭대기",
+    "itemLink": "#22",
+    "itemImg": "../src/assets/carousel/carousel22.jpg"
+  },
+  {
+    "itemName": "와인 농장",
+    "itemLink": "#23",
+    "itemImg": "../src/assets/carousel/carousel23.jpg"
+  },
+  {
+    "itemName": "료칸",
+    "itemLink": "#24",
+    "itemImg": "../src/assets/carousel/carousel24.jpg"
+  },
+  {
+    "itemName": "호숫가",
+    "itemLink": "#25",
+    "itemImg": "../src/assets/carousel/carousel25.jpg"
+  },
+  {
+    "itemName": "캠핑장",
+    "itemLink": "#26",
+    "itemImg": "../src/assets/carousel/carousel26.jpg"
+  },
+  {
+    "itemName": "A자형 주택",
+    "itemLink": "#27",
+    "itemImg": "../src/assets/carousel/carousel27.jpg"
+  },
+  {
+    "itemName": "속세를 벗어난 숙소",
+    "itemLink": "#28",
+    "itemImg": "../src/assets/carousel/carousel28.jpg"
+  },
+  {
+    "itemName": "Luxe",
+    "itemLink": "#29",
+    "itemImg": "../src/assets/carousel/carousel29.jpg"
+  },
+  {
+    "itemName": "B&B",
+    "itemLink": "#30",
+    "itemImg": "../src/assets/carousel/carousel30.jpg"
+  }
+]

@@ -1,0 +1,5 @@
+.utilMenu {display: flex; align-items: center;}
+
+.utilMenu__link {height: 42px; padding: 12px 16px; margin-left: -3px; border-radius: 22px; box-sizing: border-box;}
+.utilMenu__link:hover {background-color: #f7f7f7;}
+.utilMenu__link--creat {font-size: 0.875rem;}

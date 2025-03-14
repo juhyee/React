@@ -1,0 +1,40 @@
+
+a {
+  font-weight: 500;
+  color: #222222;
+  text-decoration: inherit;
+}
+a:hover {
+  color: #222222;
+}
+
+body {
+  margin: 0;
+}
+
+h1 {
+  font-size: 3.2em;
+  line-height: 1.1;
+}
+
+button {
+  cursor: pointer; background: inherit ; border:none; box-shadow:none; border-radius:0; padding:0; overflow:visible; cursor:pointer;
+}
+ul
+{
+list-style: none;
+padding: 0;
+margin: 0;
+}
+
+
+@media (prefers-color-scheme: light) {
+  :root {
+    color: #213547;
+    background-color: #ffffff;
+  }
+  a:hover {
+    color: #222222;
+  }
+
+}

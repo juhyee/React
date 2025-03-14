@@ -1,0 +1,4 @@
+/* .filter {width: 78px;} */
+.filter__button {display: flex; align-items: center; gap: 0 8px; height: 48px; padding: 0 16px; border: 1px solid #dddddd; border-radius: 12px;}
+.filter__button:hover {border-color: #222; background-color: #f7f7f7;}
+.filter__button span {font-size: 0.75rem;}
