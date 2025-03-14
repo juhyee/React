@@ -9,9 +9,9 @@
     "lint": "eslint .",
     "preview": "vite preview",
     "predeploy": "npm run build",
-    "deploy": "gh-pages -d build",
-    "homepage": "https://juhyee.github.io/React"
+    "deploy": "gh-pages -d build"
   },
+  "homepage": "https://juhyee.github.io/React",
   "dependencies": {
     "gh-pages": "^6.3.0",
     "react": "^19.0.0",
