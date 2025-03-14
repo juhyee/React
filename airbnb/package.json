@@ -7,11 +7,8 @@
     "dev": "vite",
     "build": "vite build",
     "lint": "eslint .",
-    "preview": "vite preview",
-    "predeploy": "npm run build",
-    "deploy": "gh-pages -d build"
+    "preview": "vite preview"
   },
-  "homepage": "https://juhyee.github.io/React",
   "dependencies": {
     "gh-pages": "^6.3.0",
     "react": "^19.0.0",
